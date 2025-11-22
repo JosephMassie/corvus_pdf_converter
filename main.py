@@ -41,6 +41,8 @@ def readArgs():
 
     return args.file, args.destination
 
+END_MISSION = "~END-MISSION~"
+
 def main():
     file, destination = readArgs()
     pdf = PdfReader(file)
@@ -71,10 +73,15 @@ def main():
             directActionStartIndex = i
             pageNum = int(indexPage[i].replace(directActionPage, "").strip())
             log(f"Found ITS Direct Actions @ {i} -> '{pageNum}' -> {directActionStartIndex}", LOG_LEVELS["BASIC"])
+            # also push a special "~END-MISSION~" to itsScenarios
+            itsScenarios.append({ "name": END_MISSION, "page": pageNum })
         elif resilienceOps in indexPage[i]:
             # end search as we've reached the end of missions
             scenarioStartIndex = float('inf')
             directActionStartIndex = float('inf')
+            pageNum = int(indexPage[i].replace(resilienceOps, "").strip())
+            # also push a special "~END-MISSION~" to directActions
+            directActions.append({ "name": END_MISSION, "page": pageNum })
 
         if i > scenarioStartIndex or i > directActionStartIndex:
             res = re.match("^(.+\s+)(\d+)$", indexPage[i])
