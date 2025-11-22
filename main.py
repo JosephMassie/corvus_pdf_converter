@@ -1,7 +1,9 @@
 #!./.venv/bin/python3
 
+import os
 import re
 import argparse
+import json
 from pypdf import PdfReader
 
 print("CB Mission PDF Converter")
@@ -13,6 +15,8 @@ parser = argparse.ArgumentParser(
 
 parser.add_argument("file", help="Path of the target PDF file to convert")
 parser.add_argument("-d", "--dest", default="./", dest="destination", help="Destination path for the resulting JSON. Defaults to current dir.")
+parser.add_argument("-n", "--name", default="missions.json", dest="jsonName", help="Name of the resulting JSON file")
+parser.add_argument("-p", "--parsed-output", action="store_true", dest="outputParsed", help="If present output raw parsed pages of PDF as text for debugging, will created a directory at destination containing all files")
 parser.add_argument("-l", "--log", default=0, type=int, dest="log_level", help="""The level of logging to display
     0:'basic output'
     1:'simple debugging information'
@@ -39,29 +43,125 @@ def readArgs():
 
     log(f"\nexecuted with the folowing args {args}\n", LOG_LEVELS["COMPLEX"])
 
-    return args.file, args.destination
+    return args.file, args.destination, args.jsonName, args.outputParsed
 
+# functional "infinity" to replace float('inf') for type consistency
+INFINITY = 10000
 END_MISSION = "~END-MISSION~"
 
+PARSED_OUTPUT_DIR = "parsed_pages"
+
+def toTitle(string: str):
+    words = string.lower().split(' ')
+    
+    words = list(map(lambda word: word[0].upper() + word[1:], words))
+
+    return ' '.join(words)
+
+def toKey(string: str):
+    return string.lower().strip().replace(" ", "_")
+
+def linesToContent(lines: list[str]):
+    return ' '.join(lines).strip()
+
+def parseMissionPages(missionName: str, pages: list[str], basePageNum = 0):
+    SKILL_SUBHEADERS = [
+        "short skill",
+        "long skill",
+        "requirements",
+        "effects"
+    ]
+
+    missionInfo: dict[str, str|dict] = {
+        "name": toTitle(missionName)
+    }
+
+    for i in range(len(pages)):
+        lines = pages[i].splitlines()
+        # cut off the first two lines as these are page number and mission nam
+        lastHeaderIndex = INFINITY
+        subHeadIndexes = []
+        lineCount = len(lines)
+        log(f"\tPage {basePageNum + i} \\w LC:{lineCount}", LOG_LEVELS["SIMPLE"])
+
+        # process each line looking for headers/subheaders as the starts/ends of blocks
+        for lineNum in range(lineCount):
+            line = lines[lineNum]
+            # check if the current line is a header/subheader
+            if line.isupper():
+                if line.lower().strip() not in SKILL_SUBHEADERS:
+                    # if in an active block we've reached the start of another block, store the previous blocks
+                    # contents
+                    if lineNum > lastHeaderIndex or lineNum == lineCount - 1:
+                        block = ''
+
+                        # check if the current block has any active sub headers
+                        subheadCount = len(subHeadIndexes)
+                        if subheadCount > 0:
+                            # with sub headers block will be a dict of sub blocks
+                            block = {}
+
+                            for i in range(subheadCount):
+                                shi = subHeadIndexes[i]
+                                content = ''
+
+                                if i == subheadCount - 1:
+                                    content = linesToContent(lines[shi+1:lineNum-1])
+                                else:
+                                    content = linesToContent(lines[shi+1:subHeadIndexes[i+1]-1])
+
+                                block[toKey(lines[shi])] = content
+                        else:
+                            # with no sub headers block is simple text
+                            block = linesToContent(lines[lastHeaderIndex+1:lineNum-1])
+
+                        blockKey = toKey(lines[lastHeaderIndex])
+
+                        if block != "" or len(block) != 0:
+                            missionInfo[blockKey] = block
+                        else:
+                            # TODO: Some empty blocks are relevant info stored in a lone header, handle these
+                            # block is empty check if it should be dropped or parsed for information
+                            log(f"\t\t\t!empty block {blockKey}!", LOG_LEVELS["COMPLEX"])
+
+                        log(f"\t\t\tBlock<{blockKey}> {len(block)}")
+                    # set block header index for the next iteration
+                    log(f"\t\tFound section block '{line}' @ lines[{lastHeaderIndex}:{lineNum}]", LOG_LEVELS["COMPLEX"])
+                    lastHeaderIndex = lineNum
+                else:
+                    if lastHeaderIndex == INFINITY:
+                        log(f"ERROR: invalid subheader, no associated main header")
+                    subHeadIndexes.append(lineNum)
+
+    return missionInfo
+
 def main():
-    file, destination = readArgs()
+    file, destination, jsonName, outputParsed = readArgs()
     pdf = PdfReader(file)
+
+    if outputParsed:
+        try:
+            os.mkdir(destination + PARSED_OUTPUT_DIR)
+        except FileExistsError:
+            log(f"output dir for raw txts already exists", LOG_LEVELS["COMPLEX"])
 
     log(f"Number of pages: {len(pdf.pages)} with a dest of {destination}", LOG_LEVELS["SIMPLE"])
 
     indexPage = pdf.pages[1].extract_text().splitlines()
 
-    itsScenarios = []
-    scenarioStartIndex = float('inf')
+    rawItsScenarios = []
+    scenarioStartIndex = INFINITY
 
-    directActions = []
-    directActionStartIndex = float('inf')
+    rawDirectActions = []
+    directActionStartIndex = INFINITY
 
+    log(f"Searching PDF for missions")
     for i in range(len(indexPage)):
         scenarioPage = "its scenarios".upper()
         directActionPage = "its direct action".upper()
         resilienceOps = "resilience operations".upper()
 
+        # detect the start/end of different sections of the PDF that we care about from the index page
         if scenarioPage in indexPage[i]:
             # found the start of its scenarios set start index
             scenarioStartIndex = i
@@ -69,38 +169,88 @@ def main():
             log(f"\nFound ITS Scenarios @ {i} -> '{pageNum}' -> {scenarioStartIndex}", LOG_LEVELS["BASIC"])
         elif directActionPage in indexPage[i]:
             # reset scenario index since we've started recording direct action missions
-            scenarioStartIndex = float('inf')
+            scenarioStartIndex = INFINITY
             directActionStartIndex = i
             pageNum = int(indexPage[i].replace(directActionPage, "").strip())
             log(f"Found ITS Direct Actions @ {i} -> '{pageNum}' -> {directActionStartIndex}", LOG_LEVELS["BASIC"])
             # also push a special "~END-MISSION~" to itsScenarios
-            itsScenarios.append({ "name": END_MISSION, "page": pageNum })
+            rawItsScenarios.append({ "name": END_MISSION, "page": pageNum })
         elif resilienceOps in indexPage[i]:
             # end search as we've reached the end of missions
-            scenarioStartIndex = float('inf')
-            directActionStartIndex = float('inf')
+            scenarioStartIndex = INFINITY
+            directActionStartIndex = INFINITY
             pageNum = int(indexPage[i].replace(resilienceOps, "").strip())
             # also push a special "~END-MISSION~" to directActions
-            directActions.append({ "name": END_MISSION, "page": pageNum })
+            rawDirectActions.append({ "name": END_MISSION, "page": pageNum })
 
+        # with an active start index for a given section save each line until it is no longer active
         if i > scenarioStartIndex or i > directActionStartIndex:
-            res = re.match("^(.+\s+)(\d+)$", indexPage[i])
+            res = re.match("^(.+\s+)(\d+)$", indexPage[i]) # type: ignore
             if res:
                 name, page = res.groups()
                 if scenarioStartIndex < directActionStartIndex:
-                    itsScenarios.append({ "name": name.strip(), "page": int(page.strip()) })
+                    rawItsScenarios.append({ "name": name.strip(), "page": int(page.strip()) })
                 else:
-                    directActions.append({ "name": name.strip(), "page": int(page.strip())})
+                    rawDirectActions.append({ "name": name.strip(), "page": int(page.strip())})
 
-    log(f"\nFound {len(itsScenarios)} scenarios")
-    for scenario in itsScenarios:
-        log(f"'{scenario["name"]}' @ {scenario["page"]}")
-    log(f"\nFound {len(directActions)} direct actions")
-    for action in directActions:
-        log(f"'{action["name"]}' @ {action["page"]}")
+    log(f"\nFound {len(rawItsScenarios)} scenarios in PDF", LOG_LEVELS["SIMPLE"])
+    for scenario in rawItsScenarios:
+        log(f"\t'{scenario["name"]}' @ {scenario["page"]}", LOG_LEVELS["SIMPLE"])
 
-    test = itsScenarios[0]
-    log(f"\n\n{test["name"]}\n{pdf.pages[test["page"]-1].extract_text()}")
+    log(f"\nFound {len(rawDirectActions)} direct actions in PDF", LOG_LEVELS["SIMPLE"])
+    for action in rawDirectActions:
+        log(f"\t'{action["name"]}' @ {action["page"]}", LOG_LEVELS["SIMPLE"])
+    
+    log(f"Parsing missions")
+    itsScenarios = []
+    for i, scenario in enumerate(rawItsScenarios):
+        # skip the end mission identifier
+        if (scenario["name"] == END_MISSION):
+            continue
+        log(f"\n\nScenario <{toKey(scenario["name"])}> @ {scenario["page"]}", LOG_LEVELS["SIMPLE"])
+        pages = pdf.pages[scenario["page"]-1:rawItsScenarios[i+1]["page"]-1]
+        pages = list(map(lambda pdfPage: pdfPage.extract_text(), pages))
+        if outputParsed:
+            parsedName = destination + PARSED_OUTPUT_DIR + "/" + toKey(scenario["name"])
+            log(f"\tWriting {scenario["name"]} to {parsedName}", LOG_LEVELS["COMPLEX"])
+            fp = open(parsedName + ".txt", 'w')
+            fp.write('\n\n'.join(pages))
+            fp.close()
+        mission = parseMissionPages(
+            missionName=scenario["name"],
+            pages=pages,
+            basePageNum=scenario["page"]
+            )
+        itsScenarios.append(mission)
+    
+    directActions = []
+    for i, action in enumerate(rawDirectActions):
+        # skip the end mission identifier
+        if action["name"] == END_MISSION:
+            continue
+        log(f"\n\nDirect Action <{toKey(action["name"])}> @ {action["page"]}", LOG_LEVELS["SIMPLE"])
+        pages = pdf.pages[action["page"]-1:rawDirectActions[i+1]["page"]-1]
+        pages = list(map(lambda pdfPage: pdfPage.extract_text(), pages))
+        if outputParsed:
+            parsedName = destination + PARSED_OUTPUT_DIR + "/" + toKey(action["name"]) + ".txt"
+            log(f"\tWriting {action["name"]} to {parsedName}", LOG_LEVELS["COMPLEX"])
+            fp = open(parsedName, 'w')
+            fp.write('\n\n'.join(pages))
+            fp.close()
+        mission = parseMissionPages(
+            missionName=action["name"],
+            pages=pages,
+            basePageNum=action["page"]
+        )
+        directActions.append(mission)
+
+    log(f"\n\n found {len(itsScenarios)} scenarios\n\t{',\n\t'.join(map(lambda s: s["name"], itsScenarios))}", LOG_LEVELS["SIMPLE"])
+    log(f"\nfound {len(directActions)} direct actions\n\t{',\n\t'.join(map(lambda d: d["name"], directActions))}", LOG_LEVELS["SIMPLE"])
+
+    jsonFile = open(destination + jsonName, 'w')
+    jsContent = { "its_scenarios": itsScenarios, "direct_actions": directActions }
+    json.dump(jsContent, jsonFile)
+    jsonFile.close()
 
 
 
