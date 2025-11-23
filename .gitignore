@@ -1,1 +1,6 @@
+parsed_pages
 
+*.pdf
+
+missions.json
+output.txt

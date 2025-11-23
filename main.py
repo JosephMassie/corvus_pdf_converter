@@ -46,7 +46,7 @@ def readArgs():
     return args.file, args.destination, args.jsonName, args.outputParsed
 
 # functional "infinity" to replace float('inf') for type consistency
-INFINITY = 10000
+INFINITY = 10_000
 END_MISSION = "~END-MISSION~"
 
 PARSED_OUTPUT_DIR = "parsed_pages"
@@ -65,6 +65,7 @@ def linesToContent(lines: list[str]):
     return ' '.join(lines).strip()
 
 def parseMissionPages(missionName: str, pages: list[str], basePageNum = 0):
+    SPECIAL_RULES_KEY = "scenario_special_rules"
     SKILL_SUBHEADERS = [
         "short skill",
         "long skill",
@@ -72,10 +73,13 @@ def parseMissionPages(missionName: str, pages: list[str], basePageNum = 0):
         "effects"
     ]
 
-    missionInfo: dict[str, str|dict] = {
-        "name": toTitle(missionName)
+    missionInfo = {
+        "name": toTitle(missionName),
+        # special rules are handled differently, all missions have them and its sections should be grouped
+        SPECIAL_RULES_KEY: {}
     }
 
+    isAfterSpecialRules = False
     for i in range(len(pages)):
         lines = pages[i].splitlines()
         # cut off the first two lines as these are page number and mission nam
@@ -87,9 +91,10 @@ def parseMissionPages(missionName: str, pages: list[str], basePageNum = 0):
         # process each line looking for headers/subheaders as the starts/ends of blocks
         for lineNum in range(lineCount):
             line = lines[lineNum]
+            normalizedLine = line.lower().strip()
             # check if the current line is a header/subheader
             if line.isupper():
-                if line.lower().strip() not in SKILL_SUBHEADERS:
+                if normalizedLine not in SKILL_SUBHEADERS:
                     # if in an active block we've reached the start of another block, store the previous blocks
                     # contents
                     if lineNum > lastHeaderIndex or lineNum == lineCount - 1:
@@ -118,15 +123,22 @@ def parseMissionPages(missionName: str, pages: list[str], basePageNum = 0):
                         blockKey = toKey(lines[lastHeaderIndex])
 
                         if block != "" or len(block) != 0:
-                            missionInfo[blockKey] = block
+                            log(f"\t\t\tadding block {isAfterSpecialRules}", LOG_LEVELS["COMPLEX"])
+                            if isAfterSpecialRules:
+                                missionInfo[SPECIAL_RULES_KEY][blockKey] = block
+                            else:
+                                missionInfo[blockKey] = block
                         else:
                             # TODO: Some empty blocks are relevant info stored in a lone header, handle these
+                            if blockKey == SPECIAL_RULES_KEY:
+                                log(f"starting to parse special rules", LOG_LEVELS["COMPLEX"])
+                                isAfterSpecialRules = True
                             # block is empty check if it should be dropped or parsed for information
-                            log(f"\t\t\t!empty block {blockKey}!", LOG_LEVELS["COMPLEX"])
+                            log(f"\t\t\t!empty block <{blockKey}>!", LOG_LEVELS["COMPLEX"])
 
                         log(f"\t\t\tBlock<{blockKey}> {len(block)}")
                     # set block header index for the next iteration
-                    log(f"\t\tFound section block '{line}' @ lines[{lastHeaderIndex}:{lineNum}]", LOG_LEVELS["COMPLEX"])
+                    log(f"\t\tFound section '{line}' @ lines[{lastHeaderIndex}:{lineNum}]", LOG_LEVELS["COMPLEX"])
                     lastHeaderIndex = lineNum
                 else:
                     if lastHeaderIndex == INFINITY:
@@ -251,6 +263,26 @@ def main():
     jsContent = { "its_scenarios": itsScenarios, "direct_actions": directActions }
     json.dump(jsContent, jsonFile)
     jsonFile.close()
+
+    # discover shared props
+    # Build a list of (KEY, COUNT) where COUNT is how many scenarios include KEY (excluding 'name')
+    if len(itsScenarios) > 0:
+        key_counts: dict[str, int] = {}
+        for s in itsScenarios:
+            for k in s.keys():
+                if k == 'name':
+                    continue
+                key_counts[k] = key_counts.get(k, 0) + 1
+
+        # Convert to a list of tuples and sort by count descending then key
+        key_count_list = list(filter(lambda t: t[1] > 1, sorted(key_counts.items(), key=lambda t: (-t[1], t[0]))))
+
+        # Output the resulting list of tuples to the console
+        print(f"Key counts across itsScenarios (excluding 'name'): ")
+        for key, count in key_count_list:
+            print(f"\t{count} - {key}")
+    else:
+        print("No itsScenarios to analyze for key counts.")
 
 
 
