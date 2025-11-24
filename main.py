@@ -4,9 +4,10 @@ import os
 import re
 import argparse
 import json
+from rich import print
 from pypdf import PdfReader
 
-print("CB Mission PDF Converter")
+print("[bold green]CB Mission PDF Converter")
 
 parser = argparse.ArgumentParser(
     prog="CB Mission PDF Converter",
@@ -197,7 +198,7 @@ def main():
 
         # with an active start index for a given section save each line until it is no longer active
         if i > scenarioStartIndex or i > directActionStartIndex:
-            res = re.match("^(.+\s+)(\d+)$", indexPage[i]) # type: ignore
+            res = re.match("^(.+\\s+)(\\d+)$", indexPage[i]) # type: ignore
             if res:
                 name, page = res.groups()
                 if scenarioStartIndex < directActionStartIndex:
@@ -278,11 +279,11 @@ def main():
         key_count_list = list(filter(lambda t: t[1] > 1, sorted(key_counts.items(), key=lambda t: (-t[1], t[0]))))
 
         # Output the resulting list of tuples to the console
-        print(f"Key counts across itsScenarios (excluding 'name'): ")
+        log(f"Key counts across itsScenarios (excluding 'name'): ", LOG_LEVELS["SIMPLE"])
         for key, count in key_count_list:
-            print(f"\t{count} - {key}")
+            log(f"\t{count} - {key}", LOG_LEVELS["SIMPLE"])
     else:
-        print("No itsScenarios to analyze for key counts.")
+        log("No itsScenarios to analyze for key counts.", LOG_LEVELS["SIMPLE"])
 
 
 
