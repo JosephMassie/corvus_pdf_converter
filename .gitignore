@@ -3,4 +3,5 @@ parsed_pages
 *.pdf
 
 missions.json
-output.txt
+
+__pycache__
