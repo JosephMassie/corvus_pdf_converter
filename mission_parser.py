@@ -121,6 +121,10 @@ def getBlocksFromPages(pages: list[str], basePageNum = 0) -> list[TextBlock]:
 
                         blockKey = toKey(lines[lastHeaderIndex])
 
+                        # make empty blocks dicts for easy mapping later
+                        if isinstance(blockContent, str) and len(blockContent) == 0:
+                            blockContent = {}
+
                         preview = blockContent[:200] if not isinstance(blockContent, dict) else json.dumps(blockContent)
                         blocks.append({
                             'key': blockKey,

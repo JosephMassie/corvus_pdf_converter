@@ -6,12 +6,12 @@ import os
 import json
 from pypdf import PdfReader
 
-import mappings_store
 
 from lib.logger import LOG_LEVELS, setLogLevel, log
 from lib.string_utils import toKey
 from lib.constants import END_MISSION, PARSED_OUTPUT_DIR
 from mission_parser import getMissionPagesFromPdf, getBlocksFromPages, blocksToMissionInfo
+from interactive_mapper import interactiveBlocksToMission
 
 click.secho("CB Mission PDF Converter", fg="green")
 
@@ -60,7 +60,13 @@ click.secho("CB Mission PDF Converter", fg="green")
     2:'complex debugging information'
 """
 )
-def main(log_level, file, destination, jsonName, outputParsed):
+@click.option(
+    "-i",
+    "--interactive",
+    is_flag=True,
+    help="Manually control how each block of text parsed for missions is converted into JSON properties."
+)
+def main(log_level, file, destination, jsonName, outputParsed, interactive):
     setLogLevel(log_level)
 
     pdf = PdfReader(file)
@@ -80,7 +86,7 @@ def main(log_level, file, destination, jsonName, outputParsed):
     itsScenarios = []
     for i, scenario in enumerate(missionPageData["itsScenarioData"]):
         # skip the end mission identifier
-        if (scenario["name"] == END_MISSION):
+        if (scenario["name"] == END_MISSION or i > 0):
             continue
         log(f"\n\nScenario <{toKey(scenario["name"])}> @ {scenario["page"]}", LOG_LEVELS.SIMPLE)
         pages_objs = pdf.pages[scenario["page"]-1:missionPageData["itsScenarioData"][i+1]["page"]-1]
@@ -92,39 +98,56 @@ def main(log_level, file, destination, jsonName, outputParsed):
             fp.write('\n\n'.join(pages))
             fp.close()
         blocks = getBlocksFromPages(pages, scenario["page"])
-        mission = blocksToMissionInfo(scenario["name"], blocks)
+        mission = {}
+
+        if interactive:
+            try:
+                mission = interactiveBlocksToMission(scenario["name"], blocks)
+            except click.Abort:
+                log("\n\n[orange_red1]quiting program")
+                return
+            except Exception as error:
+                log("\n\n[red]unexpected error quiting")
+                log(error, prettyPrint=True)
+                return
+        else:
+            # when not interactive use the default mapping
+            mission = blocksToMissionInfo(scenario["name"], blocks)
         
         log(f"mission:", LOG_LEVELS.COMPLEX)
-        log(mission, LOG_LEVELS.COMPLEX, prettyPrint=True)
+        log(mission, LOG_LEVELS.COMPLEX, prettyPrint=True, max_string=20)
 
         itsScenarios.append(mission)
 
         
 
-    directActions = []
-    for i, action in enumerate(missionPageData["directActionsData"]):
-        # skip the end mission identifier
-        if action["name"] == END_MISSION:
-            continue
-        log(f"\n\nDirect Action <{toKey(action["name"])}> @ {action["page"]}", LOG_LEVELS.SIMPLE)
-        pages_objs = pdf.pages[action["page"]-1:missionPageData["directActionsData"][i+1]["page"]-1]
-        pages = list(map(lambda pdfPage: pdfPage.extract_text(), pages_objs))
-        if outputParsed:
-            parsedName = destination + PARSED_OUTPUT_DIR + "/" + toKey(action["name"]) + ".txt"
-            log(f"\tWriting {action["name"]} to {parsedName}", LOG_LEVELS.COMPLEX)
-            fp = open(parsedName, 'w')
-            fp.write('\n\n'.join(pages))
-            fp.close()
-        blocks = getBlocksFromPages(pages, action["page"])
-        mission = blocksToMissionInfo(action["name"], blocks)
+    # directActions = []
+    # for i, action in enumerate(missionPageData["directActionsData"]):
+    #     # skip the end mission identifier
+    #     if action["name"] == END_MISSION:
+    #         continue
+    #     log(f"\n\nDirect Action <{toKey(action["name"])}> @ {action["page"]}", LOG_LEVELS.SIMPLE)
+    #     pages_objs = pdf.pages[action["page"]-1:missionPageData["directActionsData"][i+1]["page"]-1]
+    #     pages = list(map(lambda pdfPage: pdfPage.extract_text(), pages_objs))
+    #     if outputParsed:
+    #         parsedName = destination + PARSED_OUTPUT_DIR + "/" + toKey(action["name"]) + ".txt"
+    #         log(f"\tWriting {action["name"]} to {parsedName}", LOG_LEVELS.COMPLEX)
+    #         fp = open(parsedName, 'w')
+    #         fp.write('\n\n'.join(pages))
+    #         fp.close()
+    #     blocks = getBlocksFromPages(pages, action["page"])
+    #     mission = blocksToMissionInfo(action["name"], blocks)
 
-        directActions.append(mission)
+    #     directActions.append(mission)
 
-    log(f"\n\n found {len(itsScenarios)} scenarios\n\t{',\n\t'.join(map(lambda s: s["name"], itsScenarios))}", LOG_LEVELS.SIMPLE)
-    log(f"\nfound {len(directActions)} direct actions\n\t{',\n\t'.join(map(lambda d: d["name"], directActions))}", LOG_LEVELS.SIMPLE)
+    if len(itsScenarios) > 0:
+        log(f"\n\n found {len(itsScenarios)} its scenarios\n\t{',\n\t'.join(map(lambda s: s["name"], itsScenarios))}", LOG_LEVELS.SIMPLE)
+    else:
+        log("found no its scenarios")
+    #log(f"\nfound {len(directActions)} direct actions\n\t{',\n\t'.join(map(lambda d: d["name"], directActions))}", LOG_LEVELS.SIMPLE)
 
     jsonFile = open(destination + jsonName, 'w')
-    jsContent = { "its_scenarios": itsScenarios, "direct_actions": directActions }
+    jsContent = { "its_scenarios": itsScenarios }#, "direct_actions": directActions }
     json.dump(jsContent, jsonFile)
     jsonFile.close()
 

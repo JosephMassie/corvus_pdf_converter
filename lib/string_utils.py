@@ -10,3 +10,9 @@ def toKey(string: str):
 
 def linesToContent(lines: list[str]):
     return ' '.join(lines).strip()
+
+def strToKeys(string: str):
+    return string.split(".")
+
+def keysToStr(keys: list[str]):
+    return ".".join(keys)
