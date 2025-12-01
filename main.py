@@ -153,7 +153,7 @@ def main(log_level, file, destination, jsonName, outputParsed, interactive):
 
     # discover shared props
     # Build a list of (KEY, COUNT) where COUNT is how many scenarios include KEY (excluding 'name')
-    if len(itsScenarios) > 0:
+    if len(itsScenarios) > 1:
         key_counts: dict[str, int] = {}
         for s in itsScenarios:
             for k in s.keys():
@@ -169,7 +169,7 @@ def main(log_level, file, destination, jsonName, outputParsed, interactive):
         for key, count in key_count_list:
             log(f"\t{count} - {key}", LOG_LEVELS.SIMPLE)
     else:
-        log("\nNo itsScenarios to analyze for key counts.", LOG_LEVELS.SIMPLE)
+        log("\nNot enough itsScenarios to analyze for key counts.", LOG_LEVELS.SIMPLE)
 
 
 if __name__ == "__main__":

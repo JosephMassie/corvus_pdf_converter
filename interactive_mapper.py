@@ -1,4 +1,5 @@
-import click
+from click import Abort
+import questionary
 
 from mission_parser import TextBlock
 from lib.logger import LOG_LEVELS, log
@@ -37,61 +38,95 @@ def interactiveBlocksToMission(name: str, blocks: list[TextBlock]):
     log(f"[bold]Mapping [deep_sky_blue1]<{name}>")
 
 
-    answer = click.prompt(
-        "Rename mission? " + click.style("Leave empty to keep parsed name", fg="blue"),
-        default=missionName,
-    )
+    answer = questionary.text(
+        "Rename mission? Leave empty to keep parsed name",
+        default=missionName
+    ).ask()
 
     mission = {
         "name": answer
     }
 
     for block in blocks:
-        options = getAllProps(mission)
-
         missionMap = makeMap(mission)
 
-        log("\n[grey93]Current structure:")
-        log(missionMap, prettyPrint=True, expand_all=True, max_string=60)
-        log(f"\n[bold bright_blue]<{block['key']}>")
-        if len(block["content"]) == 0:
-            log("[bold turquoise4]preview")
-            log("[red italic]\tempty block")
-        elif isinstance(block["content"], dict):
-            log("[bold turquoise4]preview")
-            log(block["content"], prettyPrint=True, max_string=40)
-        else:
-            log(f"[bold][turquoise4]preview[/]\n\t{block['content'][:80]}")
+        key = block["key"]
+        content = block["content"]
 
-        log("Options:")
-        log(f"\t[bright_green]0:[/] [cyan]root")
-        log(f"\t[bright_green]1:[/] [orange_red1]drop")
-        for i, option in enumerate(options):
-            log(f"\t[bright_green]{i+2}:[/] {option}")
-        options = ["root", "drop", *options]
+        rootOption = "root"
 
-        answer = click.prompt(
-            click.style(f"Where to store ", fg="bright_green") + click.style(f"<{block['key']}>", fg="bright_blue", bold=True) + "\n\tenter the corresponding number\n\t'drop' will not use the property at all",
-            type=click.Choice(range(len(options))),
-            show_choices=False
-        )
+        dropBlockOption = "drop"
+        editKeyOption = "edit key"
+        editContentOption = "edit content"
 
-        log(f"\n[bold]chose [bright_green]{answer}", LOG_LEVELS.COMPLEX)
+        specialOptions = [dropBlockOption, editKeyOption, editContentOption]
+        # only allow content to be edited if it is text or an empty dict
+        if isinstance(content, dict) and len(content) > 0:
+            specialOptions.remove(editContentOption)
+        
+        options = [
+            *specialOptions,
+            rootOption,
+            *getAllProps(mission)
+        ]
 
-        target = mission
-        answer = options[int(answer)]
+        isEditing = True
+        while isEditing:
+            log("\n[grey93]Current structure:")
+            log(missionMap, prettyPrint=True, expand_all=True, max_string=60)
+            log(f"\n[bold]<[bright_blue]{key}[/]>")
+            if len(content) == 0:
+                log("[bold turquoise4]preview")
+                log("[red italic]\tempty block")
+            elif isinstance(content, dict):
+                log("[bold turquoise4]preview")
+                log(content, prettyPrint=True, max_string=40)
+            else:
+                log(f"[bold][turquoise4]preview[/]\n\t{content[:80]}")
 
-        if answer == "drop":
-            log(f"[orange_red1 italic]dropping {block['key']}", LOG_LEVELS.SIMPLE)
-            continue
-        elif answer != "root":
-            propChain = strToKeys(answer)
-            for prop in propChain:
-                target = target[prop]
-                if not isinstance(target, dict):
-                    log(f"[bright_red italic]invalid target {prop} is [bold]{type(target)}[/] expected [bold]dict[/]")
+            log(f"\nWhere to store [bold]<[bright_blue]{key}[/][/]>\n\tenter the corresponding number\n\t'drop' will not use the property at all")
+            answer = questionary.select(
+                "",
+                choices=options
+            ).ask()
 
-        log(target, LOG_LEVELS.COMPLEX, prettyPrint=True, max_string=60)
-        target[block['key']] = block["content"]
+            log(f"chose [bright_green]{answer}", LOG_LEVELS.COMPLEX)
+
+            # if the user made either no choice, an invlaid choice or quit exit interactive
+            if answer == None:
+                # user quit prompt
+                raise Abort
+            # if the user chose a special option handle it directly
+            elif answer in specialOptions:
+                if answer == dropBlockOption:
+                    log(f"[orange_red1 italic]dropping {key}", LOG_LEVELS.SIMPLE)
+                    isEditing = False
+                    continue
+                elif answer == editKeyOption:
+                    key = questionary.text("What should the key be?", default=key).ask()
+                elif answer == editContentOption:
+                    # change empty dicts to empty strings
+                    if isinstance(content, dict):
+                        content = ""
+                    log(f"Edit content of [bold]<[bright_blue]{key}[/][/]>")
+                    content = questionary.text(
+                        "",
+                        default=content,
+                        multiline=True
+                    ).ask()
+            # if the user chose a location including root insert the content into the correct location
+            else:
+                target = mission
+                # the chose a location other than root find that target
+                if answer != rootOption:
+                    propChain = strToKeys(answer)
+                    for prop in propChain:
+                        target = target[prop]
+                        if not isinstance(target, dict):
+                            log(f"[bright_red italic]invalid target {prop} is [bold]{type(target)}[/] expected [bold]dict[/]")
+                isEditing = False
+
+                log(target, LOG_LEVELS.COMPLEX, prettyPrint=True, max_string=60)
+                target[key] = content
 
     return mission
