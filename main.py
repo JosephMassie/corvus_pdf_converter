@@ -114,8 +114,8 @@ def main(log_level, file, destination, jsonName, outputParsed, interactive):
             # when not interactive use the default mapping
             mission = blocksToMissionInfo(scenario["name"], blocks)
         
-        log(f"mission:", LOG_LEVELS.COMPLEX)
-        log(mission, LOG_LEVELS.COMPLEX, prettyPrint=True, max_string=20)
+        log(f"\nmission:", LOG_LEVELS.COMPLEX)
+        log(mission, LOG_LEVELS.COMPLEX, prettyPrint=True, max_string=25)
 
         itsScenarios.append(mission)
 
@@ -148,7 +148,7 @@ def main(log_level, file, destination, jsonName, outputParsed, interactive):
 
     jsonFile = open(destination + jsonName, 'w')
     jsContent = { "its_scenarios": itsScenarios }#, "direct_actions": directActions }
-    json.dump(jsContent, jsonFile)
+    json.dump(jsContent, jsonFile, indent=2)
     jsonFile.close()
 
     # discover shared props

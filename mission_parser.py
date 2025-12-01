@@ -7,7 +7,6 @@ from lib.logger import LOG_LEVELS, log
 
 class TextBlock(TypedDict):
     key: str
-    preview: str
     content: str | dict[str, str]
     page_index: int
 
@@ -84,19 +83,24 @@ def getBlocksFromPages(pages: list[str], basePageNum = 0) -> list[TextBlock]:
         lastHeaderIndex = INFINITY
         subHeadIndexes = []
         lineCount = len(lines)
-        log(f"\tPage {basePageNum + i} \\w [blue]LC:{lineCount}", LOG_LEVELS.SIMPLE)
+        log(f"\nPage {basePageNum + i} \\w [blue]LC:{lineCount}", LOG_LEVELS.SIMPLE)
 
         # process each line looking for headers/subheaders as the starts/ends of blocks
         for lineNum in range(lineCount):
             line = lines[lineNum]
             normalizedLine = line.lower().strip()
+            isLastLine = (lineCount - 1) == lineNum
 
             # check if the current line is a header/subheader, which are all caps
-            if line.isupper():
+            log(f"\tchecking line [bright_cyan]{lineNum+1} of {lineCount}", LOG_LEVELS.COMPLEX)
+            log(f"\t\t'{line}'", LOG_LEVELS.COMPLEX)
+            if line.isupper() or isLastLine:
                 if normalizedLine not in SKILL_SUBHEADERS:
+                    log("\t\t[yellow]is a header but not a subheader")
                     # if in an active block we've reached the start of another block, store the previous blocks
                     # contents
-                    if lineNum > lastHeaderIndex or lineNum == lineCount - 1:
+                    if lineNum > lastHeaderIndex or isLastLine:
+                        log(f"\t\t\t[magenta]building block content {isLastLine}", LOG_LEVELS.COMPLEX)
                         blockContent = ''
 
                         # check if the current block has any active sub headers
@@ -107,17 +111,16 @@ def getBlocksFromPages(pages: list[str], basePageNum = 0) -> list[TextBlock]:
 
                             for i in range(subheadCount):
                                 shi = subHeadIndexes[i]
-                                content = ''
 
-                                if i == subheadCount - 1:
-                                    content = linesToContent(lines[shi+1:lineNum-1])
-                                else:
-                                    content = linesToContent(lines[shi+1:subHeadIndexes[i+1]-1])
+                                end = lineNum + (1 if isLastLine else 0)
+                                if i < subheadCount - 1:
+                                    end = subHeadIndexes[i+1]
 
-                                blockContent[toKey(lines[shi])] = content
+                                blockContent[toKey(lines[shi])] = linesToContent(lines[shi+1:end])
                         else:
+                            end = lineNum + (1 if isLastLine else 0)
                             # with no sub headers block is simple text
-                            blockContent = linesToContent(lines[lastHeaderIndex+1:lineNum-1])
+                            blockContent = linesToContent(lines[lastHeaderIndex+1:end])
 
                         blockKey = toKey(lines[lastHeaderIndex])
 
@@ -125,25 +128,26 @@ def getBlocksFromPages(pages: list[str], basePageNum = 0) -> list[TextBlock]:
                         if isinstance(blockContent, str) and len(blockContent) == 0:
                             blockContent = {}
 
-                        preview = blockContent[:200] if not isinstance(blockContent, dict) else json.dumps(blockContent)
                         blocks.append({
                             'key': blockKey,
-                            'preview': preview,
                             'content': blockContent,
                             'page_index': basePageNum + i,
                         })
 
-                        log(f"\t\t\tBlock<{blockKey}> {len(blockContent)}")
+                        log(f"Created [bright_cyan]Block[/] <{blockKey}> size: {len(blockContent)}", LOG_LEVELS.SIMPLE)
+                        log(f"\t\\w {subheadCount} subheaders {subHeadIndexes}", LOG_LEVELS.SIMPLE)
+                        log(blockContent, LOG_LEVELS.COMPLEX, prettyPrint=True, max_string=200)
                     # set block header index for the next iteration
-                    log(f"\t\tFound section '{line}' @ lines[{0 if lastHeaderIndex == INFINITY else lastHeaderIndex}:{lineNum}]", LOG_LEVELS.COMPLEX)
+                    if not isLastLine:
+                        log(f"\nFound section '{line}' @ [blue]lines[/][{0 if lastHeaderIndex == INFINITY else lastHeaderIndex}:{lineNum}]", LOG_LEVELS.COMPLEX)
                     lastHeaderIndex = lineNum
                 else:
                     if lastHeaderIndex == INFINITY:
-                        log(f"ERROR: invalid subheader, no associated main header")
+                        log(f"[brigh_red][bold]ERROR:[/] [italic]invalid subheader, no associated main header")
                     else:
-                        log(f"\t\t\tsubheader {normalizedLine} @ {lineNum}")
+                        log(f"\t[green3]subheader[/] <{toKey(line)}> @ [blue]L# {lineNum}")
                     subHeadIndexes.append(lineNum)
-    
+
     log(f"found {len(blocks)} blocks", LOG_LEVELS.SIMPLE)
     log(blocks, LOG_LEVELS.COMPLEX, prettyPrint=True)
     return blocks

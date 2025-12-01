@@ -12,9 +12,9 @@ def setLogLevel(level: LOG_LEVELS):
     global logLevel
     logLevel = level
 
-def log(msg, level = LOG_LEVELS.BASIC, prettyPrint = False, **options):
+def log(msg, level = LOG_LEVELS.BASIC, prettyPrint = False, end= "\n", **options):
     if logLevel >= level:
         if prettyPrint:
             pprint(msg, **options)
         else:
-            print(msg)
+            print(msg, end=end)

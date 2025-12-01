@@ -24,13 +24,12 @@ def createPropertyQuestion():
     }
 
 def makeMap(object: Dict[str, Any]):
-    log(object, prettyPrint=True)
     map = {}
     for key, value in object.items():
         if isinstance(value, dict):
             map[key] = makeMap(value)
         else:
-            map[key] = type(value)
+            map[key] = type(value).__name__
     return map
 
 def interactiveBlocksToMission(name: str, blocks: list[TextBlock]):
@@ -49,13 +48,20 @@ def interactiveBlocksToMission(name: str, blocks: list[TextBlock]):
 
     for block in blocks:
         options = getAllProps(mission)
-        options.reverse()
 
         missionMap = makeMap(mission)
 
         log("\n[grey93]Current structure:")
         log(missionMap, prettyPrint=True, expand_all=True, max_string=60)
-        log(f"\n[bold][bright_blue]<{block['key']}>[/bright_blue] [turquoise4]preview[/]\n\t{block['preview']}")
+        log(f"\n[bold bright_blue]<{block['key']}>")
+        if len(block["content"]) == 0:
+            log("[bold turquoise4]preview")
+            log("[red italic]\tempty block")
+        elif isinstance(block["content"], dict):
+            log("[bold turquoise4]preview")
+            log(block["content"], prettyPrint=True, max_string=40)
+        else:
+            log(f"[bold][turquoise4]preview[/]\n\t{block['content'][:80]}")
 
         log("Options:")
         log(f"\t[bright_green]0:[/] [cyan]root")
@@ -87,7 +93,5 @@ def interactiveBlocksToMission(name: str, blocks: list[TextBlock]):
 
         log(target, LOG_LEVELS.COMPLEX, prettyPrint=True, max_string=60)
         target[block['key']] = block["content"]
-
-        click.clear()
 
     return mission

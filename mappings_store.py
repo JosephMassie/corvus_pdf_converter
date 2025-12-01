@@ -25,7 +25,7 @@ def load_mappings() -> Optional[dict]:
     try:
         with open(path, 'r') as fh:
             return json.load(fh)
-    except Exception:
+    except:
         return None
 
 
@@ -38,5 +38,5 @@ def save_mappings(template: dict, *, overwrite: bool = False) -> bool:
         with open(path, 'w') as fh:
             json.dump(template, fh, indent=2)
         return True
-    except Exception:
+    except:
         return False
