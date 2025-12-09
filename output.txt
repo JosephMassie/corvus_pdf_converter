@@ -1,0 +1,357 @@
+
+Extracting scenarios from PDF: its-rules-season-17-en-v1.0.1.pdf
+
+
+Table of Contents has 1309 characters
+
+ITS Scenarios section: AKIAL INTERFERENCE 21 B-PONG 24 CORPORATE APPROPRIATION 27 CRITICAL INTERVENTION 30
+CROSSING LINES 34 EVACUATION 37 HARDLOCK 40 LAST LAUNCH 42 PROVISIONING 45 AREA OF INTEREST 48...
+
+Direct Action section: ANNIHILATION 51 BATTLEGROUND 53 CUTTHROAT 55 SUPERIORITY 57 UPLINK CENTER 60 ...
+
+ITS Scenarios found in TOC:
+┏━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━┓
+┃ Name                    ┃ Page ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━┩
+│ AKIAL INTERFERENCE      │ 21   │
+│ B-PONG                  │ 24   │
+│ CORPORATE APPROPRIATION │ 27   │
+│ CRITICAL INTERVENTION   │ 30   │
+│ CROSSING LINES          │ 34   │
+│ EVACUATION              │ 37   │
+│ HARDLOCK                │ 40   │
+│ LAST LAUNCH             │ 42   │
+│ PROVISIONING            │ 45   │
+│ AREA OF INTEREST        │ 48   │
+└─────────────────────────┴──────┘
+
+Direct Actions found in TOC:
+┏━━━━━━━━━━━━━━━┳━━━━━━┓
+┃ Name          ┃ Page ┃
+┡━━━━━━━━━━━━━━━╇━━━━━━┩
+│ ANNIHILATION  │ 51   │
+│ BATTLEGROUND  │ 53   │
+│ CUTTHROAT     │ 55   │
+│ SUPERIORITY   │ 57   │
+│ UPLINK CENTER │ 60   │
+└───────────────┴──────┘
+
+Extracting ITS Scenario: AKIAL INTERFERENCE
+  Pages: 21 to 23
+  Extracted 6591 characters
+  Preview: 21 AKIAL INTERFERENCE TACTICAL SUPPORT OPTIONS 0 SUITABLE FOR REINFORCEMENTS YES For you, 
+Laika. MISSION OBJECTIVES MAIN OBJECTIVES ^ Accomplish Common Classified Objectives (1 Objective Point for
+each, up to a maximum of 6 Objective Points). ^ At the end of the game, have accomplished more Classifi...
+    ✓ Found tactical support: 0
+    ✓ Found reinforcements: YES
+    ✓ Found objectives section (499 chars)
+    ✓ Found 1 objectives for 'MAIN OBJECTIVES'
+    ✓ Found classified objective
+    ✓ Found deployment section (572 chars)
+    ✓ Found 6 deployment configurations
+    ✓ Found 1 special notes
+    ✓ Found special rules section (5117 chars)
+    ✓ Found 0 special rules
+    ✓ Found end of mission section (222 chars)
+
+Extracting ITS Scenario: B-PONG
+  Pages: 24 to 26
+  Extracted 5500 characters
+  Preview: 24 B-PONG TACTICAL SUPPORT OPTIONS 2 SUITABLE FOR REINFORCEMENTS YES MISSION OBJECTIVES MAIN 
+OBJECTIVES ^ At the end of the Game, the Tracking Beacon is totally inside the enemy half of the game 
+table. (2 Objective Points). ^ At the end of each Game Round, Control the Tracking Beacon (1 Objective 
+Po...
+    ✓ Found tactical support: 2
+    ✓ Found reinforcements: YES
+    ✓ Found objectives section (385 chars)
+    ✓ Found 3 objectives for 'MAIN OBJECTIVES'
+    ✓ Found deployment section (754 chars)
+    ✓ Found 6 deployment configurations
+    ✓ Found 1 special notes
+    ✓ Found special rules section (3392 chars)
+    ✓ Found 0 special rules
+    ✓ Found end of mission section (816 chars)
+
+Extracting ITS Scenario: CORPORATE APPROPRIATION
+  Pages: 27 to 29
+  Extracted 6933 characters
+  Preview: 27 CORPORATE APPROPRIATION TACTICAL SUPPORT OPTIONS 0 SUITABLE FOR REINFORCEMENTS YES MISSION 
+OBJECTIVES MAIN OBJECTIVES ^ At the end of the game, have the Enemy Prototype Captured (2 Objective 
+Points). ^ At the end of the game, have the Enemy Prototype Captured in your Deployment Zone (1 Objective 
+...
+    ✓ Found tactical support: 0
+    ✓ Found reinforcements: YES
+    ✓ Found objectives section (666 chars)
+    ✓ Found 5 objectives for 'MAIN OBJECTIVES'
+    ✓ Found deployment section (723 chars)
+    ✓ Found 6 deployment configurations
+    ✓ Found 1 special notes
+    ✓ Found special rules section (5152 chars)
+    ✓ Found 0 special rules
+    ✓ Found end of mission section (222 chars)
+
+Extracting ITS Scenario: CRITICAL INTERVENTION
+  Pages: 30 to 33
+  Extracted 9721 characters
+  Preview: 30 CRITICAL INTERVENTION TACTICAL SUPPORT OPTIONS 1 SUITABLE FOR REINFORCEMENTS NO MISSION 
+OBJECTIVES MAIN OBJECTIVES (ATTACKER) ^ Unlock the Data Console (1 Objective Point). ^ Extract the Data 
+Pack from the Data Console (2 Objective Points). ^ The Trooper that Extracted the Data Pack is not 
+Killed...
+    ✓ Found tactical support: 1
+    ✓ Found reinforcements: NO
+    ✓ Found objectives section (1654 chars)
+    ✓ Found 5 objectives for 'MAIN OBJECTIVES (ATTACKER)'
+    ✓ Found 4 objectives for 'MAIN OBJECTIVES (DEFENDER)'
+    ✓ Found classified objective
+    ✓ Found deployment section (519 chars)
+    ✓ Found 6 deployment configurations
+    ✓ Found special rules section (6894 chars)
+    ✓ Found 0 special rules
+    ✓ Found end of mission section (222 chars)
+
+Extracting ITS Scenario: CROSSING LINES
+  Pages: 34 to 36
+  Extracted 4933 characters
+  Preview: 34 MISSION OBJECTIVES MAIN OBJECTIVES ^ At the end of each Game Round, Dominate a Dead Zone (1 
+Objective Point for each Dead Zone). ^ At the end of the game, Dominate both Dead Zones (2 Objective 
+Points). ^ At the end of the game, have an Activated Antenna (1 Objective Point for each Activated 
+Anten...
+    ✓ Found tactical support: 0
+    ✓ Found reinforcements: NO
+    ✓ Found objectives section (402 chars)
+    ✓ Found 3 objectives for 'MAIN OBJECTIVES'
+    No classified objectives
+    ✓ Found deployment section (1270 chars)
+    ✓ Found 6 deployment configurations
+    ✓ Found 2 special notes
+    ✓ Found special rules section (2952 chars)
+    ✓ Found 0 special rules
+    ✓ Found end of mission section (222 chars)
+
+Extracting ITS Scenario: EVACUATION
+  Pages: 37 to 39
+  Extracted 5025 characters
+  Preview: 37 EVACUATION TACTICAL SUPPORT OPTIONS 2 SUITABLE FOR REINFORCEMENTS YES MISSION OBJECTIVES 
+MAIN OBJECTIVES ^ At the end of the game, have an Extracted Civilian (1 Objective Point for each one). ^ 
+At the end of the game, have an Extracted enemy HVT (1 Objective Point for each one). CLASSIFIED Each p...
+    ✓ Found tactical support: 2
+    ✓ Found reinforcements: YES
+    ✓ Found objectives section (276 chars)
+    ✓ Found 2 objectives for 'MAIN OBJECTIVES'
+    ✓ Found deployment section (548 chars)
+    ✓ Found 6 deployment configurations
+    ✓ Found 1 special notes
+    ✓ Found special rules section (3822 chars)
+    ✓ Found 0 special rules
+    ✓ Found end of mission section (222 chars)
+
+Extracting ITS Scenario: HARDLOCK
+  Pages: 40 to 41
+  Extracted 4786 characters
+  Preview: 40 HARDLOCK TACTICAL SUPPORT OPTIONS 1 SUITABLE FOR REINFORCEMENTS YES MISSION OBJECTIVES MAIN 
+OBJECTIVES ^ At the end of each Game Round, Control the Enemy Beacon (1 Objective Point). ^ At the end of 
+the game, your Beacon is not Controlled by the enemy (1 Objective Point). ^ At the end of the game,...
+    ✓ Found tactical support: 1
+    ✓ Found reinforcements: YES
+    ✓ Found objectives section (451 chars)
+    ✓ Found 4 objectives for 'MAIN OBJECTIVES'
+    ✓ Found deployment section (572 chars)
+    ✓ Found 6 deployment configurations
+    ✓ Found 1 special notes
+    ✓ Found special rules section (3386 chars)
+    ✓ Found 0 special rules
+    ✓ Found end of mission section (222 chars)
+
+Extracting ITS Scenario: LAST LAUNCH
+  Pages: 42 to 44
+  Extracted 6505 characters
+  Preview: 42 LAST LAUNCH TACTICAL SUPPORT OPTIONS 2 SUITABLE FOR REINFORCEMENTS YES Based on the Dante 
+Harrower’s Scenario from the Loss of Lieutenant custom mission challenge. MISSION OBJECTIVES MAIN 
+OBJECTIVES ^ At the end of the game, have Extracted more Army Points than the adversary (2 Objective 
+Points)....
+    ✓ Found tactical support: 2
+    ✓ Found reinforcements: YES
+    ✓ Found objectives section (595 chars)
+    ✓ Found 5 objectives for 'MAIN OBJECTIVES'
+    ✓ Found deployment section (518 chars)
+    ✓ Found 6 deployment configurations
+    ✓ Found special rules section (3345 chars)
+    ✓ Found 0 special rules
+    ✓ Found end of mission section (107 chars)
+
+Extracting ITS Scenario: PROVISIONING
+  Pages: 45 to 47
+  Extracted 7247 characters
+  Preview: 45 PROVISIONING TACTICAL SUPPORT OPTIONS 1 SUITABLE FOR REINFORCEMENTS YES MISSION OBJECTIVES 
+MAIN OBJECTIVES ^ At the end of the game, Control a Supply Box (1 Objective Point for each Supply Box). ^ 
+At the end of the game, Control more Supply Boxes in your own Safe Area than your adversary in their...
+    ✓ Found tactical support: 1
+    ✓ Found reinforcements: YES
+    ✓ Found objectives section (644 chars)
+    ✓ Found 4 objectives for 'MAIN OBJECTIVES'
+    ✓ Found classified objective
+    ✓ Found deployment section (596 chars)
+    ✓ Found 6 deployment configurations
+    ✓ Found 1 special notes
+    ✓ Found special rules section (5626 chars)
+    ✓ Found 0 special rules
+    ✓ Found end of mission section (222 chars)
+
+Extracting ITS Scenario: AREA OF INTEREST
+  Pages: 48 to 50
+  Extracted 5788 characters
+  Preview: 48 AREA OF INTEREST TACTICAL SUPPORT OPTIONS 0 SUITABLE FOR REINFORCEMENTS YES MISSION 
+OBJECTIVES MAIN OBJECTIVES ^ At the end of the game, Dominate an Area of Interest (1 Objective Point for 
+each Dominated Area of Interest, up to a maximum of 3 Objective Points). ^ At the end of each GAME ROUND, 
+Do...
+    ✓ Found tactical support: 0
+    ✓ Found reinforcements: YES
+    ✓ Found objectives section (424 chars)
+    ✓ Found 3 objectives for 'MAIN OBJECTIVES'
+    ✓ Found classified objective
+    ✓ Found deployment section (641 chars)
+    ✓ Found 6 deployment configurations
+    ✓ Found 1 special notes
+    ✓ Found special rules section (4338 chars)
+    ✓ Found 0 special rules
+    ✓ Found end of mission section (222 chars)
+
+Extracting Direct Action: ANNIHILATION
+  Pages: 51 to 52
+  Extracted 3203 characters
+  Preview: 51 ITS DIRECT ACTION ANNIHILATION TACTICAL SUPPORT OPTIONS 0 SUITABLE FOR REINFORCEMENTS YES 
+MISSION OBJECTIVES 150-POINT GAME 200-POINT GAME 250-POINT GAME 300-POINT GAME 350-POINT GAME 400-POINT 
+GAME OBJECTIVE POINTS To Kill 40 to 75 enemy Army Points. To Kill 50 to 100 enemy Army Points. To Kill ...
+    ✓ Found tactical support: 0
+    ✓ Found reinforcements: YES
+    ✓ Found objectives section (1869 chars)
+    ✓ Found deployment section (479 chars)
+    ✓ Found 6 deployment configurations
+    ✓ Found special rules section (571 chars)
+    ✓ Found 0 special rules
+    ✓ Found end of mission section (107 chars)
+
+Extracting Direct Action: BATTLEGROUND
+  Pages: 53 to 54
+  Extracted 4383 characters
+  Preview: 53 MISSION OBJECTIVES ^ At the end of the game, dominate the nearest Sector to your Deployment 
+Zone (1 Objective Point). ^ At the end of the game, dominate the central Sector (3 Objective Points). ^ At
+the end of the game, dominate the farthest Sector from your Deployment Zone (4 Objective Points). ...
+    ✓ Found tactical support: 0
+    ✓ Found reinforcements: NO
+    ✓ Found objectives section (484 chars)
+    ✓ Found deployment section (482 chars)
+    ✓ Found 6 deployment configurations
+    ✓ Found special rules section (3223 chars)
+    ✓ Found 0 special rules
+    ✓ Found end of mission section (107 chars)
+
+Extracting Direct Action: CUTTHROAT
+  Pages: 55 to 56
+  Extracted 4038 characters
+  Preview: 55 CUTTHROAT TACTICAL SUPPORT OPTIONS 0 SUITABLE FOR REINFORCEMENTS YES MISSION OBJECTIVES ^ To
+Kill more Army Points than the adversary (3 Objective Points). ^ To Kill the same number of Lieutenants as
+the adversary (2 Objective Points, but only if at least 1 Lieutenant is killed by the player). ^ ...
+    ✓ Found tactical support: 0
+    ✓ Found reinforcements: YES
+    ✓ Found objectives section (429 chars)
+    ✓ Found deployment section (483 chars)
+    ✓ Found 6 deployment configurations
+    ✓ Found special rules section (2863 chars)
+    ✓ Found 0 special rules
+    ✓ Found end of mission section (107 chars)
+
+Extracting Direct Action: SUPERIORITY
+  Pages: 57 to 59
+  Extracted 6165 characters
+  Preview: 57 MISSION OBJECTIVES ^ At the end of each Game Round, dominate more Quadrants than the 
+adversary (2 Objective Points). ^ At the end of the game, have a Hacked Console (1 Objective Point for 
+each Hacked Console, up to a maximum of 3 Objective Points). ^ At the end of the game, have a Dominant Key
+Op...
+    ✓ Found tactical support: 0
+    ✓ Found reinforcements: NO
+    ✓ Found objectives section (306 chars)
+    ✓ Found deployment section (552 chars)
+    ✓ Found 6 deployment configurations
+    ✓ Found special rules section (4998 chars)
+    ✓ Found 0 special rules
+    ✓ Found end of mission section (222 chars)
+
+Extracting Direct Action: UPLINK CENTER
+  Pages: 60 to 62
+  Extracted 5485 characters
+  Preview: 60 UPLINK CENTER TACTICAL SUPPORT OPTIONS 0 SUITABLE FOR REINFORCEMENTS YES MISSION OBJECTIVES 
+^ At the end of the game, have an Activated Communication Antenna (2 Objective Points for each Activated 
+Communication Antenna). ^ At the end of the game, Control a Communication Antenna (1 Objective Point...
+    ✓ Found tactical support: 0
+    ✓ Found reinforcements: YES
+    ✓ Found objectives section (394 chars)
+    ✓ Found deployment section (591 chars)
+    ✓ Found 6 deployment configurations
+    ✓ Found 1 special notes
+    ✓ Found special rules section (4118 chars)
+    ✓ Found 0 special rules
+    ✓ Found end of mission section (222 chars)
+
+✓ Extracted 15 scenarios
+✓ Output saved to its_scenarios.json
+
+First scenario sample:
+{
+    'name': 'AKIAL INTERFERENCE',
+    'type': 'ITS Scenario',
+    'tactical_support_options': 0,
+    'suitable_for_reinforcements': True,
+    'mission_objectives': {
+        'classified': 'Each player has 1 Private Classified Objective (2 Objective Points).',
+        'main_objectives': ['Accomplish Common']
+    },
+    'forces_and_deployment': {
+        'sides': 'SIDE A and SIDE B',
+        'deployment_table': [
+            {
+                'army_points': 150,
+                'swc': 3,
+                'table_size': '24 in x 32 in',
+                'deployment_zone': '8 in x 24 in'
+            },
+            {
+                'army_points': 200,
+                'swc': 4,
+                'table_size': '32 in x 48 in',
+                'deployment_zone': '12 in x 32 in'
+            },
+            {
+                'army_points': 250,
+                'swc': 5,
+                'table_size': '32 in x 48 in',
+                'deployment_zone': '12 in x 32 in'
+            },
+            {
+                'army_points': 300,
+                'swc': 6,
+                'table_size': '48 in x 48 in',
+                'deployment_zone': '12 in x 48 in'
+            },
+            {
+                'army_points': 350,
+                'swc': 7,
+                'table_size': '48 in x 48 in',
+                'deployment_zone': '12 in x 48 in'
+            },
+            {
+                'army_points': 400,
+                'swc': 8,
+                'table_size': '48 in x 48 in',
+                'deployment_zone': '12 in x 48 in'
+            }
+        ],
+        'special_notes': [
+            'It is not allowed to deploy in Silhouette contact with the Akial Antenna or with any HVT.'
+        ]
+    },
+    'scenario_special_rules': {},
+    'end_of_mission': 'This scenario has a limited time frame, so it will automatically finish at the end 
+of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game 
+will end at the end of that Turn.'
+}

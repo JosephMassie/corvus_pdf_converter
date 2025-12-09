@@ -2,6 +2,6 @@ parsed_pages
 
 *.pdf
 
-missions.json
+its_scenarios.json
 
 __pycache__
