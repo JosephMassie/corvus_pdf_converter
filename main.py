@@ -325,7 +325,7 @@ def extract_deployment(text, debug=False):
     # Look for pattern: "A and B" or "SIDE A and SIDE B" followed by numbers and table sizes
     # Pattern: army points, SWC, table size, deployment zone
     army_configs = re.findall(
-        r'A\s+and\s+B\s+(\d{3,4})\s+(\d+)\s+(\d+\s+in\s+x\s+\d+\s+in)\s+(\d+\s+in\s+x\s+\d+\s+in)',
+        r'A\s+and\s+B\s+(\d{3,4})\s+(\d+)\s+(\d+\s+in\s+x\s+\d+\s+in)\s+((?:\d+\s+in\s+x\s+\d+\s+in)|(?:Radius of\s+\d+\s+in))',
         deploy_text, re.IGNORECASE
     )
     for config in army_configs:
@@ -369,56 +369,89 @@ def extract_special_rules(text, debug=False):
     if debug:
         console.print(f"    [green]✓ Found special rules section ({len(rules_text)} chars)[/green]")
     
-    # Find all rule headers (uppercase lines that are not part of subsections like REQUIREMENTS, EFFECTS)
-    # Look for lines that are mostly uppercase at the start of a paragraph
-    header_pattern = r'^([A-Z][A-Z \t\-\(\)\/]*[A-Z])(?:\n|$)'
-    
-    # Split by identifying rules - find each header and capture until the next header
-    # Use a more robust approach: find positions of headers, then extract content between them
-    rule_count = 0
-    
     # Subsection headers and end markers that appear within/after rules and should be skipped
-    subsection_headers = ['SHORT SKILL', 'SHORT MOVEMENT SKILL', 'LONG SKILL', 'REQUIREMENTS', 'EFFECTS', 'CANCELATION', 'END OF THE MISSION', 'END OF MISSION']
+    subsection_headers = {'SHORT SKILL', 'SHORT MOVEMENT SKILL', 'LONG SKILL', 'REQUIREMENTS', 'EFFECTS', 'CANCELATION', 'END OF THE MISSION', 'END OF MISSION'}
     
-    # Find all matches of uppercase headers (no lowercase letters allowed in actual headers)
-    # This filters out wrapped text lines which contain lowercase letters
-    # Note: Use [ \t] instead of \s to exclude newlines from header matching
-    # Allow trailing spaces/tabs but capture only the actual header text
+    # Strategy: Build a list of all headers with their positions, handling multi-line headers
+    # Multi-line headers are consecutive all-caps lines that aren't subsection headers or followed by content
+    headers_list = []
+    
     for header_match in re.finditer(r'^([A-Z][A-Z \t\-\(\)\/]*[A-Z])[ \t]*$', rules_text, re.MULTILINE):
-        header = header_match.group(1).strip()
+        header_text = header_match.group(1).strip()
         
         # Check if header is ALL CAPS (no lowercase letters) - this filters out wrapped text
-        if any(c.islower() for c in header):
+        if any(c.islower() for c in header_text):
             continue
         
-        header_start = header_match.start()
-        header_end = header_match.end()
-        
-        # Skip subsection headers (they're not top-level rules)
-        if header in subsection_headers or len(header) < 3:
+        # Check if it's a subsection header
+        if header_text in subsection_headers or len(header_text) < 3:
             continue
         
-        # Find the next top-level rule header after this one (skip subsection headers)
-        next_header_start = len(rules_text)
-        for next_match in re.finditer(r'^([A-Z][A-Z \t\-\(\)\/]*[A-Z])[ \t]*$', rules_text[header_end:], re.MULTILINE):
-            next_header_candidate = next_match.group(1).strip()
-            # Skip if contains lowercase letters (wrapped text) or is a subsection header
-            if any(c.islower() for c in next_header_candidate):
-                continue
-            # Skip subsection headers and keep looking for the next top-level rule header
-            if next_header_candidate not in subsection_headers:
-                next_header_start = header_end + next_match.start()
+        headers_list.append({
+            'text': header_text,
+            'start': header_match.start(),
+            'end': header_match.end(),
+            'match': header_match
+        })
+    
+    # Now merge consecutive headers that form multi-line headers
+    # A multi-line header occurs when: header1 is followed immediately by header2, and header2 is not a subsection header
+    # The merged header should be used as the rule name
+    merged_headers = []
+    skip_indices = set()
+    
+    for i, header_info in enumerate(headers_list):
+        if i in skip_indices:
+            continue
+        
+        merged_header = header_info['text']
+        merged_start = header_info['start']
+        merged_end = header_info['end']
+        current_idx = i
+        
+        # Look ahead to see if the next header should be merged (is a continuation line)
+        while current_idx + 1 < len(headers_list):
+            next_header = headers_list[current_idx + 1]
+            # Check if headers are adjacent (only whitespace/newlines between them)
+            between_text = rules_text[merged_end:next_header['start']]
+            
+            # If there's substantial content between headers, they're separate
+            if between_text.strip():
                 break
+            
+            # If the next header line is very short or looks like a continuation, merge it
+            # A continuation line would be short (< 50 chars) and not a subsection header
+            if len(next_header['text']) < 50 and next_header['text'] not in subsection_headers:
+                merged_header += " " + next_header['text']
+                merged_end = next_header['end']
+                skip_indices.add(current_idx + 1)
+                current_idx += 1
+            else:
+                break
+        
+        merged_headers.append({
+            'text': merged_header,
+            'start': merged_start,
+            'end': merged_end
+        })
+    
+    # Now process the merged headers to extract rule content
+    rule_count = 0
+    
+    for i, header_info in enumerate(merged_headers):
+        header = header_info['text']
+        header_end = header_info['end']
+        
+        # Find the next header's start position to determine where this rule's content ends
+        if i + 1 < len(merged_headers):
+            next_header_start = merged_headers[i + 1]['start']
+        else:
+            next_header_start = len(rules_text)
         
         # Extract content between this header and next header
         content = rules_text[header_end:next_header_start].strip()
         
         if not content or len(content) < 10:
-            continue
-        
-        # Check if header is mostly uppercase (rule names are all caps)
-        upper_count = sum(1 for c in header if c.isupper())
-        if upper_count < len(header) * 0.5:
             continue
         
         rule_key = header.lower().replace(' ', '_').replace('(', '').replace(')', '').replace('-', '_').replace('/', '_')
@@ -442,8 +475,8 @@ def extract_special_rules(text, debug=False):
     if debug:
         console.print(f"\t[green]✓ Found {rule_count} special rules[/green]")
         if rules and debug:
-            for rule_name in list(rules.keys()):
-                console.print(f"\t- {rule_name}")
+            for rule_name, rule in rules.items():
+                console.print(f"\t- {rule_name}{' (skill)' if isinstance(rule, dict) else ''}")
     
     return rules
 
