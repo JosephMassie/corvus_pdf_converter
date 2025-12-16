@@ -1,0 +1,82 @@
+{
+  "charts": {},
+  "end_of_mission": "This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn.",
+  "forces_and_deployment": {
+    "deployment_table": [
+      {
+        "army_points": 150,
+        "deployment_zone": "8 in x 24 in",
+        "swc": 3,
+        "table_size": "24 in x 32 in"
+      },
+      {
+        "army_points": 200,
+        "deployment_zone": "12 in x 32 in",
+        "swc": 4,
+        "table_size": "32 in x 48 in"
+      },
+      {
+        "army_points": 250,
+        "deployment_zone": "12 in x 32 in",
+        "swc": 5,
+        "table_size": "32 in x 48 in"
+      },
+      {
+        "army_points": 300,
+        "deployment_zone": "12 in x 48 in",
+        "swc": 6,
+        "table_size": "48 in x 48 in"
+      },
+      {
+        "army_points": 350,
+        "deployment_zone": "12 in x 48 in",
+        "swc": 7,
+        "table_size": "48 in x 48 in"
+      },
+      {
+        "army_points": 400,
+        "deployment_zone": "12 in x 48 in",
+        "swc": 8,
+        "table_size": "48 in x 48 in"
+      }
+    ],
+    "sides": "SIDE A and SIDE B",
+    "special_notes": [
+      "It is not permitted to deploy in Silhouette contact with the Beacons or with the Consoles."
+    ]
+  },
+  "mission_objectives": {
+    "classified": [
+      "Each player has 1 Classified Objective (1 Objective Point)."
+    ],
+    "main_objectives": [
+      "At the end of each Game Round, Control the Enemy Beacon (1 Objective Point).",
+      "At the end of the game, your Beacon is not Controlled by the enemy (1 Objective Point).",
+      "At the end of the game, have more Activated Consoles than the adversary (2 Objective Points).",
+      "At the end of the game, have an Activated Console (1 Objective Point for each Activated Console)."
+    ]
+  },
+  "name": "HARDLOCK",
+  "scenario_special_rules": {
+    "activate_console": {
+      "effects": "• Allows the Specialist Troop to make a Normal WIP Roll to Activate a Console. • If the roll is failed, this can be repeated as many times as necessary, each time spending the corresponding Short Skill and making the roll. • An Activated Console can be Activated again by the other player, applying the same procedure. In this situation, the Console is no longer Activated by the adversary. • Player A and Player B Tokens can be used to mark the Activated Console. It is recommended each player uses a different kind of Tokens.",
+      "name": "ACTIVATE CONSOLE",
+      "requirements": "• Only Specialist Troops can declare this Skill. • The Specialist Troop must be in Silhouette contact with a Console.",
+      "skill_type": "short skill, Attack, Scenario."
+    },
+    "beacons": "There are a total of 2 Beacons, 1 corresponding to each player, placed in different halves of the table, each in the middle of the front edge of the Deployment Zone. (see map). The Enemy Beacon is the one on the edge of the enemy Deployment Zone.",
+    "common_rules_of_beacons": "^ Each Model can carry a maximum of 1 Beacon. As an exception, Troopers possessing the Baggage Special Skill can carry up to 2 Beacons. ^ Only Models, and not Markers, (Camouflaged, Impersonation, Holoechoes…) can carry the Beacons. ^ The Beacon must always be kept on the table. ^ The Beacon always remains in Silhouette contact with the Trooper which is carrying it. ^ If the Trooper carrying the Beacon enters or is in any Null State, they drop the Beacon. Move the Beacon slightly out of Silhouette contact with the Trooper. ^ Beacons do not block movement or LoF.",
+    "consoles": "There are three Consoles, placed on the central line of the game table. One of them is in the center of the table, and the other two are placed 12 inches from the table edges in 300/350/400 point games, 8 inches in 200/250 point games, and 6 inches in 150 point games (see map). Each Console must be represented by a Console A Token or by a scenery piece of the same diameter (such as the Consoles of the ITS Objectives Pack Alpha, the Human Consoles by Micro Art Studio, the Tech Consoles by Warsenal or the Comlink Console by Customeeple).",
+    "control_an_enemy_beacon": "An Enemy Beacon is Controlled by a player as long as that player is the only one with at least one Trooper (as a Model, not a Marker) in Silhouette contact with it. So there cannot be any enemy Troopers in Silhouette contact with the Beacon. Models in a Null State cannot do either.",
+    "pick_up_beacon": {
+      "effects": "• A Trooper can pick up an Enemy Beacon in any of the situations previously mentioned by spending one Short Skill, without needing to perform a Roll. • The Troopers must follow the Common Rules of Beacons.",
+      "name": "PICK UP BEACON",
+      "requirements": "• Have an Activated Console. Also, the Trooper must be in one of the following situations: • The Trooper is in Silhouette contact with a friendly Trooper in a Normal State that has an Enemy Beacon. • The Trooper is in Silhouette contact with an Enemy Beacon which has no enemy Troops in a non-Null State in contact with it.",
+      "skill_type": "short skill, Attack, Scenario."
+    },
+    "specialist_troops": "For the purposes of this scenario, only Hackers, Doctors, Engineers, Forward Observers, Paramedics, and Troopers possessing the Chain of Command or the Specialist Operative Special Skill are considered Specialist Troops. Hackers, Doctors, and Engineers cannot make use of Repeaters or Peripheral (Servant) Models to perform tasks reserved for Specialist Troops. END OF THE MISSION This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn."
+  },
+  "suitable_for_reinforcements": true,
+  "tactical_support_options": 1,
+  "type": "ITS Scenario"
+}

@@ -1,0 +1,87 @@
+{
+  "charts": {},
+  "end_of_mission": "This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn.",
+  "forces_and_deployment": {
+    "deployment_table": [
+      {
+        "army_points": 150,
+        "deployment_zone": "Radius of 12 in",
+        "swc": 3,
+        "table_size": "24 in x 32 in"
+      },
+      {
+        "army_points": 200,
+        "deployment_zone": "Radius of 20 in",
+        "swc": 4,
+        "table_size": "32 in x 48 in"
+      },
+      {
+        "army_points": 250,
+        "deployment_zone": "Radius of 20 in",
+        "swc": 5,
+        "table_size": "32 in x 48 in"
+      },
+      {
+        "army_points": 300,
+        "deployment_zone": "Radius of 24 in",
+        "swc": 6,
+        "table_size": "48 in x 48 in"
+      },
+      {
+        "army_points": 350,
+        "deployment_zone": "Radius of 24 in",
+        "swc": 7,
+        "table_size": "48 in x 48 in"
+      },
+      {
+        "army_points": 400,
+        "deployment_zone": "Radius of 24 in",
+        "swc": 8,
+        "table_size": "48 in x 48 in"
+      }
+    ],
+    "sides": "SIDE A and SIDE B",
+    "special_notes": [
+      "It is not allowed to deploy in Silhouette contact with a Tech- Coffin."
+    ]
+  },
+  "mission_objectives": {
+    "classified": [
+      "Each player has 1 Classified Objective (1 Objective)."
+    ],
+    "main_objectives": [
+      "At the end of the game, Control a Supply Box (1 Objective Point for each Supply Box).",
+      "At the end of the game, Control more Supply Boxes in your own Safe Area than your adversary in their own Safe Area (3 Objective Points).",
+      "At the end of the game, Control the same number of Supply Boxes in your Safe Area than the adversary does in their Safe Area (1 Objective Point, but only if at least 1 Supply Box is Controlled in their Safe Area).",
+      "At the end of the game, if your adversary does not Control any Supply Boxes in their Safe Area (2 Objective Points)."
+    ]
+  },
+  "name": "PROVISIONING",
+  "scenario_special_rules": {
+    "common_rules_of_supply_boxes": "^ Each Model can carry a maximum of 1 Supply Box. As an exception, Models possessing the Baggage Special Skill can carry up to 2 Supply Boxes. ^ Only Models, and not Markers, (Camo, Impersonation, Holoechoes…) can carry the Supply Boxes. ^ The Supply Box Token must always be kept on the table. ^ The Supply Box Token always remains in Silhouette contact with the Trooper which is carrying it. ^ If the Trooper carrying the Supply Box enters or is in any Null State, they drop the Supply Box. Move the Supply Box Token slightly out of Silhouette contact with the Trooper. ^ Supply Box Tokens don’t block movement or LoF.",
+    "controlling_the_supply_boxes": "A Supply Box is Controlled by a player if, at the end of the game, that player has a Model, but not a Marker, carrying it. That Trooper cannot be in a Null State or in Silhouette contact with any enemy Model. Supply Boxes in a player’s Safe Area are Controlled by that player unless an enemy Specialist Troop is carrying it. 47",
+    "extract_supply_boxes": {
+      "effects": "• Allows the Specialist Troop to make a Normal WIP Roll to Extract and pick up the Supply Box, with a successful roll one SUPPLY BOX Token must be placed besides the Trooper. • If the roll is failed, this can be repeated as many times as necessary, each time spending the corresponding Short Skill and making the roll. • When all Supply Box Tokens have been Extracted from a Tech-Coffin, a Player A or Player B Token must be placed besides it to mark that the Supply Boxes have been extracted.",
+      "name": "EXTRACT SUPPLY BOXES",
+      "requirements": "• Only Specialist Troops can declare this Skill. • The Specialist Troop must be in base contact with a Tech-Coffin.",
+      "skill_type": "short skill, Attack, Scenario"
+    },
+    "operational_learning": "When a Specialist Troop performs a Skill with the Scenario Label that requires a WIP Roll and fails, they benefit from the following MODs in subsequent Orders: ^ In the second consecutive Order, the Trooper applies a +3 MOD to the WIP Roll required for that Scenario Skill. ^ In the third consecutive Order—and subsequent Orders— the Trooper applies +3 and +1SD MODs to the WIP Roll required for that Scenario Skill. ^ These MODs are cumulative with any other MOD that applies to Skills with the Scenario Label. IMPORTANT: These MODs only apply to Rolls made in consecutive Orders by the same Trooper for the same Scenario Skill, with the same target, with no interruptions, or Orders spent on other Troopers: ^ If the Trooper passes the Roll, the sequence resets. ^ If the Trooper do not declare that Scenario Skill, the sequence resets. ^ If the Trooper declare the same Skill, but on a different target, the sequence resets. ^ If an Order is spent on any other Trooper, the sequence resets. ^ Only one sequence can be applied per Trooper and per Scenario-labelled Skill at a time. END OF THE MISSION This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn.",
+    "pick_up_supply_boxes": {
+      "effects": "• Spending one Short Skill, without needing a Roll, the Trooper can pick up a Supply Box in any of the situations previously mentioned. Place the Supply Box Token in Silhouette contact with the Trooper. • If the Supply Box is in the enemy’s Safe Area, the Specialist Troop must pass a Normal WIP-3 Roll. • The Trooper must follow the Common Rules of Supply Boxes.",
+      "name": "PICK UP SUPPLY BOXES",
+      "requirements": "The Trooper must be in one of the following situations: • Be in Silhouette contact with an allied Trooper in a Normal State with a SUPPLY BOX Token. • Be in Silhouette contact with a Supply Box that is not being carried. In addition: • If the SUPPLY BOX Token is in the enemy’s Safe Area, the Trooper must be a Specialist Troop.",
+      "skill_type": "short skill, Attack, Scenario"
+    },
+    "remember": "The central Tech-Coffin contains two Supply Boxes.",
+    "safe_area": {
+      "name": "SAFE AREA"
+    },
+    "specialist_troops": "For the purposes of this scenario, only Hackers, Doctors, Engineers, Forward Observers, Paramedics, and Troopers possessing the Chain of Command or the Specialist Operative Special Skill are considered Specialist Troops. Hackers, Doctors, and Engineers cannot make use of Repeaters or Peripheral (Servant) Models to perform tasks reserved for Specialist Troops.",
+    "supply_boxes": "The Supply Boxes must be represented by a Supply Box Marker, or a similar scenery item (Such as the Supply Boxes of the ITS Objective Pack Alpha, the Tech Crates by Micro Art Studio, the Gang Tie Containers by Bandua Wargames, the Supply Boxes by Warsenal or the Cargo Crates by Customeeple)",
+    "tech_coffins": "There are a total of 3 Tech-Coffins. One of them is placed in the center of the table while the other two are placed along the central diagonal line of the table, at 16 inches from the central Tech-Coffin (12 inches in 200/250 point games, and 8 inches in 150 point games) (see map). Each Tech-Coffin contains one Supply Box, except for the central Tech-Coffin which contains two Supply Boxes. The Tech-Coffins must be represented by a Tech-Coffin Marker or with a scenery piece of the same diameter (Such as the ITS Objective Pack Alpha, Stasis Coffins by Warsenal or the Cryo Pods by Customeeple)."
+  },
+  "suitable_for_reinforcements": true,
+  "tactical_support_options": 1,
+  "type": "ITS Scenario"
+}

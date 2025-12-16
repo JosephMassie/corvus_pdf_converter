@@ -1,0 +1,60 @@
+{
+  "charts": {},
+  "end_of_mission": "This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round.",
+  "forces_and_deployment": {
+    "deployment_table": [
+      {
+        "army_points": 150,
+        "deployment_zone": "8 in x 24 in",
+        "swc": 3,
+        "table_size": "24 in x 32 in"
+      },
+      {
+        "army_points": 200,
+        "deployment_zone": "12 in x 32 in",
+        "swc": 4,
+        "table_size": "32 in x 48 in"
+      },
+      {
+        "army_points": 250,
+        "deployment_zone": "12 in x 32 in",
+        "swc": 5,
+        "table_size": "32 in x 48 in"
+      },
+      {
+        "army_points": 300,
+        "deployment_zone": "12 in x 48 in",
+        "swc": 6,
+        "table_size": "48 in x 48 in"
+      },
+      {
+        "army_points": 350,
+        "deployment_zone": "12 in x 48 in",
+        "swc": 7,
+        "table_size": "48 in x 48 in"
+      },
+      {
+        "army_points": 400,
+        "deployment_zone": "12 in x 48 in",
+        "swc": 8,
+        "table_size": "48 in x 48 in"
+      }
+    ],
+    "sides": "SIDE A and SIDE B",
+    "special_notes": []
+  },
+  "mission_objectives": {},
+  "name": "BATTLEGROUND",
+  "scenario_special_rules": {
+    "baggage": "Troopers possessing the Baggage piece of Equipment that are inside a Zone of Operations and in a non-Null State provide an additional 20 Victory Points for Dominating the ZO.",
+    "dominate_zo": "A Zone of Operations (ZO) is Dominated by a player if they have more Victory Points than the adversary inside the area. Only Troopers represented by Models or Markers (Camouflaged, Shasvastii-Embryo...) count, as well as Proxies and Peripheral Troops. Troops in a Null State do not count. Tokens representing weapons or pieces of equipment (like Mines or Deployable Repeaters), fake Holoechoes, and any Token that does not represent a Trooper does not count either. A Trooper is inside a Zone of Operations when more than half the Trooper’s base is inside that ZO.",
+    "hvt_and_classified_deck_not_used": "In this scenario, the HVT Model and Secure HVT rules are not applied. Players will not deploy the HVT Model on the game table and they will not use the Classified Deck in this scenario. END OF THE MISSION This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round.",
+    "key_ops": "The Key Ops is a special tactics operator with unique training to conduct multi-domain reconnaissance and combat across the full spectrum of conflicts. At the end of the Deployment Phase, in Initiative order, players must declare which Trooper from their Army List is their Key Ops. The Trooper chosen must be always one of the models deployed on the game table. Players are not allowed to choose Troopers in Hidden Deployment or in Marker state. This Trooper must always be on the game table as a Model and not as a Marker (Camouflaged, Holoecho…). Also, Irregular Troops and those whose Troop Type is REM or VH are not eligible to be Key Ops. The Key Ops possesses the Dodge (+3) and Tactical Awareness Special Skills, even if those are not listed on their Unit Profile. These Special Skills are not cumulative, if the Trooper already has them, then they are not applied. The Key Ops is identified with a Player A or B Marker.",
+    "killing": "Troopers are considered Killed by the adversary when they enter Dead State, or they are in a Null State at the end of the game. Troopers that have not been deployed on the game table, as a Model or Marker, at the end of the game will be considered to be Killed by the adversary.",
+    "shasvastii": "Troopers possessing the Shasvastii Special Skill that are inside a Zone of Operations count while they are in the Unconscious State or any non-Null State.",
+    "threaten_key_ops": "A Key Ops is Threatened by a player if they have at least one Trooper (as a Model, not a Marker) in a non-Null state inside the Key Ops’ Zone of Control."
+  },
+  "suitable_for_reinforcements": false,
+  "tactical_support_options": 0,
+  "type": "Direct Action"
+}

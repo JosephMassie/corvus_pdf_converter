@@ -1,0 +1,79 @@
+{
+  "charts": {},
+  "end_of_mission": "This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn.",
+  "forces_and_deployment": {
+    "deployment_table": [
+      {
+        "army_points": 150,
+        "deployment_zone": "8 in x 24 in",
+        "swc": 3,
+        "table_size": "24 in x \n32 in"
+      },
+      {
+        "army_points": 200,
+        "deployment_zone": "12 in x 32 in",
+        "swc": 4,
+        "table_size": "32 in x \n48 in"
+      },
+      {
+        "army_points": 250,
+        "deployment_zone": "12 in x 32 in",
+        "swc": 5,
+        "table_size": "32 in x \n48 in"
+      },
+      {
+        "army_points": 300,
+        "deployment_zone": "12 in x 48 in",
+        "swc": 6,
+        "table_size": "48 in x \n48 in"
+      },
+      {
+        "army_points": 350,
+        "deployment_zone": "12 in x 48 in",
+        "swc": 7,
+        "table_size": "48 in x \n48 in"
+      },
+      {
+        "army_points": 400,
+        "deployment_zone": "12 in x 48 in",
+        "swc": 8,
+        "table_size": "48 in x \n48 in"
+      }
+    ],
+    "sides": "SIDE A and SIDE B",
+    "special_notes": [
+      "It is not permitted to deploy in Silhouette contact with the Antennas.",
+      "Exclusion Zones are the areas between the Deployment Zones."
+    ]
+  },
+  "mission_objectives": {
+    "classified": [
+      "There are no Classified Objectives."
+    ],
+    "main_objectives": [
+      "At the end of each Game Round, Dominate a Dead Zone (1 Objective Point for each Dead Zone).",
+      "At the end of the game, Dominate both Dead Zones (2 Objective Points).",
+      "At the end of the game, have an Activated Antenna (1 Objective Point for each Activated Antenna)."
+    ]
+  },
+  "name": "CROSSING LINES",
+  "scenario_special_rules": {
+    "activate_antenna": {
+      "effects": "• Allows the Specialist Troop to make a Normal WIP Roll to Activate an Antenna. • If the roll is failed, this can be repeated as many times as necessary, each time spending the corresponding Short Skill and making the roll. • An Activated Antenna can be Activated again by the other player, applying the same procedure. In this situation, the Antenna is no longer Activated by the adversary. • Player A and Player B Tokens can be used to mark the Activated Antenna. It is recommended each player uses a different kind of Token. 36",
+      "name": "ACTIVATE ANTENNA",
+      "requirements": "• Only Specialist Troops can declare this Skill. • The Specialist Troop must be in Silhouette contact with an Antenna.",
+      "skill_type": "short skill, Attack, Scenario."
+    },
+    "antennas": "There are 2 Antennas placed on the central line of the table. They are placed 12 inches from the table edges in 300/350/400 point games, 8 inches in 200/250 point games, and 6 inches in 150 point games (see map). The Antennas must be represented by Transmission Antenna Tokens (TRANS. ANTENNA) or with scenery pieces of the same diameter (such as the Antenna of the ITS Objective Pack Alpha, the Communications Array by Warsenal or the Sat Station Antenna by Customeeple).",
+    "baggage": "Troopers possessing the Baggage piece of Equipment that are inside a Zone of Operations and in a non-Null State provide an additional 20 Victory Points for Dominating the ZO.",
+    "dead_zone": "There are two Dead Zones, one in each half of the game table. The Dead Zones are the areas between the Deployment Zones. In this scenario each Dead Zone is a Zone of Operations (ZO).",
+    "dominate_zo": "A Zone of Operations (ZO) is Dominated by a player if they have more Victory Points than the adversary inside the area. Only Troopers represented by Models or Markers (Camouflaged, Shasvastii-Embryo...) count, as well as Proxies and Peripheral Troops. Troops in a Null State do not count. Tokens representing weapons or pieces of equipment (like Mines or Deployable Repeaters), fake Holoechoes, and any Token that does not represent a Trooper does not count either. A Trooper is inside a Zone of Operations when more than half the Trooper’s base is inside that ZO.",
+    "secure_hvt_or_secure_treasure_not_used": "In this scenario, the Secure HVT or Secure Treasure rule is not applied.",
+    "shasvastii": "Troopers possessing the Shasvastii Special Skill that are inside a Zone of Operations count while they are in the Shasvastii- Embryo State or any non-Null State.",
+    "specialist_troops": "For the purposes of this scenario, only Hackers, Doctors, Engineers, Forward Observers, Paramedics, and Troopers possessing the Chain of Command or the Specialist Operative Special Skill are considered Specialist Troops. Hackers, Doctors, and Engineers cannot make use of Repeaters or Peripheral (Servant) Models to perform tasks reserved for Specialist Troops. END OF THE MISSION This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn.",
+    "superior_deployment": "With the exception of Impersonation, Special Skills with the Superior Deployment Label cannot be used in this scenario."
+  },
+  "suitable_for_reinforcements": false,
+  "tactical_support_options": 0,
+  "type": "ITS Scenario"
+}

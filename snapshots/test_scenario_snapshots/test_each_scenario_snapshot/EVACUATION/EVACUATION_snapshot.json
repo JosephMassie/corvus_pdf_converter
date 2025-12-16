@@ -1,0 +1,75 @@
+{
+  "charts": {},
+  "end_of_mission": "This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn.",
+  "forces_and_deployment": {
+    "deployment_table": [
+      {
+        "army_points": 150,
+        "deployment_zone": "8 in x 24 in",
+        "swc": 3,
+        "table_size": "24 in x 32 in"
+      },
+      {
+        "army_points": 200,
+        "deployment_zone": "12 in x 32 in",
+        "swc": 4,
+        "table_size": "32 in x 48 in"
+      },
+      {
+        "army_points": 250,
+        "deployment_zone": "12 in x 32 in",
+        "swc": 5,
+        "table_size": "32 in x 48 in"
+      },
+      {
+        "army_points": 300,
+        "deployment_zone": "12 in x 48 in",
+        "swc": 6,
+        "table_size": "48 in x 48 in"
+      },
+      {
+        "army_points": 350,
+        "deployment_zone": "12 in x 48 in",
+        "swc": 7,
+        "table_size": "48 in x 48 in"
+      },
+      {
+        "army_points": 400,
+        "deployment_zone": "12 in x 48 in",
+        "swc": 8,
+        "table_size": "48 in x 48 in"
+      }
+    ],
+    "sides": "SIDE A and SIDE B",
+    "special_notes": [
+      "It is not allowed to deploy in Silhouette contact with a Civilian."
+    ]
+  },
+  "mission_objectives": {
+    "classified": [
+      "Each player has 2 Classified Objectives (2 Objective Points for each one)."
+    ],
+    "main_objectives": [
+      "At the end of the game, have an Extracted Civilian (1 Objective Point for each one).",
+      "At the end of the game, have an Extracted enemy HVT (1 Objective Point for each one)."
+    ]
+  },
+  "name": "EVACUATION",
+  "scenario_special_rules": {
+    "activate_extraction_console": {
+      "effects": "• Allows the Specialist Troop to make a Normal WIP Roll to Activate an Extraction Console. If the roll is failed, this can be repeated as many times as necessary, each time spending the corresponding Short Skill and making the roll. • If the roll is successful, the player chooses one of the Specialist Troop’s CivEvaced Civilians or Enemy HVTs. The chosen Civilian or HVT has been Extracted, and is removed from the game table. 39",
+      "name": "ACTIVATE EXTRACTION CONSOLE",
+      "requirements": "• Only Specialist Troops can declare this Skill. • The Specialist Troop must be in Silhouette contact with an Extraction Console. • The Specialist Troop must be CivEvacing a Civilian or an Enemy HVT. • This Skill cannot be declared during the first Game Round.",
+      "skill_type": "short skill, Attack, Scenario."
+    },
+    "civilians": "There are a total of four Civilians on the game table, two of them in each table half. Each Civilian is placed 16 inches from the rear of the Deployment Zone and 6 inches from the edge of the table. (see the map). For 150 point games, the Civilians are placed 12 inches from the rear of the Deployment Zone and 6 inches from the edges of the table. (see the map). The Civilians cannot be placed on top of or inside of any Scenery Item or Building, always deploying them in accessible locations on the table. Scenery placement must facilitate this. Players can use any Model from the Infinity or the Infinity Bootleg range, preferably those designated as HVT or as a Civilian. Good examples of this are the O-12 High Commissioner, the Tohaa Diplomat, Go-Go Marlene, the Fusilier Angus, the TAG Pilots, the VIP Executive or the HAZMAT A1 Specialist. Players can also use the Player A and Player B Tokens to identify or even represent their Civilians.",
+    "extraction_consoles": "There are 2 Extraction Consoles, placed on the central line of the table. They are placed 16 inches from the edges of the table in 300/350/400 point games, 12 inches in 200/250 point games, and 8 inches in 150 point games (see map). Each Console must be represented by a Console A Token or by a scenery piece of the same diameter (such as the Consoles of the ITS Objective Pack Alpha, the Human Consoles by Micro Art Studio, the Tech Consoles by Warsenal or the Comlink Console by Customeeple).",
+    "important": "These MODs only apply to Rolls made in consecutive Orders by the same Trooper for the same Scenario Skill, with the same target, with no interruptions, or Orders spent on other Troopers: ^ If the Trooper passes the Roll, the sequence resets. ^ If the Trooper do not declare that Scenario Skill, the sequence resets. ^ If the Trooper declare the same Skill, but on a different target, the sequence resets. ^ If an Order is spent on any other Trooper, the sequence resets. ^ Only one sequence can be applied per Trooper and per Scenario-labelled Skill at a time. END OF THE MISSION This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn.",
+    "multiple_hvts": "Each of the players deploys two HVTs, following the usual rules for deploying HVTs.",
+    "operational_learning": "When a Specialist Troop performs a Skill with the Scenario Label that requires a WIP Roll and fails, they benefit from the following MODs in subsequent Orders: ^ In the second consecutive Order, the Trooper applies a +3 MOD to the WIP Roll required for that Scenario Skill. ^ In the third consecutive Order—and subsequent Orders— the Trooper applies +3 and +1SD MODs to the WIP Roll required for that Scenario Skill. ^ These MODs are cumulative with any other MOD that applies to Skills with the Scenario Label.",
+    "specialist_troops": "For the purposes of this scenario, only Hackers, Doctors, Engineers, Forward Observers, Paramedics, and Troopers possessing the Chain of Command or the Specialist Operative Special Skill are considered Specialist Troops. Hackers, Doctors, and Engineers cannot make use of Repeaters or Peripheral (Servant) Models to perform tasks reserved for Specialist Troops."
+  },
+  "suitable_for_reinforcements": true,
+  "tactical_support_options": 2,
+  "type": "ITS Scenario"
+}

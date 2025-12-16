@@ -2,6 +2,7 @@ import pymupdf  # PyMuPDF
 import json
 import re
 import click
+from pathlib import Path
 from rich.console import Console
 from rich.table import Table
 from rich import print as rprint
@@ -179,10 +180,199 @@ def find_page_with_text(doc, search_text, start_page=0):
             return page_num
     return -1
 
+def extract_charts(text, debug=False):
+    """
+    Finds and parses all known charts (like Panoply, Treasure Chart) from the text.
+    Returns a dictionary of parsed charts and the text with chart sections removed.
+    """
+    parsed_charts = {}
+    remaining_text = text
+
+    # Regex for Panoply/Treasure chart style:
+    # 1-2 Some Item 13 Another Item
+    # Handles ranges (1-2) or single numbers (9)
+    chart_row_regex = re.compile(r"^\s*(\d{1,2}(?:-\d{1,2})?)\s+([A-Z\d].*?)\s+(\d{1,2})\s+([A-Z\d].*?)\s*$", re.MULTILINE)
+
+    # List of known chart headers
+    known_chart_headers = ["PANOPLY CHART", "TREASURE CHART"]
+
+    for header in known_chart_headers:
+        header_match = re.search(header, remaining_text, re.IGNORECASE)
+        if not header_match:
+            continue
+
+        # Find the text block for this chart. Assume it ends with a double newline or end of text.
+        chart_block_match = re.search(rf"{header}\s*\n(.*?)(?=\n\n\w|SCENARIO SPECIAL RULES|END OF THE MISSION|\Z)", remaining_text, re.DOTALL | re.IGNORECASE)
+        if not chart_block_match:
+            continue
+            
+        chart_text = chart_block_match.group(1)
+        
+        if debug:
+            console.print(f"    [cyan]✓ Found '{header}' section. Parsing for chart data...[/cyan]")
+
+        rows = []
+        for row_match in chart_row_regex.finditer(chart_text):
+            rows.append({
+                "roll_1": row_match.group(1).strip(),
+                "item_1": row_match.group(2).strip(),
+                "roll_2": row_match.group(3).strip(),
+                "item_2": row_match.group(4).strip(),
+            })
+
+        if rows:
+            chart_key = header.lower().replace(" ", "_")
+            parsed_charts[chart_key] = rows
+            if debug:
+                console.print(f"    [green]✓ Parsed {len(rows)} rows from '{header}'[/green]")
+            
+            # Remove the parsed chart block from the text to avoid re-parsing
+            remaining_text = remaining_text.replace(chart_block_match.group(0), "")
+
+    return parsed_charts, remaining_text
+
+
+def extract_stat_blocks(text, debug=False):
+    """
+    Finds and parses all known stat blocks from the text.
+    Returns a dictionary of parsed stat blocks and the text with stat block sections removed.
+    """
+    parsed_stats = {}
+    remaining_text = text
+
+    known_headers = [
+        "ARMED TURRET - DEFENSE SYSTEM", "PROTOTYPE", "ISC: TURRET F-13", "BEACON",
+        "ISC: HVT (High Value Target)", "ISC: HOSTILE HVT", "ISC: CIVILIAN",
+        "ISC: (DESIGNATED TARGET) HVT"
+    ]
+
+    # Sort headers by length descending to prioritize longer, more specific headers
+    # This helps avoid partial matches for headers that are substrings of others
+    known_headers.sort(key=len, reverse=True)
+
+    for header in known_headers:
+        # Header pattern matches the header on its own line, followed by a newline
+        header_pattern = re.compile(r"^\s*(" + re.escape(header) + r")\s*\n", re.MULTILINE | re.IGNORECASE)
+        header_match = header_pattern.search(remaining_text)
+
+        if not header_match:
+            continue
+
+        # The content to search for the end of the block starts after the header line
+        search_start_pos = header_match.end()
+        text_to_search_for_end = remaining_text[search_start_pos:]
+
+        # Define the pattern for what terminates a block:
+        # A double newline OR a specific major section header OR End of the entire text
+        # This list of major section headers is more explicit and less likely to match content lines.
+        end_section_headers = [
+            "SCENARIO SPECIAL RULES", "MISSION OBJECTIVES", "FORCES AND DEPLOYMENT",
+            "END OF THE MISSION", "DATA CONSOLE", "ID CHECKER", 
+            "SERVER ROOM", "LAUNCHING TOWER", "HVT", "PROXIES", # General section headers
+            "RULES", "MINIATURES", "REMEMBER", "EVENT PARTICIPANTS", # From ITS Basic Rules
+            "ITS RANKING", "REGIONAL RANKINGS", "TACTICAL ELEMENTS", # Other section headers
+            "SPECIALIST TROOPS", "OPERATIONAL LEARNING",
+            "PICK UP PROTOTYPE", "AUTOMATED DEFENSE SYSTEM", "DESTROY THE PROTOTYPES",
+            "COMMON RULES OF PROTOTYPES", "CAPTURING ENEMY PROTOTYPE" # Prototype related headers
+        ]
+        end_section_headers_pattern = "|".join([re.escape(h) for h in end_section_headers])
+
+        # Added a specific negative lookahead for stat names to prevent premature termination if those names appear as headers
+        # This prevents "ARM" or "MOV" from being seen as a terminator if it's the start of another actual section.
+        end_pattern = re.compile(rf"\n\s*\n|{end_section_headers_pattern}|\Z", re.MULTILINE | re.IGNORECASE)
+        end_match = end_pattern.search(text_to_search_for_end)
+
+        # Determine the end position of the block content within text_to_search_for_end
+        content_end_pos_in_subtext = end_match.start() if end_match else len(text_to_search_for_end)
+        
+        block_content = text_to_search_for_end[:content_end_pos_in_subtext].strip()
+
+        # The full text of the matched block (header + content) for removal
+        full_block_text_for_removal = remaining_text[header_match.start() : search_start_pos + content_end_pos_in_subtext]
+        
+        block_key = header_match.group(1).strip().lower().replace(" ", "_").replace("(", "").replace(")", "").replace("-", "_").replace(":", "")
+
+        if debug:
+            console.print(f"    [cyan]✓ Found potential stat block for '{header_match.group(1).strip()}'[/cyan]")
+            console.print(f"      [dim]Header match at: {header_match.start()}-{header_match.end()}[/dim]")
+            console.print(f"      [dim]Block content extracted (length {len(block_content)}):[/dim]")
+            console.print(f"[dim]{block_content}[/dim]")
+
+        stat_data = {}
+        # New parsing strategy for the stat block content
+        # Find the stat headers line (e.g., MOV CC BS PH WIP ARM BTS STR S)
+        # Find the stat values line (e.g., -- 5 10 -- 11 2 3 1 2)
+        # Then the rest are attributes
+        
+        # Pattern to find stat headers (uppercase words, potentially with - or º)
+        # and stat values (numbers, --, X)
+        stats_pattern = re.compile(
+            r"([A-Z\s\-º]+)\s*\n" # Stat headers line
+            r"([0-9X\s\-º]+)(.*)", # Stat values line, and then the rest of the content
+            re.DOTALL # Allow . to match newlines in the last group
+        )
+        stats_match = stats_pattern.search(block_content) # Use search() as it may not be at the beginning
+
+        if stats_match:
+            stat_headers_line = stats_match.group(1).strip()
+            stat_values_line = stats_match.group(2).strip()
+            remaining_attributes_text = stats_match.group(3).strip()
+
+            stat_headers = stat_headers_line.split()
+            stat_values = stat_values_line.split()
+
+            if len(stat_headers) == len(stat_values):
+                stat_data['stats'] = dict(zip(stat_headers, stat_values))
+                
+                attributes = {}
+                for line in remaining_attributes_text.split('\n'):
+                    line = line.strip()
+                    if not line: continue
+                    if ":" in line:
+                        key, value = line.split(":", 1)
+                        attr_key = key.strip().lower().replace(" ", "_")
+                        attributes[attr_key] = value.strip()
+                    elif "=" in line:
+                        parts = re.split(r'\s*,\s*', line) # Split by comma for multiple attributes on one line
+                        for part in parts:
+                            if "=" in part:
+                                key, value = part.split("=", 1)
+                                attr_key = key.strip().lower().replace(" ", "_")
+                                value = value.strip().replace(")", "").replace("(", "")
+                                attributes[attr_key] = value
+                    else: # Handle single word attributes like 'SPECIALIST TROOPS' -> {'specialist_troops': True}
+                        attr_key = line.strip().lower().replace(" ", "_")
+                        attributes[attr_key] = True
+
+                if attributes:
+                    stat_data['attributes'] = attributes
+            elif debug:
+                console.print(f"    [red]✗ Header/value mismatch for '{header}'[/red]")
+                console.print(f"      Headers ({len(stat_headers)}): {stat_headers}")
+                console.print(f"      Values ({len(stat_values)}):  {stat_values}")
+        elif debug:
+            console.print(f"    [red]✗ Could not find stat headers/values block in content for '{header}'[/red]")
+
+        if stat_data:
+            parsed_stats[block_key] = stat_data
+            remaining_text = remaining_text.replace(full_block_text_for_removal, "", 1)
+            if debug:
+                console.print(f"    [green]✓ Successfully parsed stat block for '{header}'[/green]")
+                pprint(stat_data)
+        elif debug:
+            console.print(f"    [red]✗ Could not fully parse stat block for '{header}'[/red]")
+
+    return parsed_stats, remaining_text
+
+
 def parse_scenario(name, text, is_direct_action=False, debug=False):
     """
     Parse a scenario's text and extract structured information.
     """
+    
+    charts, remaining_text_after_charts = extract_charts(text, debug)
+    #stat_blocks, final_remaining_text = extract_stat_blocks(remaining_text_after_charts, debug)
+
     scenario = {
         "name": name,
         "type": "Direct Action" if is_direct_action else "ITS Scenario",
@@ -190,7 +380,8 @@ def parse_scenario(name, text, is_direct_action=False, debug=False):
         "suitable_for_reinforcements": extract_reinforcements(text, debug),
         "mission_objectives": extract_objectives(text, debug),
         "forces_and_deployment": extract_deployment(text, debug),
-        "scenario_special_rules": extract_special_rules(text, debug),
+        "charts": charts,
+        "scenario_special_rules": extract_special_rules(remaining_text_after_charts, debug),
         "end_of_mission": extract_end_of_mission(text, debug)
     }
     
@@ -572,9 +763,18 @@ def main(pdf_path, debug):
     
     scenarios = extract_scenarios_from_pdf(pdf_path, debug=debug)
     
+    # Extract season and version from the file name
+    season = "Unknown"
+    version = "N/A"
+    match = re.search(r'its-rules-season-(\d+)-en-(v[\d\.]+)\.pdf', Path(pdf_path).name, re.IGNORECASE)
+    if match:
+        season = f"Season {match.group(1)}"
+        version = match.group(2)
+        console.print(f"  [green]Detected {season}, version {version}[/green]")
+
     output = {
-        "season": "Season 17",
-        "version": "v1.0.1",
+        "season": season,
+        "version": version,
         "scenarios": scenarios
     }
     

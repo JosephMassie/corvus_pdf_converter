@@ -1,0 +1,69 @@
+{
+  "charts": {},
+  "end_of_mission": "This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn.",
+  "forces_and_deployment": {
+    "deployment_table": [
+      {
+        "army_points": 150,
+        "deployment_zone": "12 in x 24 in",
+        "swc": 3,
+        "table_size": "24 in x 32 in"
+      },
+      {
+        "army_points": 200,
+        "deployment_zone": "16 in x 32 in",
+        "swc": 4,
+        "table_size": "32 in x 48 in"
+      },
+      {
+        "army_points": 250,
+        "deployment_zone": "16 in x 32 in",
+        "swc": 5,
+        "table_size": "32 in x 48 in"
+      },
+      {
+        "army_points": 300,
+        "deployment_zone": "16 in x 48 in",
+        "swc": 6,
+        "table_size": "48 in x 48 in"
+      },
+      {
+        "army_points": 350,
+        "deployment_zone": "16 in x 48 in",
+        "swc": 7,
+        "table_size": "48 in x 48 in"
+      },
+      {
+        "army_points": 400,
+        "deployment_zone": "16 in x 48 in",
+        "swc": 8,
+        "table_size": "48 in x 48 in"
+      }
+    ],
+    "sides": "SIDE A and SIDE B",
+    "special_notes": [
+      "It is not permitted to deploy in Silhouette contact with the TechCoffin or with the Communication Antennas."
+    ]
+  },
+  "mission_objectives": {},
+  "name": "UPLINK CENTER",
+  "scenario_special_rules": {
+    "activate_communication_antenna": {
+      "effects": "• Allows the Specialist Troop to make a Normal WIP Roll to Activate a Communication Antenna. • If the roll is failed, this can be repeated as many times as necessary, each time spending the corresponding Short Skill and making the roll. • An Activated Communication Antenna can be Activated again by the other player, applying the same procedure. In this situation, the Communication Antenna is no longer Activated by the adversary. • Player A and Player B Tokens can be used to mark the Activated Communication Antenna. It is recommended each player uses a different kind of Tokens.",
+      "name": "ACTIVATE COMMUNICATION ANTENNA",
+      "requirements": "• Only Specialist Troops can declare this Skill. • The Specialist Troop must be in Silhouette contact with a Communication Antenna.",
+      "skill_type": "short skill, Attack, Scenario"
+    },
+    "active_lieutenant": "At the end of the game, a Lieutenant is Active if they are not in any Null state (Unconscious, Dead, Sepsitorized…), Isolated State, or any Immobilized State.",
+    "communication_antennas": "There are 2 Communication Antennas on the central line of the table. They are placed 12 inches from the table edges in 300/350/400 point games, 8 inches in 200/250 point games, and 4 inches in 150 point games. Each Communication Antenna must be represented by a Transmission Antenna Token (TRANS. ANTENNA) or with a scenery piece of the same diameter (such as the Antenna of the ITS Objective Pack Alpha, the Communications Array by Warsenal or the Sat Station Antenna by Customeeple).",
+    "control_a_communication_antenna": "A Communication Antenna is Controlled by a player as long as that player is the only one with at least one Trooper (as a Model, not a Marker) in Silhouette contact with it. So there cannot be any enemy Troopers in Silhouette contact with the Communication Antenna. Models in a Null State cannot do either.",
+    "control_the_tech_coffin": "The Tech-Coffin is Controlled by a player as long as that player is the only one with at least one Trooper (as a Model, not a Marker) in Silhouette contact with it. So there cannot be any enemy Troopers in Silhouette contact with the Tech-Coffin. Models in a Null State cannot do either.",
+    "hvt_and_classified_deck_not_used": "In this scenario, the HVT Model and Secure HVT rules are not applied. Players will not deploy the HVT Model on the game table and they will not use the Classified Deck in this scenario. END OF THE MISSION This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn.",
+    "operational_learning": "When a Specialist Troop performs a Skill with the Scenario Label that requires a WIP Roll and fails, they benefit from the following MODs in subsequent Orders: In the second consecutive Order, the Trooper applies a +3 MOD to the WIP Roll required for that Scenario Skill. In the third consecutive Order—and subsequent Orders—the Trooper applies +3 and +1SD MODs to the WIP Roll required for that Scenario Skill. These MODs are cumulative with any other MOD that applies to Skills with the Scenario Label. IMPORTANT: These MODs only apply to Rolls made in consecutive Orders by the same Trooper for the same Scenario Skill, with the same target, with no interruptions, or Orders spent on other Troopers: If the Trooper passes the Roll, the sequence resets. If the Trooper do not declare that Scenario Skill, the sequence resets. If the Trooper declares the same Skill, but with a different target, the sequence resets. If an Order is spent on any other Trooper, the sequence resets. Only one sequence can be applied per Trooper and per Scenario-Labelled Skill at a time.",
+    "specialist_troops": "For the purposes of this scenario, only Hackers, Doctors, Engineers, Forward Observers, Paramedics, and Troopers possessing the Chain of Command or the Specialist Operative Special Skill are considered Specialist Troops. Hackers, Doctors, and Engineers cannot make use of Repeaters or Peripheral (Servant) Models to perform tasks reserved for Specialist Troops. 62",
+    "tech_coffin": "There is 1 Tech-Coffin placed in the center of the table. The Tech-Coffin must be represented by a Tech-Coffin Token or with a scenery piece of the same diameter (such as the Tech- Coffin of the ITS Objective Pack Alpha, the Stasis Coffins by Warsenal or the Cryo Pods by Customeeple)."
+  },
+  "suitable_for_reinforcements": true,
+  "tactical_support_options": 0,
+  "type": "Direct Action"
+}

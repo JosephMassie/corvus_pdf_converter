@@ -1,0 +1,68 @@
+{
+  "charts": {},
+  "end_of_mission": "This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn.",
+  "forces_and_deployment": {
+    "deployment_table": [
+      {
+        "army_points": 150,
+        "deployment_zone": "8 in x 24 in",
+        "swc": 3,
+        "table_size": "24 in x 32 in"
+      },
+      {
+        "army_points": 200,
+        "deployment_zone": "12 in x 32 in",
+        "swc": 4,
+        "table_size": "32 in x 48 in"
+      },
+      {
+        "army_points": 250,
+        "deployment_zone": "12 in x 32 in",
+        "swc": 5,
+        "table_size": "32 in x 48 in"
+      },
+      {
+        "army_points": 300,
+        "deployment_zone": "12 in x 48 in",
+        "swc": 6,
+        "table_size": "48 in x 48 in"
+      },
+      {
+        "army_points": 350,
+        "deployment_zone": "12 in x 48 in",
+        "swc": 7,
+        "table_size": "48 in x 48 in"
+      },
+      {
+        "army_points": 400,
+        "deployment_zone": "12 in x 48 in",
+        "swc": 8,
+        "table_size": "48 in x 48 in"
+      }
+    ],
+    "sides": "SIDE A and SIDE B",
+    "special_notes": []
+  },
+  "mission_objectives": {},
+  "name": "SUPERIORITY",
+  "scenario_special_rules": {
+    "baggage": "Troopers possessing the Baggage piece of Equipment that are inside a Zone of Operations and in a non-Null State provide an additional 20 Victory Points for Dominating the ZO.",
+    "consoles": "There are 4 Consoles, placed on the center of each Quadrant (See map). Each Console must be represented by a Console A Token or by a scenery piece of the same diameter (such as the Consoles of the ITS Objective Pack Alpha, the Human Consolesby Micro Art Studio, the Tech Consoles by Warsenal or the Comlink Console by Customeeple).",
+    "dominant_key_ops": "Players who have their Key Ops in any non-Null State in a ZO Dominated by them, have a Dominant Key Ops.",
+    "dominate_zo": "A Zone of Operations (ZO) is Dominated by a player if they have more Victory Points than the adversary inside the area. Only Troopers represented by Models or Markers (Camouflaged, Shasvastii-Embryo...) count, as well as Proxies and Peripheral Troops. Troops in a Null State do not count. Tokens representing weapons or pieces of equipment (like Mines or Deployable Repeaters), fake Holoechoes, and any Token that does not represent a Trooper does not count either. A Trooper is inside a Zone of Operations when more than half the Trooper’s base is inside that ZO.",
+    "hack_consoles": {
+      "effects": "• Allows the Specialist Troop to make a Normal WIP Roll to Hack the Console. • If the roll is failed, this can be repeated as many times as necessary, each time spending the corresponding Short Skill and making the roll. • A Hacked Console can be Hacked again by the other player applying the same procedure. In this case, both players will count that Console as Hacked. • Player A and Player B Tokens can be used to mark the Hacked Consoles. It is recommended each player uses a different kind of Tokens.",
+      "name": "HACK CONSOLES",
+      "requirements": "• Only Specialist Troops can declare this Skill. • The Specialist Troop must be in Silhouette contact with a Console.",
+      "skill_type": "short skill, Attack, Scenario."
+    },
+    "hvt_and_classified_deck_not_used": "In this scenario, the HVT Model and Secure HVT rules are not applied. Players will not deploy the HVT Model on the game table and they will not use the Classified Deck in this scenario. END OF THE MISSION This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn.",
+    "key_ops": "The Key Ops is a special tactics operator with unique training to conduct multi-domain reconnaissance and combat across the full spectrum of conflicts. At the end of the Deployment Phase, in Initiative order, players must declare which Trooper from their Army List is their Key Ops. The Trooper chosen must be always one of the models deployed on the game table. Players are not allowed to choose Troopers in Hidden Deployment or in Marker state. This Trooper must always be on the game table as a Model and not as a Marker (Camouflaged, Holoecho…). Also, Irregular Troops and those whose Troop Type is REM or VH are not eligible to be Key Ops. The Key Ops possesses the Dodge (+3) and Tactical Awareness Special Skills, even if those are not listed on their Unit Profile. These Special Skills are not cumulative, if the Trooper already has them, then they are not applied. The Key Ops is identified with a Player A or B Marker.",
+    "operational_learning": "When a Specialist Troop performs a Skill with the Scenario Label that requires a WIP Roll and fails, they benefit from the following MODs in subsequent Orders: ^ In the second consecutive Order, the Trooper applies a +3 MOD to the WIP Roll required for that Scenario Skill. ^ In the third consecutive Order—and subsequent Orders— the Trooper applies +3 and +1SD MODs to the WIP Roll required for that Scenario Skill. ^ These MODs are cumulative with any other MOD that applies to Skills with the Scenario Label. IMPORTANT: These MODs only apply to Rolls made in consecutive Orders by the same Trooper for the same Scenario Skill, with the same target, with no interruptions, or Orders spent on other Troopers: ^ If the Trooper passes the Roll, the sequence resets. ^ If the Trooper do not declare that Scenario Skill, the sequence resets. ^ If the Trooper declare the same Skill, but on a different target, the sequence resets. ^ If an Order is spent on any other Trooper, the sequence resets. ^ Only one sequence can be applied per Trooper and per Scenario-labelled Skill at a time.",
+    "shasvastii": "Troopers possessing the Shasvastii Special Skill that are inside a Zone of Operations count while they are in the Unconscious State or any non-Null State.",
+    "specialist_troops": "For the purposes of this scenario, only Hackers, Doctors, Engineers, Forward Observers, Paramedics, and Troopers possessing the Chain of Command or the Specialist Operative Special Skill are considered Specialist Troops. Hackers, Doctors, and Engineers cannot make use of Repeaters or Peripheral (Servant) Models to perform tasks reserved for Specialist Troops. 59"
+  },
+  "suitable_for_reinforcements": false,
+  "tactical_support_options": 0,
+  "type": "Direct Action"
+}

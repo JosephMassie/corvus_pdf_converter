@@ -1,0 +1,88 @@
+{
+  "charts": {},
+  "end_of_mission": "This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round.",
+  "forces_and_deployment": {
+    "deployment_table": [
+      {
+        "army_points": 150,
+        "deployment_zone": "8 in x 24 in",
+        "swc": 3,
+        "table_size": "24 in x 32 in"
+      },
+      {
+        "army_points": 200,
+        "deployment_zone": "12 in x 32 in",
+        "swc": 4,
+        "table_size": "32 in x 48 in"
+      },
+      {
+        "army_points": 250,
+        "deployment_zone": "12 in x 32 in",
+        "swc": 5,
+        "table_size": "32 in x 48 in"
+      },
+      {
+        "army_points": 300,
+        "deployment_zone": "12 in x 48 in",
+        "swc": 6,
+        "table_size": "48 in x 48 in"
+      },
+      {
+        "army_points": 350,
+        "deployment_zone": "12 in x 48 in",
+        "swc": 7,
+        "table_size": "48 in x 48 in"
+      },
+      {
+        "army_points": 400,
+        "deployment_zone": "12 in x 48 in",
+        "swc": 8,
+        "table_size": "48 in x 48 in"
+      }
+    ],
+    "sides": "SIDE A and SIDE B",
+    "special_notes": []
+  },
+  "mission_objectives": {
+    "classified": [
+      "Each player has 3 Classified Objectives (1 Objective Point for each one)."
+    ],
+    "main_objectives": [
+      "At the end of the game, have Extracted more Army Points than the adversary (2 Objective Points).",
+      "At the end of the game, have Extracted more Specialist Troops than the adversary (2 Objective Points).",
+      "At the end of the game, have Killed more Specialist Troops than the adversary (2 Objective Points).",
+      "At the end of the game, have Killed the same number of Specialist Troops as the adversary (1 Objective Point).",
+      "At the end of the game, Dominate the Launching Tower (1 Objective Point)."
+    ]
+  },
+  "name": "LAST LAUNCH",
+  "scenario_special_rules": {
+    "common_rules_of_id_tokens": "^ A Trooper with an ID Token cannot enter or be in any Marker State. ^ A Trooper can only have a single ID Token at a time. ^ If a Trooper with an ID Token enters Dead State, remove their ID Token. 44",
+    "download_id": {
+      "effects": "• Allows the Specialist Troop to make a Normal WIP Roll to Download an ID, with a successful roll an ID Token must be placed beside it. • If the roll is failed, this can be repeated as many times as necessary, each time spending the corresponding Short Skill and making the roll.",
+      "name": "DOWNLOAD ID",
+      "requirements": "• Only Specialist Troops can declare this Skill. • The Specialist Troop must be in Silhouette contact with the ID Scanner.",
+      "skill_type": "short skill, Attack, Scenario"
+    },
+    "extract_identified_tropper": {
+      "effects": "• Without needing to perform a Roll, the player can Extract the Trooper. • Remove the Trooper from the game table, and any Peripherals it has that are inside the Launching Tower. • Add the removed Troopers’ points cost to the player’s Extracted Army Points. Each player’s Extracted Army Points total is Open Information. • Troopers removed this way still count toward the player’s Victory Points, even if they entered a Null State or Dead State during the Order they were Extracted. • During a player’s Tactical Phase, if their current Lieutenant has been extracted, apply the Loss of Lieutenant rule.",
+      "name": "EXTRACT IDENTIFIED TROPPER",
+      "requirements": "• The Trooper must have an ID Token. • The Trooper must be in Silhouette contact with the ID Checker. • Troopers taking part in a Coordinated Order cannot declare this Skill.",
+      "skill_type": "short skill, Attack, Scenario"
+    },
+    "id_checker": "There is 1 ID Checker placed in the center of the Launching Tower. The ID Checker must be represented by a Console A Token or by a scenery piece of the same diameter (such as the Consoles of the ITS Objectives Pack Alpha, the Human Consoles by Micro Art Studio, the Tech Consoles by Warsenal or the Comlink Console by Customeeple).",
+    "id_scanners": "There are 2 ID Scanners placed on the central line of the table. They are placed 8 inches from the table edges (4 inches in 150 point games). The ID Scanners must be represented by a Tech-Coffin Token or with a scenery piece of the same diameter (such as the Tech- Coffins of the ITS Objective Pack Alpha, the Stasis Coffins by Warsenal, or the Cryo Pods by Customeeple).",
+    "killing": "Troopers are considered Killed by the adversary when they enter Dead State or are in a Null State at the end of the game. Troopers that have not been deployed on the game table, as a Model or Marker, at the end of the game will be considered to be Killed by the adversary. Troopers that have been Extracted are never considered to be Killed by the adversary.",
+    "no_quarter": "In this scenario, the Retreat! rules are not applied. END OF THE MISSION This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round.",
+    "specialist_troops": "For the purposes of this scenario, only Hackers, Doctors, Engineers, Forward Observers, Paramedics, and Troopers possessing the Chain of Command or the Specialist Operative Special Skill are considered Specialist Troops. Hackers, Doctors, and Engineers cannot make use of Repeaters or Peripheral (Servant) Models to perform tasks reserved for Specialist Troops.",
+    "swap_id": {
+      "effects": "• Without needing to perform a Roll, the player can Swap the ID. • Place the ID Token next to the Trooper that declared this Skill.",
+      "name": "SWAP ID",
+      "requirements": "• The Trooper must be in Silhouette contact with an Allied Trooper with an ID Token.",
+      "skill_type": "short skill, Attack, Scenario"
+    }
+  },
+  "suitable_for_reinforcements": true,
+  "tactical_support_options": 2,
+  "type": "ITS Scenario"
+}

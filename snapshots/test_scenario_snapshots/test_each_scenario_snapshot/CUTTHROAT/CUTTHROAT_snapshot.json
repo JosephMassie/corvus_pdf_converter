@@ -1,0 +1,58 @@
+{
+  "charts": {},
+  "end_of_mission": "This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round.",
+  "forces_and_deployment": {
+    "deployment_table": [
+      {
+        "army_points": 150,
+        "deployment_zone": "12 in x 24 in",
+        "swc": 3,
+        "table_size": "24 in x 32 in"
+      },
+      {
+        "army_points": 200,
+        "deployment_zone": "16 in x 32 in",
+        "swc": 4,
+        "table_size": "32 in x 48 in"
+      },
+      {
+        "army_points": 250,
+        "deployment_zone": "16 in x 32 in",
+        "swc": 5,
+        "table_size": "32 in x 48 in"
+      },
+      {
+        "army_points": 300,
+        "deployment_zone": "16 in x 48 in",
+        "swc": 6,
+        "table_size": "48 in x 48 in"
+      },
+      {
+        "army_points": 350,
+        "deployment_zone": "16 in x 48 in",
+        "swc": 7,
+        "table_size": "48 in x 48 in"
+      },
+      {
+        "army_points": 400,
+        "deployment_zone": "16 in x 48 in",
+        "swc": 8,
+        "table_size": "48 in x 48 in"
+      }
+    ],
+    "sides": "SIDE A and SIDE B",
+    "special_notes": []
+  },
+  "mission_objectives": {},
+  "name": "CUTTHROAT",
+  "scenario_special_rules": {
+    "hvt_and_classified_deck_not_used": "In this scenario, the HVT Model and Secure HVT rules are not applied. Players will not deploy the HVT Model on the game table and they will not use the Classified Deck in this scenario. END OF THE MISSION This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round.",
+    "key_ops": "The Key Ops is a special tactics operator with unique training to conduct multi-domain reconnaissance and combat across the full spectrum of conflicts. At the end of the Deployment Phase, in Initiative order, players must declare which Trooper from their Army List is their Key Ops. The Trooper chosen must be always one of the models deployed on the game table. Players are not allowed to choose Troopers in Hidden Deployment or in Marker state. This Trooper must always be on the game table as a Model and not as a Marker (Camouflaged, Holoecho…). Also, Irregular Troops and those whose Troop Type is REM or VH are not eligible to be Key Ops. The Key Ops possesses the Dodge (+3) and Tactical Awareness Special Skills, even if those are not listed on their Unit Profile. These Special Skills are not cumulative, if the Trooper already has them, then they are not applied. The Key Ops is identified with a Player A or B Marker.",
+    "killing": "Troopers are considered Killed by the adversary when they enter Dead State, or they are in a Null State at the end of the game. Troopers that have not been deployed on the game table, as a Model or Marker, at the end of the game will be considered to be Killed by the adversary. The Key Ops counts as Killing a target if they cause the target to be in a Null State at the end of the game, or if they cause the loss of one or more Wounds/STR points during the Order in which the target enters Dead State. A Lieutenant is considered Killed if they were a Lieutenant at any time during the game, and they either enter Dead State or are in a Null State at the end of the game.",
+    "no_quarter": "In this scenario, the Retreat! rules are not applied.",
+    "reinforced_tactical_link": "In this scenario the Loss of Lieutenant rule does not apply. In this mission, the identity of the Lieutenant is always Open Information. The player must indicate which Marker is the Lieutenant if it is in a Marker State (Camouflaged, Decoy...) or which Markers are the Lieutenant in the case of a Holoprojector. The Lieutenant must be placed on the game table at the beginning of the first Game Round, either as a Model or as a Marker. Players may not deploy their Lieutenants in Hidden Deployment State. If the player lacks a Lieutenant during the Tactical Phase of their Active Turn because this Trooper was not deployed or because it is in the Isolated State or any Null State (Unconscious, Dead, Sepsitorized…), then the player must name a new Lieutenant, without Order expenditure. The identity of this new Lieutenant is also Open Information. It is compulsory that this Lieutenant be a Model or a Marker placed on the game table."
+  },
+  "suitable_for_reinforcements": true,
+  "tactical_support_options": 0,
+  "type": "Direct Action"
+}

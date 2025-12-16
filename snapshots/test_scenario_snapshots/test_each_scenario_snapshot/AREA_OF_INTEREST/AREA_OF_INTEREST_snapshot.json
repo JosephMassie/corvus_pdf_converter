@@ -1,0 +1,76 @@
+{
+  "charts": {},
+  "end_of_mission": "This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn.",
+  "forces_and_deployment": {
+    "deployment_table": [
+      {
+        "army_points": 150,
+        "deployment_zone": "Radius of 12 in",
+        "swc": 3,
+        "table_size": "24 in x 32 in"
+      },
+      {
+        "army_points": 200,
+        "deployment_zone": "Radius of 20 in",
+        "swc": 4,
+        "table_size": "32 in x 48 in"
+      },
+      {
+        "army_points": 250,
+        "deployment_zone": "Radius of 20 in",
+        "swc": 5,
+        "table_size": "32 in x 48 in"
+      },
+      {
+        "army_points": 300,
+        "deployment_zone": "Radius of 24 in",
+        "swc": 6,
+        "table_size": "48 in x 48 in"
+      },
+      {
+        "army_points": 350,
+        "deployment_zone": "Radius of 24 in",
+        "swc": 7,
+        "table_size": "48 in x 48 in"
+      },
+      {
+        "army_points": 400,
+        "deployment_zone": "Radius of 24 in",
+        "swc": 8,
+        "table_size": "48 in x 48 in"
+      }
+    ],
+    "sides": "SIDE A and SIDE B",
+    "special_notes": [
+      "It is not allowed to deploy inside of an Area of Interest, or in Silhouette contact with the Communication Antenna."
+    ]
+  },
+  "mission_objectives": {
+    "classified": [
+      "Each player has 1 Classified Objective (1 Objective Point)."
+    ],
+    "main_objectives": [
+      "At the end of the game, Dominate an Area of Interest (1 Objective Point for each Dominated Area of Interest, up to a maximum of 3 Objective Points).",
+      "At the end of each GAME ROUND, Dominate the Special Area of Interest (1 Objective Point).",
+      "At the end of each GAME ROUND have an Activated Communication Antenna (1 Objective Point)."
+    ]
+  },
+  "name": "AREA OF INTEREST",
+  "scenario_special_rules": {
+    "activate_communication_antenna": {
+      "effects": "• Spending one Short Skill, without needing to perform a Roll, the Specialist Trooper Activates the Communication Antenna. • If there are any enemy Hackers within any Areas of Interest, one of them can declare an ARO to oppose the Specialist Trooper. Activating the Communication Antenna in this situation is a Face to Face WIP Roll. • If the roll is failed, this can be repeated as many times as necessary, each time spending the corresponding Short Skill. • An Activated Communication Antenna can be Activated again by the other player, applying the same procedure. In this situation, the Communication Antenna is no longer Activated by the adversary. • Player A and Player B Tokens can be used to mark the Activated Communication Antenna. It is recommended each player uses a different kind of Token.",
+      "name": "ACTIVATE COMMUNICATION ANTENNA",
+      "requirements": "• Only Specialist Troops can declare this Skill. • The Specialist Troop must be in Silhouette contact with the Communication Antenna.",
+      "skill_type": "short skill, Attack, Scenario"
+    },
+    "area_of_interest": "In this scenario the Areas of Interest are Zones of Operations (ZO), represented by Circular Templates. There are a total of three Areas of Interest, one of which is the Special Area of Interest. Before the Deployment Phase, and in Initiative order, each player must place their Circular Templates. They can be placed on any surface of the game table that is equal or larger in size than the Template, must be completely outside any Deployment Zones, and cannot overlap another Area of Interest. The player with the first turn must place an Area of Interest and the Special Area of Interest, specifying which Template is the Special Area of Interest when placing it. The player with second turn places an Area of Interest.",
+    "baggage": "Troopers possessing the Baggage piece of Equipment that are inside a Zone of Operations and in a non-Null State provide an additional 20 Victory Points for Dominating the ZO.",
+    "communication_antenna": "There is 1 Communication Antenna placed in the center of the table. The Communication Antenna must be represented by a Transmission Antenna Token (TRANS. ANTENNA) or with a scenery piece of the same diameter (such as the Antenna of the ITS Objective Pack Alpha, the Communications Array by Warsenal or the Sat Station Antenna by Customeeple).",
+    "dominate_zo": "A Zone of Operations (ZO) is Dominated by a player if they have more Victory Points than the adversary inside the area. Only Troopers represented by Models or Markers (Camouflaged, Shasvastii-Embryo...) count, as well as Proxies and Peripheral Troops. Troops in a Null State do not count. Tokens representing weapons or pieces of equipment (like Mines or Deployable Repeaters), fake Holoechoes, and any Token that does not represent a Trooper does not count either. A Trooper is inside a Zone of Operations when more than half the Trooper’s base is inside that ZO.",
+    "shasvastii": "Troopers possessing the Shasvastii Special Skill that are inside a Zone of Operations count while they are in Unconscious State or any non-Null State. 50",
+    "specialist_troops": "For the purposes of this scenario, only Hackers, Doctors, Engineers, Forward Observers, Paramedics, and Troopers possessing the Chain of Command or the Specialist Operative Special Skill are considered Specialist Troops. Hackers, Doctors, and Engineers cannot make use of Repeaters or Peripheral (Servant) Models to perform tasks reserved for Specialist Troops. INTELCOM CARD (SUPPORT AND CONTROL) Before the beginning of the game, but after choosing the first Classified Objective, the player must inform to their adversary if that card will be their Classified Objective or their INTELCOM Card. Each player rolls a die and the one who gets the highest score must be the first who announces their decision to their adversary. The content of the card, whether the mission or the card numeric value, is Private Information, no matter which use the player has chosen for it. At the end of the last Game Round, when the players count up their points and in Initiative order, the player can use their INTELCOM Card in Support and Control Mode. Support and Control Mode: The player can add the value of the Support and Control Card to their Victory Points in the Zone of Operations (ZO) of their choice. The player must have at least one Trooper inside that ZO, in a non-Null State. END OF THE MISSION This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn."
+  },
+  "suitable_for_reinforcements": true,
+  "tactical_support_options": 0,
+  "type": "ITS Scenario"
+}

@@ -1,0 +1,1179 @@
+{
+  "scenarios": [
+    {
+      "charts": {},
+      "end_of_mission": "This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn.",
+      "forces_and_deployment": {
+        "deployment_table": [
+          {
+            "army_points": 150,
+            "deployment_zone": "8 in x 24 in",
+            "swc": 3,
+            "table_size": "24 in x 32 in"
+          },
+          {
+            "army_points": 200,
+            "deployment_zone": "12 in x 32 in",
+            "swc": 4,
+            "table_size": "32 in x 48 in"
+          },
+          {
+            "army_points": 250,
+            "deployment_zone": "12 in x 32 in",
+            "swc": 5,
+            "table_size": "32 in x 48 in"
+          },
+          {
+            "army_points": 300,
+            "deployment_zone": "12 in x 48 in",
+            "swc": 6,
+            "table_size": "48 in x 48 in"
+          },
+          {
+            "army_points": 350,
+            "deployment_zone": "12 in x 48 in",
+            "swc": 7,
+            "table_size": "48 in x 48 in"
+          },
+          {
+            "army_points": 400,
+            "deployment_zone": "12 in x 48 in",
+            "swc": 8,
+            "table_size": "48 in x 48 in"
+          }
+        ],
+        "sides": "SIDE A and SIDE B",
+        "special_notes": [
+          "It is not allowed to deploy in Silhouette contact with the Akial Antenna or with any HVT."
+        ]
+      },
+      "mission_objectives": {
+        "classified": [
+          "Each player has 1 Private Classified Objective (2 Objective Points)."
+        ],
+        "main_objectives": [
+          "Accomplish Common Classified Objectives (1 Objective Point for each, up to a maximum of 6 Objective Points).",
+          "At the end of the game, have accomplished more Classified Objectives than the adversary (1 Objective Point).",
+          "At the end of the game, have accomplished at least 1 Classified Objective in each Game Round (1 Objective Point, even if the Classified Objective gets canceled for that player)."
+        ]
+      },
+      "name": "AKIAL INTERFERENCE",
+      "scenario_special_rules": {
+        "akial_antenna": "There is 1 Akial Antenna placed in the center of the table. The Akial Antenna must be represented by a Transmission Antenna Token (TRANS. ANTENNA) or with a scenery piece of the same diameter (such as the Antenna of the ITS Objective Pack Alpha, the Communications Array by Warsenal or the Sat Station Antenna by Customeeple).",
+        "common_classified_objectives": "Both players share 2 Common Classified Objectives each Game Round, which are Public Information. At the beginning of the first Game Round, each player must shuffle their Classified Deck in front of their opponent. Then each player must draw two cards, select one of them as their Private Classified Objective, and the other as a Common Classified Objective for the first Game Round. Once both players have selected a Common Classified Objective, they are revealed at the same time. At the beginning of Game Rounds two and three, any current Common Classified Objective cards that have not been accomplished by either player are discarded. The Common Classified Objective cards that have been accomplished are moved to a separate area, so that each player can keep track of which cards have been accomplished. Player A and Player B Tokens can be used to mark which player has accomplished each Common Classified Objective card. It is recommended each player uses a different kind of Token. Each player then draws two cards from their Classified Deck, chooses one as a Common Classified Objective, and discards the other. Any Common Classified Objective that is checked “at the end of the game” or “during the game” can be accomplished at the end of any Player Turn. If both players accomplished the same Common Classified Objective in the same Round, both players have accomplished it. A Common Classified Objective can only be accomplished after it has been drawn. If a player’s deck runs out of cards, shuffle their discard pile into a new deck.",
+        "emit_akial_interference": {
+          "effects": "• Allows the Specialist Troop to make a Normal WIP Roll to Emit Akial Interference. If the roll is failed, this can be repeated as many times as necessary, each time spending the corresponding Short Skill and making the roll. • When Akial Interference is Emitted, the player may cancel a Common Classified Objective that has been accomplished by the adversary and that shares a symbol with a Common Classified Objective previously accomplished by the player. • The adversary has no longer accomplished the chosen Common Classified Objective card. If neither player has accomplished the card, discard it. • Only Common Classified Objective cards that have been accomplished count towards the final score total, or can be used to Emit Akial Interference.",
+          "name": "EMIT AKIAL INTERFERENCE",
+          "requirements": "• Only Specialist Troops can declare this Skill. • The Specialist Troop must be in Silhouette contact with the Akial Antenna • The player has accomplished a Common Classified Objective that has any of those symbols: , , , . • Each of those Common Classified Objective cards can only be chosen once for this Skill. • Each Specialist Troop can only Emit Akial Interference once per Game Round.",
+          "skill_type": "short skill, Attack, Scenario"
+        },
+        "filter_the_signal": {
+          "effects": "• Without needing to perform a Roll, the player can Filter the Signal. • When Filtering the Signal, the player chooses one of the current Common Classified Objective cards. • If any player has accomplished the chosen card, it is placed with the other accomplished cards. If neither player has accomplished the card, discard it. • The player draws a replacement card from their deck.",
+          "name": "FILTER THE SIGNAL",
+          "requirements": "• Only Specialist Troops can declare this Skill. • The Specialist Troop must be in Silhouette contact with the Akial Antenna.",
+          "skill_type": "short skill, Attack, Scenario"
+        },
+        "multiple_hvts": "Each of the players will deploy four HVTs, following the usual rules for deploying HVTs. Each HVT may only be used to accomplish one Classified Objective - once a Classified Objective targeting an HVT has been completed, that HVT Model is removed from the game table. 23",
+        "private_classified_objective": "A Private Classified Objective cannot be used to Emit Akial Interference, and cannot be canceled by it. The Private Classified Objectives are Private Information.",
+        "secure_hvt_or_secure_treasure_not_used": "In this scenario, the Secure HVT or Secure Treasure rule is not applied.",
+        "signal_redundancy": "If, upon revealing the Common Classified Objectives, both have the same name, the player with the first Player Turn must draw another card from their Classified Deck and place it as an extra Common Classified Objective. Two Classified Objectives with the same name, whether Common or Private, can both be accomplished in the same Player Turn as long as they each have a different target or are accomplished by a different Trooper.",
+        "specialist_troops": "For the purposes of this scenario, only Hackers, Doctors, Engineers, Forward Observers, Paramedics, and Troopers possessing the Chain of Command or the Specialist Operative Special Skill are considered Specialist Troops. Hackers, Doctors, and Engineers cannot make use of Repeaters or Peripheral (Servant) Models to perform tasks reserved for Specialist Troops. END OF THE MISSION This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn."
+      },
+      "suitable_for_reinforcements": true,
+      "tactical_support_options": 0,
+      "type": "ITS Scenario"
+    },
+    {
+      "charts": {},
+      "end_of_mission": "This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. CONTROL THE CONSOLE At the end of each Game Round, a Console is Controlled by a player as long as that player is the only one with at least one Trooper (as a Model, not a Marker) in Silhouette contact with it. So there cannot be any enemy Troopers in Silhouette contact with the Console. Models in a Null State cannot do either. SPECIALIST TROOPS For the purposes of this scenario, only Hackers, Doctors, Engineers, Forward Observers, Paramedics, and Troopers possessing the Chain of Command or the Specialist Operative Special Skill are considered Specialist Troops. Hackers, Doctors, and Engineers cannot make use of Repeaters or Peripheral (Servant) Models to perform tasks reserved for Specialist Troops.",
+      "forces_and_deployment": {
+        "deployment_table": [
+          {
+            "army_points": 150,
+            "deployment_zone": "12 in x 24 in",
+            "swc": 3,
+            "table_size": "24 in x 32 in"
+          },
+          {
+            "army_points": 200,
+            "deployment_zone": "16 in x 32 in",
+            "swc": 4,
+            "table_size": "32 in x 48 in"
+          },
+          {
+            "army_points": 250,
+            "deployment_zone": "16 in x 32 in",
+            "swc": 5,
+            "table_size": "32 in x 48 in"
+          },
+          {
+            "army_points": 300,
+            "deployment_zone": "16 in x 48 in",
+            "swc": 6,
+            "table_size": "48 in x 48 in"
+          },
+          {
+            "army_points": 350,
+            "deployment_zone": "16 in x 48 in",
+            "swc": 7,
+            "table_size": "48 in x 48 in"
+          },
+          {
+            "army_points": 400,
+            "deployment_zone": "16 in x 48 in",
+            "swc": 8,
+            "table_size": "48 in x 48 in"
+          }
+        ],
+        "sides": "SIDE A and SIDE B",
+        "special_notes": [
+          "Exclusion Zone is the area covering 4 inches (2 inches in 150 point games) either side of the central line of the game table."
+        ]
+      },
+      "mission_objectives": {
+        "classified": [
+          "Each player has 2 Classified Objectives (1 Objective Point for each one)."
+        ],
+        "main_objectives": [
+          "At the end of the Game, the Tracking Beacon is totally inside the enemy half of the game table. (2 Objective Points).",
+          "At the end of each Game Round, Control the Tracking Beacon (1 Objective Point).",
+          "At the end of each Game Round, Control at least one Console (1 Objective Point)."
+        ]
+      },
+      "name": "B-PONG",
+      "scenario_special_rules": {
+        "activate_console": {
+          "effects": "• Allows the Specialist Troop to make a Normal WIP Roll to Activate the Console. If the roll is failed, this can be repeated as many times as necessary, each time spending the corresponding Short Skill and making the roll. • Once you successfully have Activated the Console, you must choose and perform one of the following actions: • Nudge the Tracking Beacon: Place the Tracking Beacon anywhere within 2 inches of its current position. • Magnetize the Tracking Beacon: Place the Tracking Beacon within 6 inches of its current position and directly towards the center of the game table. This action cannot be used to move the Tracking Beacon beyond the center of the table. 26",
+          "name": "ACTIVATE CONSOLE",
+          "requirements": "• Only Specialist Troops can declare this Skill. • The Specialist Troop must be in Silhouette contact with the Console. • The Tracking Beacon cannot be in Silhouette contact with a Trooper. • Each Specialist Troop can only successfully Activate a Console once per Game Round.",
+          "skill_type": "short skill, Attack, Scenario."
+        },
+        "common_rules_of_the_tracking_beacon": "When moving the Tracking Beacon, the following rules must be followed: ^ The final position of the Tracking Beacon must be fully supported by the surface it is placed on, and it cannot be placed on a vertical surface. ^ It must be possible to draw a path between the Tracking Beacon’s starting and final positions. The path cannot be blocked by an impassable obstacle (for example a wall of infinite height, a closed door or sealed room...) or a gap too small for the diameter of the Tracking Beacon to pass through. ^ The Tracking Beacon is placed in its final position at the Conclusion of the Order.",
+        "consoles": "There are two Consoles, placed on the central line of the game table. They are placed 12 inches from the table edges in 300/350/400 point games, 8 inches in 200/250 point games, and 6 inches in 150 point games (see map). Each Console must be represented by a Console A Token or by a scenery piece of the same diameter (such as the Consoles from the ITS Objectives Pack Alpha, the Human Consoles by Micro Art Studio, the Tech Consoles by Warsenal or the Comlink Console by Customeeple).",
+        "control_the_console": "At the end of each Game Round, a Console is Controlled by a player as long as that player is the only one with at least one Trooper (as a Model, not a Marker) in Silhouette contact with it. So there cannot be any enemy Troopers in Silhouette contact with the Console. Models in a Null State cannot do either.",
+        "control_the_tracking_beacon": "At the end of each Game Round, the Tracking Beacon is Controlled by a player as long as that player is the only one with at least one Trooper (as a Model, not a Marker) in Silhouette contact with it. So there cannot be any enemy Troopers in Silhouette contact with the Tracking Beacon. Models in a Null State cannot do either.",
+        "no_quarter": "In this scenario, the Retreat! rules are not applied. END OF THE MISSION This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round.",
+        "relocate_the_tracking_beacon": {
+          "effects": "• Spending one Short Skill, without needing to perform a Roll, the player can Relocate the Tracking Beacon. • Place the Tracking Beacon anywhere within 4 inches of its previous position.",
+          "name": "RELOCATE THE TRACKING BEACON",
+          "requirements": "• Only Specialist Troops can declare this Skill. • The Specialist Troop must be in Silhouette contact with the Tracking Beacon. • Each Specialist Troop can only declare this Skill once per Game Round.",
+          "skill_type": "short skill, Attack, Scenario."
+        },
+        "specialist_troops": "For the purposes of this scenario, only Hackers, Doctors, Engineers, Forward Observers, Paramedics, and Troopers possessing the Chain of Command or the Specialist Operative Special Skill are considered Specialist Troops. Hackers, Doctors, and Engineers cannot make use of Repeaters or Peripheral (Servant) Models to perform tasks reserved for Specialist Troops.",
+        "tracking_beacon": "There is 1 Tracking Beacon placed in the center of the table. The Tracking Beacon must be represented by a Beacon Token (BEACON) or by a scenery piece of the same diameter (such as the Beacon from the ITS Objectives Pack Alpha, the Tactical Beacons by Micro Art Studio, the Tracking Beacons by Warsenal or the Mark One Beacons by Customeeple)."
+      },
+      "suitable_for_reinforcements": true,
+      "tactical_support_options": 2,
+      "type": "ITS Scenario"
+    },
+    {
+      "charts": {
+        "panoply_chart": [
+          {
+            "item_1": "Grenades",
+            "item_2": "MOV 8-4",
+            "roll_1": "5-6",
+            "roll_2": "15"
+          },
+          {
+            "item_1": "DA CC Weapon",
+            "item_2": "TAG: BS Attack (Shock)",
+            "roll_1": "7-8",
+            "roll_2": "16"
+          },
+          {
+            "item_1": "MULTI Sniper Rifle",
+            "item_2": "EXP CC Weapon",
+            "roll_1": "17",
+            "roll_2": "10"
+          },
+          {
+            "item_1": "Mimetism (-6)",
+            "item_2": "TAG: Immunity (AP)",
+            "roll_1": "19",
+            "roll_2": "12"
+          }
+        ]
+      },
+      "end_of_mission": "This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn.",
+      "forces_and_deployment": {
+        "deployment_table": [
+          {
+            "army_points": 150,
+            "deployment_zone": "8 in x 24 in",
+            "swc": 3,
+            "table_size": "24 in x 32 in"
+          },
+          {
+            "army_points": 200,
+            "deployment_zone": "12 in x 32 in",
+            "swc": 4,
+            "table_size": "32 in x 48 in"
+          },
+          {
+            "army_points": 250,
+            "deployment_zone": "12 in x 32 in",
+            "swc": 5,
+            "table_size": "32 in x 48 in"
+          },
+          {
+            "army_points": 300,
+            "deployment_zone": "12 in x 48 in",
+            "swc": 6,
+            "table_size": "48 in x 48 in"
+          },
+          {
+            "army_points": 350,
+            "deployment_zone": "12 in x 48 in",
+            "swc": 7,
+            "table_size": "48 in x 48 in"
+          },
+          {
+            "army_points": 400,
+            "deployment_zone": "12 in x 48 in",
+            "swc": 8,
+            "table_size": "48 in x 48 in"
+          }
+        ],
+        "sides": "SIDE A and SIDE B",
+        "special_notes": [
+          "Exclusion Zone is the area covering 4 inches either side of the central line of the game table."
+        ]
+      },
+      "mission_objectives": {
+        "classified": [
+          "Each player has 3 Classified Objectives (1 Objective Point for each one)."
+        ],
+        "main_objectives": [
+          "At the end of the game, have the Enemy Prototype Captured (2 Objective Points).",
+          "At the end of the game, have the Enemy Prototype Captured in your Deployment Zone (1 Objective Point, in addition to the previous Objective).",
+          "At the end of the game, your Prototype is not Captured by the enemy (1 Objective Point, but only if your Prototype has not been Destroyed).",
+          "At the end of the game, your Prototype is Destroyed (3 Objective Points).",
+          "At the end of the game, have acquired more weapons or items from the Panoplies than the adversary (1 Objective Points)."
+        ]
+      },
+      "name": "CORPORATE APPROPRIATION",
+      "scenario_special_rules": {
+        "capturing_enemy_prototype": "A Enemy Prototype is Captured by a player if, at the end of the game, that player has a Model, but not a Marker, carrying it. That Trooper cannot be in a Null State or in Silhouette contact with any enemy Model. 29",
+        "common_rules_of_prototypes": {
+          "name": "COMMON RULES OF PROTOTYPES"
+        },
+        "destroy_the_prototypes": "A Prototype can only be damaged by CC Attacks with Weapons possessing the Anti-materiel Trait, or by placing D-Charges. The Prototype is Destroyed and must be removed from the gaming table when it suffers a number of Wounds equal or higher than its STR Attribute value. The Prototype can be the target of the Engineer Special Skill or the GizmoKit piece of Equipment Attacks cannot be declared against Prototypes during the first Game Round, with the exception of Pick Up Prototype.",
+        "name_arm_bts_str": "S Prototype 6 6 3 3 FIXED CC ROLL= 8, GIZMOKIT (PH=9) AUTOMATED DEFENSE SYSTEM (ADS) Every Prototype is equipped with an ADS to avoid tampering with the Prototype system. Any CC Attack made against the Prototype will trigger a CC Attack in reaction, which automatically rolls an 8. Any CC Attack against the Prototype is automatically a Face to Face Roll. No MODs can be applied to the attacker’s CC Attribute. If the ADS’s Roll of 8 is a success, the attacker suffers a Stun Ammunition hit, forcing them to make one Saving Roll against BTS, with PS 5. The Immunity (Enhanced) and Immunity (BTS) Special Skills are not effective against this hit.",
+        "panoplies": "There are a total of 2 Panoplies, placed in different halves of the table, each in the middle of the front edge of the Deployment Zone. (see map) Each Panoply must be represented by an Objective Token or by a scenery piece of the same diameter (such as the Objective of the ITS Objectives Pack or the Alpha Info Hubs by Micro Art Studio).",
+        "pick_up_prototype": {
+          "effects": "• Spending one Short Skill, without needing a Roll, any Trooper can pick up an Enemy Prototype in any of the situations previously mentioned. • The Trooper must follow the Common Rules of Prototypes.",
+          "name": "PICK UP PROTOTYPE",
+          "requirements": "The Trooper must be in one of the following situations: • Be in Silhouette contact with an allied Trooper in a Normal State with an Enemy Prototype. • Be in Silhouette contact with an Enemy Prototype Token that is not being carried.",
+          "skill_type": "short skill, Attack, Scenario"
+        },
+        "prototype": "There are 2 Prototypes, 1 belonging to each player, on the central line of the table. They are placed 12 inches from the table edges in 300/350/400 point games, 8 inches in 200/250 point games, and 6 inches in 150 point games. Before the Deployment Phase, the player with the second Turn decides which Prototype belongs to which player. Each Prototype must be represented by an Objective Token or by a scenery piece of the same diameter (such as the Objective of the ITS Objectives Pack or the Alpha Info Hubs by Micro Art Studio). In this scenario the Prototypes have a Profile and can be targeted.",
+        "use_panoplies": {
+          "effects": "• By succeeding at a WIP Roll, a Trooper gains the D-Charges weapon or, if their player prefers, makes a Roll on the Panoply Chart to obtain one different weapon or piece of equipment. Once a success has been rolled, that Trooper cannot use this Panoply again. • Troopers possessing the Booty Special Skill, or any other Skill which specifies so, don’t need to make the WIP Roll. • A Trooper in Silhouette contact with this piece of scenery may spend one",
+          "name": "USE PANOPLIES",
+          "requirements": "• The Trooper must be in Silhouette contact with a Panoply.",
+          "skill_type": "short skill, Attack, Scenario."
+        }
+      },
+      "suitable_for_reinforcements": true,
+      "tactical_support_options": 0,
+      "type": "ITS Scenario"
+    },
+    {
+      "charts": {},
+      "end_of_mission": "This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn.",
+      "forces_and_deployment": {
+        "deployment_table": [
+          {
+            "army_points": 150,
+            "deployment_zone": "8 in x 24 in",
+            "swc": 3,
+            "table_size": "24 in x 32 in"
+          },
+          {
+            "army_points": 200,
+            "deployment_zone": "12 in x 32 in",
+            "swc": 4,
+            "table_size": "32 in x 48 in"
+          },
+          {
+            "army_points": 250,
+            "deployment_zone": "12 in x 32 in",
+            "swc": 5,
+            "table_size": "32 in x 48 in"
+          },
+          {
+            "army_points": 300,
+            "deployment_zone": "12 in x 48 in",
+            "swc": 6,
+            "table_size": "48 in x 48 in"
+          },
+          {
+            "army_points": 350,
+            "deployment_zone": "12 in x 48 in",
+            "swc": 7,
+            "table_size": "48 in x 48 in"
+          },
+          {
+            "army_points": 400,
+            "deployment_zone": "12 in x 48 in",
+            "swc": 8,
+            "table_size": "48 in x 48 in"
+          }
+        ],
+        "sides": "SIDE A and SIDE B",
+        "special_notes": []
+      },
+      "mission_objectives": {
+        "classified": [
+          "Each player has 1 Classified Objective (1 Objective Point). 31"
+        ],
+        "main_objectives_attacker": [
+          "Unlock the Data Console (1 Objective Point).",
+          "Extract the Data Pack from the Data Console (2 Objective Points).",
+          "The Trooper that Extracted the Data Pack is not Killed at the end of the game (1 Objective Point).",
+          "At the end of the game, the Trooper that Extracted the Data Pack is in your Deployment Zone and is not in a Null State (2 Objective Points).",
+          "At the end of the game, Dominate the Server Room (2 Objective Points)."
+        ],
+        "main_objectives_defender": [
+          "Prevent the Attacker from Unlocking the Data Console (1 Objective Point).",
+          "Prevent the Attacker from Extracting the Data Pack from the Data Console (3 Objective Points).",
+          "Kill the Trooper that Extracted the Data Pack (2 Objective Points, only if the Attacker has Extracted the Data Pack).",
+          "At the end of the game, Dominate the Server Room (3 Objective Points)."
+        ],
+        "points": [
+          "To Kill at least 75 enemy Army Points. To Kill at least 100 enemy Army Points. To Kill at least 125 enemy Army Points. To Kill at least 150 enemy Army Points. To Kill at least 175 enemy Army Points. To Kill at least 200 enemy Army Points. 2 Objective Points."
+        ]
+      },
+      "name": "CRITICAL INTERVENTION",
+      "scenario_special_rules": {
+        "attacker_and_defender": "In this scenario, two distinct roles are established: Attacker and Defender. Each has different Main Objectives. The player with the first Player Turn is the Attacker. The player with the second Player Turn is the Defender. Before the Deployment Phase, the Defender may spend 1 single Command Token to perform one of the following actions: ^ Activate the Server Room Defense System. ^ Ignore the Deployment Restriction for the Server Room. You can deploy up to 65 points of Troops from your Army List, anywhere in the Server Room. This does not require the use of Special Skills with the Superior Deployment Label. 32",
+        "baggage": "Troopers possessing the Baggage piece of Equipment that are inside a Zone of Operations and in a non-Null State provide an additional 20 Victory Points for Dominating the ZO.",
+        "data_console": "There is 1 Data Console placed in the center of the table. Inside the Data Console is 1 single Data Pack. The Data Console must be represented by a Console A Token or by a scenery piece of the same diameter (such as the Consoles from the ITS Objectives Pack Alpha, the Human Consoles by Micro Art Studio, the Tech Consoles by Warsenal or the Comlink Console by Customeeple).",
+        "data_pack": "The Data Pack must be represented by a DATA PACK Token. The Trooper who has the Data Pack must always be on the game table as a Model and not as a Marker (Camouflaged, Holoecho…). Once the Data Pack is Extracted, if the Trooper carrying it enters Dead State the DATA PACK Token must be removed from the game table. 33 INHIBITOR ANTENNA There is an Inhibitor Antenna placed next to one of the outer corners of the Server Room in the Defender’s half of the game table. (see map). The Inhibitor Antenna must be represented by a Transmission Antenna Token (TRANS. ANTENNA) or with a scenery piece of the same diameter (such as the Antenna of the ITS Objective Pack Alpha, the Communications Array by Warsenal or the Sat Station Antenna by Customeeple).",
+        "dominate_zo": "A Zone of Operations (ZO) is Dominated by a player if they have more Victory Points than the adversary inside the area. Only Troopers represented by Models or Markers (Camouflaged, Shasvastii-Embryo...) count, as well as Proxies and Peripheral Troops. Troops in a Null State do not count. Tokens representing weapons or pieces of equipment (like Mines or Deployable Repeaters), fake Holoechoes, and any Token that does not represent a Trooper does not count either. A Trooper is inside a Zone of Operations when more than half the Trooper’s base is inside that ZO.",
+        "extract_data_pack": {
+          "effects": "• Allows the Specialist Troop to make a Normal WIP-6 Roll to Extract the Data Pack, with a successful roll a DATA PACK Token must be placed besides it. • If the roll is failed, this can be repeated as many times as necessary, each time spending the corresponding Short Skill and making the roll. • If the Data Console is Unlocked, the roll is a Normal WIP roll without the -6 MOD.",
+          "name": "EXTRACT DATA PACK",
+          "requirements": "• Only Specialist Troops can declare this Skill. • The Specialist Troop must be in Silhouette contact with the Data Console.",
+          "skill_type": "short skill, Attack, Scenario."
+        },
+        "important": "This use of a Command Token is in addition to the Strategic Use of Command Tokens.",
+        "intelcom_card": "(SUPPORT AND CONTROL) Before the beginning of the game, but after choosing the first Classified Objective, the player must inform to their adversary if that card will be their Classified Objective or their INTELCOM Card. Each player rolls a die and the one who gets the highest score must be the first who announces their decision to their adversary. The content of the card, whether the mission or the card numeric value, is Private Information, no matter which use the player has chosen for it. At the end of the last Game Round, when the players count up their points and in Initiative order, the player can use their INTELCOM Card in Support and Control Mode. Support and Control Mode: The player can add the value of the Support and Control Card to their Victory Points in the Zone of Operations (ZO) of their choice. The player must have at least one Trooper inside that ZO, in a non-Null State. END OF THE MISSION This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn.",
+        "killing": "Troopers are considered Killed by the adversary when they enter Dead State, or they are in a Null State at the end of the game. Troopers that have not been deployed on the game table, as a Model or Marker, at the end of the game will be considered to be Killed by the adversary.",
+        "server_room": "In this scenario the Server Room is a Zone of Operations (ZO). Placed in the center of the table, it covers an area of 8 by 8 inches. To represent the Server Room, we recommend using the Objective Room by Micro Art Studio, the Command Bunker by Warsenal, or the Panic Room by Customeeple. In game terms it is considered to have walls of infinite height that completely block Line of Fire. It has four Gates, one in the middle of each wall (see map). The Gates of the Server Room are open at the start of the game. The Server Room Gates must be represented by a Wide Gate Token or a scenery piece with the same size.",
+        "server_room_defense_system": "There are 2 Armed Turrets, placed inside the Server Room in different corners (see map). The Armed Turrets must be represented by a Defensive Turret A /B Token or by a Model or piece of scenery with the same Silhouette value (for example Turrets from the ITS Objectives Pack Alpha). If the Server Room’s Defense System is active, the Armed Turrets react with BS Attack or CC Attack to any Order declared by an active Enemy Model (but not Markers) in LOF or in Silhouette contact.",
+        "shasvastii": "Troopers possessing the Shasvastii Special Skill that are inside a Zone of Operations count while they are in the Shasvastii- Embryo State or any non-Null State.",
+        "specialist_troops": "For the purposes of this scenario, only Hackers, Doctors, Engineers, Forward Observers, Paramedics, and Troopers possessing the Chain of Command or the Specialist Operative Special Skill are considered Specialist Troops. Hackers, Doctors, and Engineers cannot make use of Repeaters or Peripheral (Servant) Models to perform tasks reserved for Specialist Troops.",
+        "use_inhibitor_antenna": {
+          "effects": "• When declaring this Skill, you must choose one of the following actions: • (Only Attacker) Unlock the Data Console. • Activate or deactivate the Server Room Defense System. • With a successful a Normal WIP Roll, the chosen action is performed. • If the roll is failed, this can be repeated as many times as necessary, each time spending the corresponding Short Skill and making the roll.",
+          "name": "USE INHIBITOR ANTENNA",
+          "requirements": "• Only Specialist Troops can declare this Skill. • The Specialist Troop must be in Silhouette contact with the Inhibitor Antenna.",
+          "skill_type": "short skill, Attack, Scenario"
+        },
+        "wip_arm_bts_str": "S -- 5 10 -- 11 2 3 1 2 Equipment: 360º Visor Special Skills: Total Reaction BS Weapons: Combi Rifle CC Weapons: PARA CC Weapon (-3)"
+      },
+      "suitable_for_reinforcements": false,
+      "tactical_support_options": 1,
+      "type": "ITS Scenario"
+    },
+    {
+      "charts": {},
+      "end_of_mission": "This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn.",
+      "forces_and_deployment": {
+        "deployment_table": [
+          {
+            "army_points": 150,
+            "deployment_zone": "8 in x 24 in",
+            "swc": 3,
+            "table_size": "24 in x \n32 in"
+          },
+          {
+            "army_points": 200,
+            "deployment_zone": "12 in x 32 in",
+            "swc": 4,
+            "table_size": "32 in x \n48 in"
+          },
+          {
+            "army_points": 250,
+            "deployment_zone": "12 in x 32 in",
+            "swc": 5,
+            "table_size": "32 in x \n48 in"
+          },
+          {
+            "army_points": 300,
+            "deployment_zone": "12 in x 48 in",
+            "swc": 6,
+            "table_size": "48 in x \n48 in"
+          },
+          {
+            "army_points": 350,
+            "deployment_zone": "12 in x 48 in",
+            "swc": 7,
+            "table_size": "48 in x \n48 in"
+          },
+          {
+            "army_points": 400,
+            "deployment_zone": "12 in x 48 in",
+            "swc": 8,
+            "table_size": "48 in x \n48 in"
+          }
+        ],
+        "sides": "SIDE A and SIDE B",
+        "special_notes": [
+          "It is not permitted to deploy in Silhouette contact with the Antennas.",
+          "Exclusion Zones are the areas between the Deployment Zones."
+        ]
+      },
+      "mission_objectives": {
+        "classified": [
+          "There are no Classified Objectives."
+        ],
+        "main_objectives": [
+          "At the end of each Game Round, Dominate a Dead Zone (1 Objective Point for each Dead Zone).",
+          "At the end of the game, Dominate both Dead Zones (2 Objective Points).",
+          "At the end of the game, have an Activated Antenna (1 Objective Point for each Activated Antenna)."
+        ]
+      },
+      "name": "CROSSING LINES",
+      "scenario_special_rules": {
+        "activate_antenna": {
+          "effects": "• Allows the Specialist Troop to make a Normal WIP Roll to Activate an Antenna. • If the roll is failed, this can be repeated as many times as necessary, each time spending the corresponding Short Skill and making the roll. • An Activated Antenna can be Activated again by the other player, applying the same procedure. In this situation, the Antenna is no longer Activated by the adversary. • Player A and Player B Tokens can be used to mark the Activated Antenna. It is recommended each player uses a different kind of Token. 36",
+          "name": "ACTIVATE ANTENNA",
+          "requirements": "• Only Specialist Troops can declare this Skill. • The Specialist Troop must be in Silhouette contact with an Antenna.",
+          "skill_type": "short skill, Attack, Scenario."
+        },
+        "antennas": "There are 2 Antennas placed on the central line of the table. They are placed 12 inches from the table edges in 300/350/400 point games, 8 inches in 200/250 point games, and 6 inches in 150 point games (see map). The Antennas must be represented by Transmission Antenna Tokens (TRANS. ANTENNA) or with scenery pieces of the same diameter (such as the Antenna of the ITS Objective Pack Alpha, the Communications Array by Warsenal or the Sat Station Antenna by Customeeple).",
+        "baggage": "Troopers possessing the Baggage piece of Equipment that are inside a Zone of Operations and in a non-Null State provide an additional 20 Victory Points for Dominating the ZO.",
+        "dead_zone": "There are two Dead Zones, one in each half of the game table. The Dead Zones are the areas between the Deployment Zones. In this scenario each Dead Zone is a Zone of Operations (ZO).",
+        "dominate_zo": "A Zone of Operations (ZO) is Dominated by a player if they have more Victory Points than the adversary inside the area. Only Troopers represented by Models or Markers (Camouflaged, Shasvastii-Embryo...) count, as well as Proxies and Peripheral Troops. Troops in a Null State do not count. Tokens representing weapons or pieces of equipment (like Mines or Deployable Repeaters), fake Holoechoes, and any Token that does not represent a Trooper does not count either. A Trooper is inside a Zone of Operations when more than half the Trooper’s base is inside that ZO.",
+        "secure_hvt_or_secure_treasure_not_used": "In this scenario, the Secure HVT or Secure Treasure rule is not applied.",
+        "shasvastii": "Troopers possessing the Shasvastii Special Skill that are inside a Zone of Operations count while they are in the Shasvastii- Embryo State or any non-Null State.",
+        "specialist_troops": "For the purposes of this scenario, only Hackers, Doctors, Engineers, Forward Observers, Paramedics, and Troopers possessing the Chain of Command or the Specialist Operative Special Skill are considered Specialist Troops. Hackers, Doctors, and Engineers cannot make use of Repeaters or Peripheral (Servant) Models to perform tasks reserved for Specialist Troops. END OF THE MISSION This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn.",
+        "superior_deployment": "With the exception of Impersonation, Special Skills with the Superior Deployment Label cannot be used in this scenario."
+      },
+      "suitable_for_reinforcements": false,
+      "tactical_support_options": 0,
+      "type": "ITS Scenario"
+    },
+    {
+      "charts": {},
+      "end_of_mission": "This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn.",
+      "forces_and_deployment": {
+        "deployment_table": [
+          {
+            "army_points": 150,
+            "deployment_zone": "8 in x 24 in",
+            "swc": 3,
+            "table_size": "24 in x 32 in"
+          },
+          {
+            "army_points": 200,
+            "deployment_zone": "12 in x 32 in",
+            "swc": 4,
+            "table_size": "32 in x 48 in"
+          },
+          {
+            "army_points": 250,
+            "deployment_zone": "12 in x 32 in",
+            "swc": 5,
+            "table_size": "32 in x 48 in"
+          },
+          {
+            "army_points": 300,
+            "deployment_zone": "12 in x 48 in",
+            "swc": 6,
+            "table_size": "48 in x 48 in"
+          },
+          {
+            "army_points": 350,
+            "deployment_zone": "12 in x 48 in",
+            "swc": 7,
+            "table_size": "48 in x 48 in"
+          },
+          {
+            "army_points": 400,
+            "deployment_zone": "12 in x 48 in",
+            "swc": 8,
+            "table_size": "48 in x 48 in"
+          }
+        ],
+        "sides": "SIDE A and SIDE B",
+        "special_notes": [
+          "It is not allowed to deploy in Silhouette contact with a Civilian."
+        ]
+      },
+      "mission_objectives": {
+        "classified": [
+          "Each player has 2 Classified Objectives (2 Objective Points for each one)."
+        ],
+        "main_objectives": [
+          "At the end of the game, have an Extracted Civilian (1 Objective Point for each one).",
+          "At the end of the game, have an Extracted enemy HVT (1 Objective Point for each one)."
+        ]
+      },
+      "name": "EVACUATION",
+      "scenario_special_rules": {
+        "activate_extraction_console": {
+          "effects": "• Allows the Specialist Troop to make a Normal WIP Roll to Activate an Extraction Console. If the roll is failed, this can be repeated as many times as necessary, each time spending the corresponding Short Skill and making the roll. • If the roll is successful, the player chooses one of the Specialist Troop’s CivEvaced Civilians or Enemy HVTs. The chosen Civilian or HVT has been Extracted, and is removed from the game table. 39",
+          "name": "ACTIVATE EXTRACTION CONSOLE",
+          "requirements": "• Only Specialist Troops can declare this Skill. • The Specialist Troop must be in Silhouette contact with an Extraction Console. • The Specialist Troop must be CivEvacing a Civilian or an Enemy HVT. • This Skill cannot be declared during the first Game Round.",
+          "skill_type": "short skill, Attack, Scenario."
+        },
+        "civilians": "There are a total of four Civilians on the game table, two of them in each table half. Each Civilian is placed 16 inches from the rear of the Deployment Zone and 6 inches from the edge of the table. (see the map). For 150 point games, the Civilians are placed 12 inches from the rear of the Deployment Zone and 6 inches from the edges of the table. (see the map). The Civilians cannot be placed on top of or inside of any Scenery Item or Building, always deploying them in accessible locations on the table. Scenery placement must facilitate this. Players can use any Model from the Infinity or the Infinity Bootleg range, preferably those designated as HVT or as a Civilian. Good examples of this are the O-12 High Commissioner, the Tohaa Diplomat, Go-Go Marlene, the Fusilier Angus, the TAG Pilots, the VIP Executive or the HAZMAT A1 Specialist. Players can also use the Player A and Player B Tokens to identify or even represent their Civilians.",
+        "extraction_consoles": "There are 2 Extraction Consoles, placed on the central line of the table. They are placed 16 inches from the edges of the table in 300/350/400 point games, 12 inches in 200/250 point games, and 8 inches in 150 point games (see map). Each Console must be represented by a Console A Token or by a scenery piece of the same diameter (such as the Consoles of the ITS Objective Pack Alpha, the Human Consoles by Micro Art Studio, the Tech Consoles by Warsenal or the Comlink Console by Customeeple).",
+        "important": "These MODs only apply to Rolls made in consecutive Orders by the same Trooper for the same Scenario Skill, with the same target, with no interruptions, or Orders spent on other Troopers: ^ If the Trooper passes the Roll, the sequence resets. ^ If the Trooper do not declare that Scenario Skill, the sequence resets. ^ If the Trooper declare the same Skill, but on a different target, the sequence resets. ^ If an Order is spent on any other Trooper, the sequence resets. ^ Only one sequence can be applied per Trooper and per Scenario-labelled Skill at a time. END OF THE MISSION This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn.",
+        "multiple_hvts": "Each of the players deploys two HVTs, following the usual rules for deploying HVTs.",
+        "operational_learning": "When a Specialist Troop performs a Skill with the Scenario Label that requires a WIP Roll and fails, they benefit from the following MODs in subsequent Orders: ^ In the second consecutive Order, the Trooper applies a +3 MOD to the WIP Roll required for that Scenario Skill. ^ In the third consecutive Order—and subsequent Orders— the Trooper applies +3 and +1SD MODs to the WIP Roll required for that Scenario Skill. ^ These MODs are cumulative with any other MOD that applies to Skills with the Scenario Label.",
+        "specialist_troops": "For the purposes of this scenario, only Hackers, Doctors, Engineers, Forward Observers, Paramedics, and Troopers possessing the Chain of Command or the Specialist Operative Special Skill are considered Specialist Troops. Hackers, Doctors, and Engineers cannot make use of Repeaters or Peripheral (Servant) Models to perform tasks reserved for Specialist Troops."
+      },
+      "suitable_for_reinforcements": true,
+      "tactical_support_options": 2,
+      "type": "ITS Scenario"
+    },
+    {
+      "charts": {},
+      "end_of_mission": "This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn.",
+      "forces_and_deployment": {
+        "deployment_table": [
+          {
+            "army_points": 150,
+            "deployment_zone": "8 in x 24 in",
+            "swc": 3,
+            "table_size": "24 in x 32 in"
+          },
+          {
+            "army_points": 200,
+            "deployment_zone": "12 in x 32 in",
+            "swc": 4,
+            "table_size": "32 in x 48 in"
+          },
+          {
+            "army_points": 250,
+            "deployment_zone": "12 in x 32 in",
+            "swc": 5,
+            "table_size": "32 in x 48 in"
+          },
+          {
+            "army_points": 300,
+            "deployment_zone": "12 in x 48 in",
+            "swc": 6,
+            "table_size": "48 in x 48 in"
+          },
+          {
+            "army_points": 350,
+            "deployment_zone": "12 in x 48 in",
+            "swc": 7,
+            "table_size": "48 in x 48 in"
+          },
+          {
+            "army_points": 400,
+            "deployment_zone": "12 in x 48 in",
+            "swc": 8,
+            "table_size": "48 in x 48 in"
+          }
+        ],
+        "sides": "SIDE A and SIDE B",
+        "special_notes": [
+          "It is not permitted to deploy in Silhouette contact with the Beacons or with the Consoles."
+        ]
+      },
+      "mission_objectives": {
+        "classified": [
+          "Each player has 1 Classified Objective (1 Objective Point)."
+        ],
+        "main_objectives": [
+          "At the end of each Game Round, Control the Enemy Beacon (1 Objective Point).",
+          "At the end of the game, your Beacon is not Controlled by the enemy (1 Objective Point).",
+          "At the end of the game, have more Activated Consoles than the adversary (2 Objective Points).",
+          "At the end of the game, have an Activated Console (1 Objective Point for each Activated Console)."
+        ]
+      },
+      "name": "HARDLOCK",
+      "scenario_special_rules": {
+        "activate_console": {
+          "effects": "• Allows the Specialist Troop to make a Normal WIP Roll to Activate a Console. • If the roll is failed, this can be repeated as many times as necessary, each time spending the corresponding Short Skill and making the roll. • An Activated Console can be Activated again by the other player, applying the same procedure. In this situation, the Console is no longer Activated by the adversary. • Player A and Player B Tokens can be used to mark the Activated Console. It is recommended each player uses a different kind of Tokens.",
+          "name": "ACTIVATE CONSOLE",
+          "requirements": "• Only Specialist Troops can declare this Skill. • The Specialist Troop must be in Silhouette contact with a Console.",
+          "skill_type": "short skill, Attack, Scenario."
+        },
+        "beacons": "There are a total of 2 Beacons, 1 corresponding to each player, placed in different halves of the table, each in the middle of the front edge of the Deployment Zone. (see map). The Enemy Beacon is the one on the edge of the enemy Deployment Zone.",
+        "common_rules_of_beacons": "^ Each Model can carry a maximum of 1 Beacon. As an exception, Troopers possessing the Baggage Special Skill can carry up to 2 Beacons. ^ Only Models, and not Markers, (Camouflaged, Impersonation, Holoechoes…) can carry the Beacons. ^ The Beacon must always be kept on the table. ^ The Beacon always remains in Silhouette contact with the Trooper which is carrying it. ^ If the Trooper carrying the Beacon enters or is in any Null State, they drop the Beacon. Move the Beacon slightly out of Silhouette contact with the Trooper. ^ Beacons do not block movement or LoF.",
+        "consoles": "There are three Consoles, placed on the central line of the game table. One of them is in the center of the table, and the other two are placed 12 inches from the table edges in 300/350/400 point games, 8 inches in 200/250 point games, and 6 inches in 150 point games (see map). Each Console must be represented by a Console A Token or by a scenery piece of the same diameter (such as the Consoles of the ITS Objectives Pack Alpha, the Human Consoles by Micro Art Studio, the Tech Consoles by Warsenal or the Comlink Console by Customeeple).",
+        "control_an_enemy_beacon": "An Enemy Beacon is Controlled by a player as long as that player is the only one with at least one Trooper (as a Model, not a Marker) in Silhouette contact with it. So there cannot be any enemy Troopers in Silhouette contact with the Beacon. Models in a Null State cannot do either.",
+        "pick_up_beacon": {
+          "effects": "• A Trooper can pick up an Enemy Beacon in any of the situations previously mentioned by spending one Short Skill, without needing to perform a Roll. • The Troopers must follow the Common Rules of Beacons.",
+          "name": "PICK UP BEACON",
+          "requirements": "• Have an Activated Console. Also, the Trooper must be in one of the following situations: • The Trooper is in Silhouette contact with a friendly Trooper in a Normal State that has an Enemy Beacon. • The Trooper is in Silhouette contact with an Enemy Beacon which has no enemy Troops in a non-Null State in contact with it.",
+          "skill_type": "short skill, Attack, Scenario."
+        },
+        "specialist_troops": "For the purposes of this scenario, only Hackers, Doctors, Engineers, Forward Observers, Paramedics, and Troopers possessing the Chain of Command or the Specialist Operative Special Skill are considered Specialist Troops. Hackers, Doctors, and Engineers cannot make use of Repeaters or Peripheral (Servant) Models to perform tasks reserved for Specialist Troops. END OF THE MISSION This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn."
+      },
+      "suitable_for_reinforcements": true,
+      "tactical_support_options": 1,
+      "type": "ITS Scenario"
+    },
+    {
+      "charts": {},
+      "end_of_mission": "This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round.",
+      "forces_and_deployment": {
+        "deployment_table": [
+          {
+            "army_points": 150,
+            "deployment_zone": "8 in x 24 in",
+            "swc": 3,
+            "table_size": "24 in x 32 in"
+          },
+          {
+            "army_points": 200,
+            "deployment_zone": "12 in x 32 in",
+            "swc": 4,
+            "table_size": "32 in x 48 in"
+          },
+          {
+            "army_points": 250,
+            "deployment_zone": "12 in x 32 in",
+            "swc": 5,
+            "table_size": "32 in x 48 in"
+          },
+          {
+            "army_points": 300,
+            "deployment_zone": "12 in x 48 in",
+            "swc": 6,
+            "table_size": "48 in x 48 in"
+          },
+          {
+            "army_points": 350,
+            "deployment_zone": "12 in x 48 in",
+            "swc": 7,
+            "table_size": "48 in x 48 in"
+          },
+          {
+            "army_points": 400,
+            "deployment_zone": "12 in x 48 in",
+            "swc": 8,
+            "table_size": "48 in x 48 in"
+          }
+        ],
+        "sides": "SIDE A and SIDE B",
+        "special_notes": []
+      },
+      "mission_objectives": {
+        "classified": [
+          "Each player has 3 Classified Objectives (1 Objective Point for each one)."
+        ],
+        "main_objectives": [
+          "At the end of the game, have Extracted more Army Points than the adversary (2 Objective Points).",
+          "At the end of the game, have Extracted more Specialist Troops than the adversary (2 Objective Points).",
+          "At the end of the game, have Killed more Specialist Troops than the adversary (2 Objective Points).",
+          "At the end of the game, have Killed the same number of Specialist Troops as the adversary (1 Objective Point).",
+          "At the end of the game, Dominate the Launching Tower (1 Objective Point)."
+        ]
+      },
+      "name": "LAST LAUNCH",
+      "scenario_special_rules": {
+        "common_rules_of_id_tokens": "^ A Trooper with an ID Token cannot enter or be in any Marker State. ^ A Trooper can only have a single ID Token at a time. ^ If a Trooper with an ID Token enters Dead State, remove their ID Token. 44",
+        "download_id": {
+          "effects": "• Allows the Specialist Troop to make a Normal WIP Roll to Download an ID, with a successful roll an ID Token must be placed beside it. • If the roll is failed, this can be repeated as many times as necessary, each time spending the corresponding Short Skill and making the roll.",
+          "name": "DOWNLOAD ID",
+          "requirements": "• Only Specialist Troops can declare this Skill. • The Specialist Troop must be in Silhouette contact with the ID Scanner.",
+          "skill_type": "short skill, Attack, Scenario"
+        },
+        "extract_identified_tropper": {
+          "effects": "• Without needing to perform a Roll, the player can Extract the Trooper. • Remove the Trooper from the game table, and any Peripherals it has that are inside the Launching Tower. • Add the removed Troopers’ points cost to the player’s Extracted Army Points. Each player’s Extracted Army Points total is Open Information. • Troopers removed this way still count toward the player’s Victory Points, even if they entered a Null State or Dead State during the Order they were Extracted. • During a player’s Tactical Phase, if their current Lieutenant has been extracted, apply the Loss of Lieutenant rule.",
+          "name": "EXTRACT IDENTIFIED TROPPER",
+          "requirements": "• The Trooper must have an ID Token. • The Trooper must be in Silhouette contact with the ID Checker. • Troopers taking part in a Coordinated Order cannot declare this Skill.",
+          "skill_type": "short skill, Attack, Scenario"
+        },
+        "id_checker": "There is 1 ID Checker placed in the center of the Launching Tower. The ID Checker must be represented by a Console A Token or by a scenery piece of the same diameter (such as the Consoles of the ITS Objectives Pack Alpha, the Human Consoles by Micro Art Studio, the Tech Consoles by Warsenal or the Comlink Console by Customeeple).",
+        "id_scanners": "There are 2 ID Scanners placed on the central line of the table. They are placed 8 inches from the table edges (4 inches in 150 point games). The ID Scanners must be represented by a Tech-Coffin Token or with a scenery piece of the same diameter (such as the Tech- Coffins of the ITS Objective Pack Alpha, the Stasis Coffins by Warsenal, or the Cryo Pods by Customeeple).",
+        "killing": "Troopers are considered Killed by the adversary when they enter Dead State or are in a Null State at the end of the game. Troopers that have not been deployed on the game table, as a Model or Marker, at the end of the game will be considered to be Killed by the adversary. Troopers that have been Extracted are never considered to be Killed by the adversary.",
+        "no_quarter": "In this scenario, the Retreat! rules are not applied. END OF THE MISSION This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round.",
+        "specialist_troops": "For the purposes of this scenario, only Hackers, Doctors, Engineers, Forward Observers, Paramedics, and Troopers possessing the Chain of Command or the Specialist Operative Special Skill are considered Specialist Troops. Hackers, Doctors, and Engineers cannot make use of Repeaters or Peripheral (Servant) Models to perform tasks reserved for Specialist Troops.",
+        "swap_id": {
+          "effects": "• Without needing to perform a Roll, the player can Swap the ID. • Place the ID Token next to the Trooper that declared this Skill.",
+          "name": "SWAP ID",
+          "requirements": "• The Trooper must be in Silhouette contact with an Allied Trooper with an ID Token.",
+          "skill_type": "short skill, Attack, Scenario"
+        }
+      },
+      "suitable_for_reinforcements": true,
+      "tactical_support_options": 2,
+      "type": "ITS Scenario"
+    },
+    {
+      "charts": {},
+      "end_of_mission": "This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn.",
+      "forces_and_deployment": {
+        "deployment_table": [
+          {
+            "army_points": 150,
+            "deployment_zone": "Radius of 12 in",
+            "swc": 3,
+            "table_size": "24 in x 32 in"
+          },
+          {
+            "army_points": 200,
+            "deployment_zone": "Radius of 20 in",
+            "swc": 4,
+            "table_size": "32 in x 48 in"
+          },
+          {
+            "army_points": 250,
+            "deployment_zone": "Radius of 20 in",
+            "swc": 5,
+            "table_size": "32 in x 48 in"
+          },
+          {
+            "army_points": 300,
+            "deployment_zone": "Radius of 24 in",
+            "swc": 6,
+            "table_size": "48 in x 48 in"
+          },
+          {
+            "army_points": 350,
+            "deployment_zone": "Radius of 24 in",
+            "swc": 7,
+            "table_size": "48 in x 48 in"
+          },
+          {
+            "army_points": 400,
+            "deployment_zone": "Radius of 24 in",
+            "swc": 8,
+            "table_size": "48 in x 48 in"
+          }
+        ],
+        "sides": "SIDE A and SIDE B",
+        "special_notes": [
+          "It is not allowed to deploy in Silhouette contact with a Tech- Coffin."
+        ]
+      },
+      "mission_objectives": {
+        "classified": [
+          "Each player has 1 Classified Objective (1 Objective)."
+        ],
+        "main_objectives": [
+          "At the end of the game, Control a Supply Box (1 Objective Point for each Supply Box).",
+          "At the end of the game, Control more Supply Boxes in your own Safe Area than your adversary in their own Safe Area (3 Objective Points).",
+          "At the end of the game, Control the same number of Supply Boxes in your Safe Area than the adversary does in their Safe Area (1 Objective Point, but only if at least 1 Supply Box is Controlled in their Safe Area).",
+          "At the end of the game, if your adversary does not Control any Supply Boxes in their Safe Area (2 Objective Points)."
+        ]
+      },
+      "name": "PROVISIONING",
+      "scenario_special_rules": {
+        "common_rules_of_supply_boxes": "^ Each Model can carry a maximum of 1 Supply Box. As an exception, Models possessing the Baggage Special Skill can carry up to 2 Supply Boxes. ^ Only Models, and not Markers, (Camo, Impersonation, Holoechoes…) can carry the Supply Boxes. ^ The Supply Box Token must always be kept on the table. ^ The Supply Box Token always remains in Silhouette contact with the Trooper which is carrying it. ^ If the Trooper carrying the Supply Box enters or is in any Null State, they drop the Supply Box. Move the Supply Box Token slightly out of Silhouette contact with the Trooper. ^ Supply Box Tokens don’t block movement or LoF.",
+        "controlling_the_supply_boxes": "A Supply Box is Controlled by a player if, at the end of the game, that player has a Model, but not a Marker, carrying it. That Trooper cannot be in a Null State or in Silhouette contact with any enemy Model. Supply Boxes in a player’s Safe Area are Controlled by that player unless an enemy Specialist Troop is carrying it. 47",
+        "extract_supply_boxes": {
+          "effects": "• Allows the Specialist Troop to make a Normal WIP Roll to Extract and pick up the Supply Box, with a successful roll one SUPPLY BOX Token must be placed besides the Trooper. • If the roll is failed, this can be repeated as many times as necessary, each time spending the corresponding Short Skill and making the roll. • When all Supply Box Tokens have been Extracted from a Tech-Coffin, a Player A or Player B Token must be placed besides it to mark that the Supply Boxes have been extracted.",
+          "name": "EXTRACT SUPPLY BOXES",
+          "requirements": "• Only Specialist Troops can declare this Skill. • The Specialist Troop must be in base contact with a Tech-Coffin.",
+          "skill_type": "short skill, Attack, Scenario"
+        },
+        "operational_learning": "When a Specialist Troop performs a Skill with the Scenario Label that requires a WIP Roll and fails, they benefit from the following MODs in subsequent Orders: ^ In the second consecutive Order, the Trooper applies a +3 MOD to the WIP Roll required for that Scenario Skill. ^ In the third consecutive Order—and subsequent Orders— the Trooper applies +3 and +1SD MODs to the WIP Roll required for that Scenario Skill. ^ These MODs are cumulative with any other MOD that applies to Skills with the Scenario Label. IMPORTANT: These MODs only apply to Rolls made in consecutive Orders by the same Trooper for the same Scenario Skill, with the same target, with no interruptions, or Orders spent on other Troopers: ^ If the Trooper passes the Roll, the sequence resets. ^ If the Trooper do not declare that Scenario Skill, the sequence resets. ^ If the Trooper declare the same Skill, but on a different target, the sequence resets. ^ If an Order is spent on any other Trooper, the sequence resets. ^ Only one sequence can be applied per Trooper and per Scenario-labelled Skill at a time. END OF THE MISSION This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn.",
+        "pick_up_supply_boxes": {
+          "effects": "• Spending one Short Skill, without needing a Roll, the Trooper can pick up a Supply Box in any of the situations previously mentioned. Place the Supply Box Token in Silhouette contact with the Trooper. • If the Supply Box is in the enemy’s Safe Area, the Specialist Troop must pass a Normal WIP-3 Roll. • The Trooper must follow the Common Rules of Supply Boxes.",
+          "name": "PICK UP SUPPLY BOXES",
+          "requirements": "The Trooper must be in one of the following situations: • Be in Silhouette contact with an allied Trooper in a Normal State with a SUPPLY BOX Token. • Be in Silhouette contact with a Supply Box that is not being carried. In addition: • If the SUPPLY BOX Token is in the enemy’s Safe Area, the Trooper must be a Specialist Troop.",
+          "skill_type": "short skill, Attack, Scenario"
+        },
+        "remember": "The central Tech-Coffin contains two Supply Boxes.",
+        "safe_area": {
+          "name": "SAFE AREA"
+        },
+        "specialist_troops": "For the purposes of this scenario, only Hackers, Doctors, Engineers, Forward Observers, Paramedics, and Troopers possessing the Chain of Command or the Specialist Operative Special Skill are considered Specialist Troops. Hackers, Doctors, and Engineers cannot make use of Repeaters or Peripheral (Servant) Models to perform tasks reserved for Specialist Troops.",
+        "supply_boxes": "The Supply Boxes must be represented by a Supply Box Marker, or a similar scenery item (Such as the Supply Boxes of the ITS Objective Pack Alpha, the Tech Crates by Micro Art Studio, the Gang Tie Containers by Bandua Wargames, the Supply Boxes by Warsenal or the Cargo Crates by Customeeple)",
+        "tech_coffins": "There are a total of 3 Tech-Coffins. One of them is placed in the center of the table while the other two are placed along the central diagonal line of the table, at 16 inches from the central Tech-Coffin (12 inches in 200/250 point games, and 8 inches in 150 point games) (see map). Each Tech-Coffin contains one Supply Box, except for the central Tech-Coffin which contains two Supply Boxes. The Tech-Coffins must be represented by a Tech-Coffin Marker or with a scenery piece of the same diameter (Such as the ITS Objective Pack Alpha, Stasis Coffins by Warsenal or the Cryo Pods by Customeeple)."
+      },
+      "suitable_for_reinforcements": true,
+      "tactical_support_options": 1,
+      "type": "ITS Scenario"
+    },
+    {
+      "charts": {},
+      "end_of_mission": "This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn.",
+      "forces_and_deployment": {
+        "deployment_table": [
+          {
+            "army_points": 150,
+            "deployment_zone": "Radius of 12 in",
+            "swc": 3,
+            "table_size": "24 in x 32 in"
+          },
+          {
+            "army_points": 200,
+            "deployment_zone": "Radius of 20 in",
+            "swc": 4,
+            "table_size": "32 in x 48 in"
+          },
+          {
+            "army_points": 250,
+            "deployment_zone": "Radius of 20 in",
+            "swc": 5,
+            "table_size": "32 in x 48 in"
+          },
+          {
+            "army_points": 300,
+            "deployment_zone": "Radius of 24 in",
+            "swc": 6,
+            "table_size": "48 in x 48 in"
+          },
+          {
+            "army_points": 350,
+            "deployment_zone": "Radius of 24 in",
+            "swc": 7,
+            "table_size": "48 in x 48 in"
+          },
+          {
+            "army_points": 400,
+            "deployment_zone": "Radius of 24 in",
+            "swc": 8,
+            "table_size": "48 in x 48 in"
+          }
+        ],
+        "sides": "SIDE A and SIDE B",
+        "special_notes": [
+          "It is not allowed to deploy inside of an Area of Interest, or in Silhouette contact with the Communication Antenna."
+        ]
+      },
+      "mission_objectives": {
+        "classified": [
+          "Each player has 1 Classified Objective (1 Objective Point)."
+        ],
+        "main_objectives": [
+          "At the end of the game, Dominate an Area of Interest (1 Objective Point for each Dominated Area of Interest, up to a maximum of 3 Objective Points).",
+          "At the end of each GAME ROUND, Dominate the Special Area of Interest (1 Objective Point).",
+          "At the end of each GAME ROUND have an Activated Communication Antenna (1 Objective Point)."
+        ]
+      },
+      "name": "AREA OF INTEREST",
+      "scenario_special_rules": {
+        "activate_communication_antenna": {
+          "effects": "• Spending one Short Skill, without needing to perform a Roll, the Specialist Trooper Activates the Communication Antenna. • If there are any enemy Hackers within any Areas of Interest, one of them can declare an ARO to oppose the Specialist Trooper. Activating the Communication Antenna in this situation is a Face to Face WIP Roll. • If the roll is failed, this can be repeated as many times as necessary, each time spending the corresponding Short Skill. • An Activated Communication Antenna can be Activated again by the other player, applying the same procedure. In this situation, the Communication Antenna is no longer Activated by the adversary. • Player A and Player B Tokens can be used to mark the Activated Communication Antenna. It is recommended each player uses a different kind of Token.",
+          "name": "ACTIVATE COMMUNICATION ANTENNA",
+          "requirements": "• Only Specialist Troops can declare this Skill. • The Specialist Troop must be in Silhouette contact with the Communication Antenna.",
+          "skill_type": "short skill, Attack, Scenario"
+        },
+        "area_of_interest": "In this scenario the Areas of Interest are Zones of Operations (ZO), represented by Circular Templates. There are a total of three Areas of Interest, one of which is the Special Area of Interest. Before the Deployment Phase, and in Initiative order, each player must place their Circular Templates. They can be placed on any surface of the game table that is equal or larger in size than the Template, must be completely outside any Deployment Zones, and cannot overlap another Area of Interest. The player with the first turn must place an Area of Interest and the Special Area of Interest, specifying which Template is the Special Area of Interest when placing it. The player with second turn places an Area of Interest.",
+        "baggage": "Troopers possessing the Baggage piece of Equipment that are inside a Zone of Operations and in a non-Null State provide an additional 20 Victory Points for Dominating the ZO.",
+        "communication_antenna": "There is 1 Communication Antenna placed in the center of the table. The Communication Antenna must be represented by a Transmission Antenna Token (TRANS. ANTENNA) or with a scenery piece of the same diameter (such as the Antenna of the ITS Objective Pack Alpha, the Communications Array by Warsenal or the Sat Station Antenna by Customeeple).",
+        "dominate_zo": "A Zone of Operations (ZO) is Dominated by a player if they have more Victory Points than the adversary inside the area. Only Troopers represented by Models or Markers (Camouflaged, Shasvastii-Embryo...) count, as well as Proxies and Peripheral Troops. Troops in a Null State do not count. Tokens representing weapons or pieces of equipment (like Mines or Deployable Repeaters), fake Holoechoes, and any Token that does not represent a Trooper does not count either. A Trooper is inside a Zone of Operations when more than half the Trooper’s base is inside that ZO.",
+        "shasvastii": "Troopers possessing the Shasvastii Special Skill that are inside a Zone of Operations count while they are in Unconscious State or any non-Null State. 50",
+        "specialist_troops": "For the purposes of this scenario, only Hackers, Doctors, Engineers, Forward Observers, Paramedics, and Troopers possessing the Chain of Command or the Specialist Operative Special Skill are considered Specialist Troops. Hackers, Doctors, and Engineers cannot make use of Repeaters or Peripheral (Servant) Models to perform tasks reserved for Specialist Troops. INTELCOM CARD (SUPPORT AND CONTROL) Before the beginning of the game, but after choosing the first Classified Objective, the player must inform to their adversary if that card will be their Classified Objective or their INTELCOM Card. Each player rolls a die and the one who gets the highest score must be the first who announces their decision to their adversary. The content of the card, whether the mission or the card numeric value, is Private Information, no matter which use the player has chosen for it. At the end of the last Game Round, when the players count up their points and in Initiative order, the player can use their INTELCOM Card in Support and Control Mode. Support and Control Mode: The player can add the value of the Support and Control Card to their Victory Points in the Zone of Operations (ZO) of their choice. The player must have at least one Trooper inside that ZO, in a non-Null State. END OF THE MISSION This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn."
+      },
+      "suitable_for_reinforcements": true,
+      "tactical_support_options": 0,
+      "type": "ITS Scenario"
+    },
+    {
+      "charts": {},
+      "end_of_mission": "This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round.",
+      "forces_and_deployment": {
+        "deployment_table": [
+          {
+            "army_points": 200,
+            "deployment_zone": "12 in x 32 in",
+            "swc": 4,
+            "table_size": "32 in x 48 in"
+          },
+          {
+            "army_points": 250,
+            "deployment_zone": "12 in x 32 in",
+            "swc": 5,
+            "table_size": "32 in x 48 in"
+          },
+          {
+            "army_points": 300,
+            "deployment_zone": "12 in x 48 in",
+            "swc": 6,
+            "table_size": "48 in x 48 in"
+          },
+          {
+            "army_points": 350,
+            "deployment_zone": "12 in x 48 in",
+            "swc": 7,
+            "table_size": "48 in x 48 in"
+          },
+          {
+            "army_points": 400,
+            "deployment_zone": "12 in x 48 in",
+            "swc": 8,
+            "table_size": "48 in x 48 in"
+          }
+        ],
+        "sides": "SIDE A and SIDE B",
+        "special_notes": []
+      },
+      "mission_objectives": {
+        "points": [
+          "To Kill 40 to 75 enemy Army Points. To Kill 50 to 100 enemy Army Points. To Kill 65 to 125 enemy Army Points.. To Kill 75 to 150 enemy Army Points. To Kill 85 to 175 enemy Army Points.. To Kill 100 to 200 enemy Army Points. 1 Objective Point. To Kill 76 to 125 enemy Army Points. To Kill 101 to 150 enemy Army Points. To Kill 126 to 200 enemy Army Points. To Kill 151 to 250 enemy Army Points. To Kill 176 to 274 enemy Army Points. To Kill 201 to 300 enemy Army Points. 3 Objective Points. To Kill more than 125 enemy Army Points. To Kill more than 150 enemy Army Points. To Kill more than 200 enemy Army Points. To Kill more than 250 enemy Army Points. To Kill more than 275 enemy Army Points. To Kill more than 300 enemy Army Points. 4 Objective Points. If you have 40 to 75 surviving Victory Points. If you have 50 to 100 surviving Victory Points.. If you have 65 to 125 surviving Victory Points. If you have 75 to 150 surviving Victory Points. If you have 85 to 175 surviving Victory Points. If you have 100 to 200 surviving Victory Points. 1 Objective Point. If you have 76 to 125 surviving Victory Points.. If you have 101 to 150 surviving Victory Points. If you have 126 to 200 surviving Victory Points.. If you have 151 to 250 surviving Victory Points. If you have 176 to 274 surviving Victory Points. If you have 201 to 300 surviving Victory Points. 3 Objective Point. If you have more than 125 surviving Victory Points. If you have more than 150 surviving Victory Points. If you have more than 200 surviving Victory Points. If you have more than 250 surviving Victory Points. If you have more than 275 surviving Victory Points. If you have more than 300 surviving Victory Points. 4 Objective Points. To Kill the enemy Lieutenant. 2 Objective Points. 52"
+        ]
+      },
+      "name": "ANNIHILATION",
+      "scenario_special_rules": {
+        "hvt_and_classified_deck_not_used": "In this scenario, the HVT Model and Secure HVT rules are not applied. Players will not deploy the HVT Model on the game table and they will not use the Classified Deck in this scenario. END OF THE MISSION This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round.",
+        "killing": "Troopers are considered Killed by the adversary when they enter Dead State, or they are in a Null State at the end of the game. Troopers that have not been deployed on the game table, as a Model or Marker, at the end of the game will be considered to be Killed by the adversary.",
+        "no_quarter": "In this scenario, the Retreat! rules are not applied."
+      },
+      "suitable_for_reinforcements": true,
+      "tactical_support_options": 0,
+      "type": "Direct Action"
+    },
+    {
+      "charts": {},
+      "end_of_mission": "This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round.",
+      "forces_and_deployment": {
+        "deployment_table": [
+          {
+            "army_points": 150,
+            "deployment_zone": "8 in x 24 in",
+            "swc": 3,
+            "table_size": "24 in x 32 in"
+          },
+          {
+            "army_points": 200,
+            "deployment_zone": "12 in x 32 in",
+            "swc": 4,
+            "table_size": "32 in x 48 in"
+          },
+          {
+            "army_points": 250,
+            "deployment_zone": "12 in x 32 in",
+            "swc": 5,
+            "table_size": "32 in x 48 in"
+          },
+          {
+            "army_points": 300,
+            "deployment_zone": "12 in x 48 in",
+            "swc": 6,
+            "table_size": "48 in x 48 in"
+          },
+          {
+            "army_points": 350,
+            "deployment_zone": "12 in x 48 in",
+            "swc": 7,
+            "table_size": "48 in x 48 in"
+          },
+          {
+            "army_points": 400,
+            "deployment_zone": "12 in x 48 in",
+            "swc": 8,
+            "table_size": "48 in x 48 in"
+          }
+        ],
+        "sides": "SIDE A and SIDE B",
+        "special_notes": []
+      },
+      "mission_objectives": {},
+      "name": "BATTLEGROUND",
+      "scenario_special_rules": {
+        "baggage": "Troopers possessing the Baggage piece of Equipment that are inside a Zone of Operations and in a non-Null State provide an additional 20 Victory Points for Dominating the ZO.",
+        "dominate_zo": "A Zone of Operations (ZO) is Dominated by a player if they have more Victory Points than the adversary inside the area. Only Troopers represented by Models or Markers (Camouflaged, Shasvastii-Embryo...) count, as well as Proxies and Peripheral Troops. Troops in a Null State do not count. Tokens representing weapons or pieces of equipment (like Mines or Deployable Repeaters), fake Holoechoes, and any Token that does not represent a Trooper does not count either. A Trooper is inside a Zone of Operations when more than half the Trooper’s base is inside that ZO.",
+        "hvt_and_classified_deck_not_used": "In this scenario, the HVT Model and Secure HVT rules are not applied. Players will not deploy the HVT Model on the game table and they will not use the Classified Deck in this scenario. END OF THE MISSION This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round.",
+        "key_ops": "The Key Ops is a special tactics operator with unique training to conduct multi-domain reconnaissance and combat across the full spectrum of conflicts. At the end of the Deployment Phase, in Initiative order, players must declare which Trooper from their Army List is their Key Ops. The Trooper chosen must be always one of the models deployed on the game table. Players are not allowed to choose Troopers in Hidden Deployment or in Marker state. This Trooper must always be on the game table as a Model and not as a Marker (Camouflaged, Holoecho…). Also, Irregular Troops and those whose Troop Type is REM or VH are not eligible to be Key Ops. The Key Ops possesses the Dodge (+3) and Tactical Awareness Special Skills, even if those are not listed on their Unit Profile. These Special Skills are not cumulative, if the Trooper already has them, then they are not applied. The Key Ops is identified with a Player A or B Marker.",
+        "killing": "Troopers are considered Killed by the adversary when they enter Dead State, or they are in a Null State at the end of the game. Troopers that have not been deployed on the game table, as a Model or Marker, at the end of the game will be considered to be Killed by the adversary.",
+        "shasvastii": "Troopers possessing the Shasvastii Special Skill that are inside a Zone of Operations count while they are in the Unconscious State or any non-Null State.",
+        "threaten_key_ops": "A Key Ops is Threatened by a player if they have at least one Trooper (as a Model, not a Marker) in a non-Null state inside the Key Ops’ Zone of Control."
+      },
+      "suitable_for_reinforcements": false,
+      "tactical_support_options": 0,
+      "type": "Direct Action"
+    },
+    {
+      "charts": {},
+      "end_of_mission": "This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round.",
+      "forces_and_deployment": {
+        "deployment_table": [
+          {
+            "army_points": 150,
+            "deployment_zone": "12 in x 24 in",
+            "swc": 3,
+            "table_size": "24 in x 32 in"
+          },
+          {
+            "army_points": 200,
+            "deployment_zone": "16 in x 32 in",
+            "swc": 4,
+            "table_size": "32 in x 48 in"
+          },
+          {
+            "army_points": 250,
+            "deployment_zone": "16 in x 32 in",
+            "swc": 5,
+            "table_size": "32 in x 48 in"
+          },
+          {
+            "army_points": 300,
+            "deployment_zone": "16 in x 48 in",
+            "swc": 6,
+            "table_size": "48 in x 48 in"
+          },
+          {
+            "army_points": 350,
+            "deployment_zone": "16 in x 48 in",
+            "swc": 7,
+            "table_size": "48 in x 48 in"
+          },
+          {
+            "army_points": 400,
+            "deployment_zone": "16 in x 48 in",
+            "swc": 8,
+            "table_size": "48 in x 48 in"
+          }
+        ],
+        "sides": "SIDE A and SIDE B",
+        "special_notes": []
+      },
+      "mission_objectives": {},
+      "name": "CUTTHROAT",
+      "scenario_special_rules": {
+        "hvt_and_classified_deck_not_used": "In this scenario, the HVT Model and Secure HVT rules are not applied. Players will not deploy the HVT Model on the game table and they will not use the Classified Deck in this scenario. END OF THE MISSION This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round.",
+        "key_ops": "The Key Ops is a special tactics operator with unique training to conduct multi-domain reconnaissance and combat across the full spectrum of conflicts. At the end of the Deployment Phase, in Initiative order, players must declare which Trooper from their Army List is their Key Ops. The Trooper chosen must be always one of the models deployed on the game table. Players are not allowed to choose Troopers in Hidden Deployment or in Marker state. This Trooper must always be on the game table as a Model and not as a Marker (Camouflaged, Holoecho…). Also, Irregular Troops and those whose Troop Type is REM or VH are not eligible to be Key Ops. The Key Ops possesses the Dodge (+3) and Tactical Awareness Special Skills, even if those are not listed on their Unit Profile. These Special Skills are not cumulative, if the Trooper already has them, then they are not applied. The Key Ops is identified with a Player A or B Marker.",
+        "killing": "Troopers are considered Killed by the adversary when they enter Dead State, or they are in a Null State at the end of the game. Troopers that have not been deployed on the game table, as a Model or Marker, at the end of the game will be considered to be Killed by the adversary. The Key Ops counts as Killing a target if they cause the target to be in a Null State at the end of the game, or if they cause the loss of one or more Wounds/STR points during the Order in which the target enters Dead State. A Lieutenant is considered Killed if they were a Lieutenant at any time during the game, and they either enter Dead State or are in a Null State at the end of the game.",
+        "no_quarter": "In this scenario, the Retreat! rules are not applied.",
+        "reinforced_tactical_link": "In this scenario the Loss of Lieutenant rule does not apply. In this mission, the identity of the Lieutenant is always Open Information. The player must indicate which Marker is the Lieutenant if it is in a Marker State (Camouflaged, Decoy...) or which Markers are the Lieutenant in the case of a Holoprojector. The Lieutenant must be placed on the game table at the beginning of the first Game Round, either as a Model or as a Marker. Players may not deploy their Lieutenants in Hidden Deployment State. If the player lacks a Lieutenant during the Tactical Phase of their Active Turn because this Trooper was not deployed or because it is in the Isolated State or any Null State (Unconscious, Dead, Sepsitorized…), then the player must name a new Lieutenant, without Order expenditure. The identity of this new Lieutenant is also Open Information. It is compulsory that this Lieutenant be a Model or a Marker placed on the game table."
+      },
+      "suitable_for_reinforcements": true,
+      "tactical_support_options": 0,
+      "type": "Direct Action"
+    },
+    {
+      "charts": {},
+      "end_of_mission": "This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn.",
+      "forces_and_deployment": {
+        "deployment_table": [
+          {
+            "army_points": 150,
+            "deployment_zone": "8 in x 24 in",
+            "swc": 3,
+            "table_size": "24 in x 32 in"
+          },
+          {
+            "army_points": 200,
+            "deployment_zone": "12 in x 32 in",
+            "swc": 4,
+            "table_size": "32 in x 48 in"
+          },
+          {
+            "army_points": 250,
+            "deployment_zone": "12 in x 32 in",
+            "swc": 5,
+            "table_size": "32 in x 48 in"
+          },
+          {
+            "army_points": 300,
+            "deployment_zone": "12 in x 48 in",
+            "swc": 6,
+            "table_size": "48 in x 48 in"
+          },
+          {
+            "army_points": 350,
+            "deployment_zone": "12 in x 48 in",
+            "swc": 7,
+            "table_size": "48 in x 48 in"
+          },
+          {
+            "army_points": 400,
+            "deployment_zone": "12 in x 48 in",
+            "swc": 8,
+            "table_size": "48 in x 48 in"
+          }
+        ],
+        "sides": "SIDE A and SIDE B",
+        "special_notes": []
+      },
+      "mission_objectives": {},
+      "name": "SUPERIORITY",
+      "scenario_special_rules": {
+        "baggage": "Troopers possessing the Baggage piece of Equipment that are inside a Zone of Operations and in a non-Null State provide an additional 20 Victory Points for Dominating the ZO.",
+        "consoles": "There are 4 Consoles, placed on the center of each Quadrant (See map). Each Console must be represented by a Console A Token or by a scenery piece of the same diameter (such as the Consoles of the ITS Objective Pack Alpha, the Human Consolesby Micro Art Studio, the Tech Consoles by Warsenal or the Comlink Console by Customeeple).",
+        "dominant_key_ops": "Players who have their Key Ops in any non-Null State in a ZO Dominated by them, have a Dominant Key Ops.",
+        "dominate_zo": "A Zone of Operations (ZO) is Dominated by a player if they have more Victory Points than the adversary inside the area. Only Troopers represented by Models or Markers (Camouflaged, Shasvastii-Embryo...) count, as well as Proxies and Peripheral Troops. Troops in a Null State do not count. Tokens representing weapons or pieces of equipment (like Mines or Deployable Repeaters), fake Holoechoes, and any Token that does not represent a Trooper does not count either. A Trooper is inside a Zone of Operations when more than half the Trooper’s base is inside that ZO.",
+        "hack_consoles": {
+          "effects": "• Allows the Specialist Troop to make a Normal WIP Roll to Hack the Console. • If the roll is failed, this can be repeated as many times as necessary, each time spending the corresponding Short Skill and making the roll. • A Hacked Console can be Hacked again by the other player applying the same procedure. In this case, both players will count that Console as Hacked. • Player A and Player B Tokens can be used to mark the Hacked Consoles. It is recommended each player uses a different kind of Tokens.",
+          "name": "HACK CONSOLES",
+          "requirements": "• Only Specialist Troops can declare this Skill. • The Specialist Troop must be in Silhouette contact with a Console.",
+          "skill_type": "short skill, Attack, Scenario."
+        },
+        "hvt_and_classified_deck_not_used": "In this scenario, the HVT Model and Secure HVT rules are not applied. Players will not deploy the HVT Model on the game table and they will not use the Classified Deck in this scenario. END OF THE MISSION This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn.",
+        "key_ops": "The Key Ops is a special tactics operator with unique training to conduct multi-domain reconnaissance and combat across the full spectrum of conflicts. At the end of the Deployment Phase, in Initiative order, players must declare which Trooper from their Army List is their Key Ops. The Trooper chosen must be always one of the models deployed on the game table. Players are not allowed to choose Troopers in Hidden Deployment or in Marker state. This Trooper must always be on the game table as a Model and not as a Marker (Camouflaged, Holoecho…). Also, Irregular Troops and those whose Troop Type is REM or VH are not eligible to be Key Ops. The Key Ops possesses the Dodge (+3) and Tactical Awareness Special Skills, even if those are not listed on their Unit Profile. These Special Skills are not cumulative, if the Trooper already has them, then they are not applied. The Key Ops is identified with a Player A or B Marker.",
+        "operational_learning": "When a Specialist Troop performs a Skill with the Scenario Label that requires a WIP Roll and fails, they benefit from the following MODs in subsequent Orders: ^ In the second consecutive Order, the Trooper applies a +3 MOD to the WIP Roll required for that Scenario Skill. ^ In the third consecutive Order—and subsequent Orders— the Trooper applies +3 and +1SD MODs to the WIP Roll required for that Scenario Skill. ^ These MODs are cumulative with any other MOD that applies to Skills with the Scenario Label. IMPORTANT: These MODs only apply to Rolls made in consecutive Orders by the same Trooper for the same Scenario Skill, with the same target, with no interruptions, or Orders spent on other Troopers: ^ If the Trooper passes the Roll, the sequence resets. ^ If the Trooper do not declare that Scenario Skill, the sequence resets. ^ If the Trooper declare the same Skill, but on a different target, the sequence resets. ^ If an Order is spent on any other Trooper, the sequence resets. ^ Only one sequence can be applied per Trooper and per Scenario-labelled Skill at a time.",
+        "shasvastii": "Troopers possessing the Shasvastii Special Skill that are inside a Zone of Operations count while they are in the Unconscious State or any non-Null State.",
+        "specialist_troops": "For the purposes of this scenario, only Hackers, Doctors, Engineers, Forward Observers, Paramedics, and Troopers possessing the Chain of Command or the Specialist Operative Special Skill are considered Specialist Troops. Hackers, Doctors, and Engineers cannot make use of Repeaters or Peripheral (Servant) Models to perform tasks reserved for Specialist Troops. 59"
+      },
+      "suitable_for_reinforcements": false,
+      "tactical_support_options": 0,
+      "type": "Direct Action"
+    },
+    {
+      "charts": {},
+      "end_of_mission": "This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn.",
+      "forces_and_deployment": {
+        "deployment_table": [
+          {
+            "army_points": 150,
+            "deployment_zone": "12 in x 24 in",
+            "swc": 3,
+            "table_size": "24 in x 32 in"
+          },
+          {
+            "army_points": 200,
+            "deployment_zone": "16 in x 32 in",
+            "swc": 4,
+            "table_size": "32 in x 48 in"
+          },
+          {
+            "army_points": 250,
+            "deployment_zone": "16 in x 32 in",
+            "swc": 5,
+            "table_size": "32 in x 48 in"
+          },
+          {
+            "army_points": 300,
+            "deployment_zone": "16 in x 48 in",
+            "swc": 6,
+            "table_size": "48 in x 48 in"
+          },
+          {
+            "army_points": 350,
+            "deployment_zone": "16 in x 48 in",
+            "swc": 7,
+            "table_size": "48 in x 48 in"
+          },
+          {
+            "army_points": 400,
+            "deployment_zone": "16 in x 48 in",
+            "swc": 8,
+            "table_size": "48 in x 48 in"
+          }
+        ],
+        "sides": "SIDE A and SIDE B",
+        "special_notes": [
+          "It is not permitted to deploy in Silhouette contact with the TechCoffin or with the Communication Antennas."
+        ]
+      },
+      "mission_objectives": {},
+      "name": "UPLINK CENTER",
+      "scenario_special_rules": {
+        "activate_communication_antenna": {
+          "effects": "• Allows the Specialist Troop to make a Normal WIP Roll to Activate a Communication Antenna. • If the roll is failed, this can be repeated as many times as necessary, each time spending the corresponding Short Skill and making the roll. • An Activated Communication Antenna can be Activated again by the other player, applying the same procedure. In this situation, the Communication Antenna is no longer Activated by the adversary. • Player A and Player B Tokens can be used to mark the Activated Communication Antenna. It is recommended each player uses a different kind of Tokens.",
+          "name": "ACTIVATE COMMUNICATION ANTENNA",
+          "requirements": "• Only Specialist Troops can declare this Skill. • The Specialist Troop must be in Silhouette contact with a Communication Antenna.",
+          "skill_type": "short skill, Attack, Scenario"
+        },
+        "active_lieutenant": "At the end of the game, a Lieutenant is Active if they are not in any Null state (Unconscious, Dead, Sepsitorized…), Isolated State, or any Immobilized State.",
+        "communication_antennas": "There are 2 Communication Antennas on the central line of the table. They are placed 12 inches from the table edges in 300/350/400 point games, 8 inches in 200/250 point games, and 4 inches in 150 point games. Each Communication Antenna must be represented by a Transmission Antenna Token (TRANS. ANTENNA) or with a scenery piece of the same diameter (such as the Antenna of the ITS Objective Pack Alpha, the Communications Array by Warsenal or the Sat Station Antenna by Customeeple).",
+        "control_a_communication_antenna": "A Communication Antenna is Controlled by a player as long as that player is the only one with at least one Trooper (as a Model, not a Marker) in Silhouette contact with it. So there cannot be any enemy Troopers in Silhouette contact with the Communication Antenna. Models in a Null State cannot do either.",
+        "control_the_tech_coffin": "The Tech-Coffin is Controlled by a player as long as that player is the only one with at least one Trooper (as a Model, not a Marker) in Silhouette contact with it. So there cannot be any enemy Troopers in Silhouette contact with the Tech-Coffin. Models in a Null State cannot do either.",
+        "hvt_and_classified_deck_not_used": "In this scenario, the HVT Model and Secure HVT rules are not applied. Players will not deploy the HVT Model on the game table and they will not use the Classified Deck in this scenario. END OF THE MISSION This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round. If one of the players starts their Active Turn in a Retreat! situation, the game will end at the end of that Turn.",
+        "operational_learning": "When a Specialist Troop performs a Skill with the Scenario Label that requires a WIP Roll and fails, they benefit from the following MODs in subsequent Orders: In the second consecutive Order, the Trooper applies a +3 MOD to the WIP Roll required for that Scenario Skill. In the third consecutive Order—and subsequent Orders—the Trooper applies +3 and +1SD MODs to the WIP Roll required for that Scenario Skill. These MODs are cumulative with any other MOD that applies to Skills with the Scenario Label. IMPORTANT: These MODs only apply to Rolls made in consecutive Orders by the same Trooper for the same Scenario Skill, with the same target, with no interruptions, or Orders spent on other Troopers: If the Trooper passes the Roll, the sequence resets. If the Trooper do not declare that Scenario Skill, the sequence resets. If the Trooper declares the same Skill, but with a different target, the sequence resets. If an Order is spent on any other Trooper, the sequence resets. Only one sequence can be applied per Trooper and per Scenario-Labelled Skill at a time.",
+        "specialist_troops": "For the purposes of this scenario, only Hackers, Doctors, Engineers, Forward Observers, Paramedics, and Troopers possessing the Chain of Command or the Specialist Operative Special Skill are considered Specialist Troops. Hackers, Doctors, and Engineers cannot make use of Repeaters or Peripheral (Servant) Models to perform tasks reserved for Specialist Troops. 62",
+        "tech_coffin": "There is 1 Tech-Coffin placed in the center of the table. The Tech-Coffin must be represented by a Tech-Coffin Token or with a scenery piece of the same diameter (such as the Tech- Coffin of the ITS Objective Pack Alpha, the Stasis Coffins by Warsenal or the Cryo Pods by Customeeple)."
+      },
+      "suitable_for_reinforcements": true,
+      "tactical_support_options": 0,
+      "type": "Direct Action"
+    }
+  ],
+  "season": "Season 17",
+  "version": "v1.0.1"
+}

@@ -1,0 +1,54 @@
+{
+  "charts": {},
+  "end_of_mission": "This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round.",
+  "forces_and_deployment": {
+    "deployment_table": [
+      {
+        "army_points": 200,
+        "deployment_zone": "12 in x 32 in",
+        "swc": 4,
+        "table_size": "32 in x 48 in"
+      },
+      {
+        "army_points": 250,
+        "deployment_zone": "12 in x 32 in",
+        "swc": 5,
+        "table_size": "32 in x 48 in"
+      },
+      {
+        "army_points": 300,
+        "deployment_zone": "12 in x 48 in",
+        "swc": 6,
+        "table_size": "48 in x 48 in"
+      },
+      {
+        "army_points": 350,
+        "deployment_zone": "12 in x 48 in",
+        "swc": 7,
+        "table_size": "48 in x 48 in"
+      },
+      {
+        "army_points": 400,
+        "deployment_zone": "12 in x 48 in",
+        "swc": 8,
+        "table_size": "48 in x 48 in"
+      }
+    ],
+    "sides": "SIDE A and SIDE B",
+    "special_notes": []
+  },
+  "mission_objectives": {
+    "points": [
+      "To Kill 40 to 75 enemy Army Points. To Kill 50 to 100 enemy Army Points. To Kill 65 to 125 enemy Army Points.. To Kill 75 to 150 enemy Army Points. To Kill 85 to 175 enemy Army Points.. To Kill 100 to 200 enemy Army Points. 1 Objective Point. To Kill 76 to 125 enemy Army Points. To Kill 101 to 150 enemy Army Points. To Kill 126 to 200 enemy Army Points. To Kill 151 to 250 enemy Army Points. To Kill 176 to 274 enemy Army Points. To Kill 201 to 300 enemy Army Points. 3 Objective Points. To Kill more than 125 enemy Army Points. To Kill more than 150 enemy Army Points. To Kill more than 200 enemy Army Points. To Kill more than 250 enemy Army Points. To Kill more than 275 enemy Army Points. To Kill more than 300 enemy Army Points. 4 Objective Points. If you have 40 to 75 surviving Victory Points. If you have 50 to 100 surviving Victory Points.. If you have 65 to 125 surviving Victory Points. If you have 75 to 150 surviving Victory Points. If you have 85 to 175 surviving Victory Points. If you have 100 to 200 surviving Victory Points. 1 Objective Point. If you have 76 to 125 surviving Victory Points.. If you have 101 to 150 surviving Victory Points. If you have 126 to 200 surviving Victory Points.. If you have 151 to 250 surviving Victory Points. If you have 176 to 274 surviving Victory Points. If you have 201 to 300 surviving Victory Points. 3 Objective Point. If you have more than 125 surviving Victory Points. If you have more than 150 surviving Victory Points. If you have more than 200 surviving Victory Points. If you have more than 250 surviving Victory Points. If you have more than 275 surviving Victory Points. If you have more than 300 surviving Victory Points. 4 Objective Points. To Kill the enemy Lieutenant. 2 Objective Points. 52"
+    ]
+  },
+  "name": "ANNIHILATION",
+  "scenario_special_rules": {
+    "hvt_and_classified_deck_not_used": "In this scenario, the HVT Model and Secure HVT rules are not applied. Players will not deploy the HVT Model on the game table and they will not use the Classified Deck in this scenario. END OF THE MISSION This scenario has a limited time frame, so it will automatically finish at the end of the third Game Round.",
+    "killing": "Troopers are considered Killed by the adversary when they enter Dead State, or they are in a Null State at the end of the game. Troopers that have not been deployed on the game table, as a Model or Marker, at the end of the game will be considered to be Killed by the adversary.",
+    "no_quarter": "In this scenario, the Retreat! rules are not applied."
+  },
+  "suitable_for_reinforcements": true,
+  "tactical_support_options": 0,
+  "type": "Direct Action"
+}
