@@ -1,0 +1,171 @@
+34
+MISSION OBJECTIVES 
+MAIN OBJECTIVES 
+ 
+^ At the end of each Game Round, Dominate a Dead Zone 
+(1 Objective Point for each Dead Zone).
+ 
+^ At the end of the game, Dominate both Dead Zones 
+(2 Objective Points). 
+ 
+^ At the end of the game, have an Activated Antenna 
+(1 Objective Point for each Activated Antenna).
+CLASSIFIED
+There are no Classified Objectives.
+CROSSING LINES
+TACTICAL SUPPORT OPTIONS 
+0
+SUITABLE FOR REINFORCEMENTS
+NO
+FORCES AND DEPLOYMENT
+SIDE A and SIDE B: Both players will deploy on opposite sides 
+of the game table, in Deployment Zones whose size depends on 
+the number of Army Points in the Army Lists. Each player has a 
+Deployment Zone in the rear of their half of the game table, and 
+a second Deployment Zone in the other half of the game table, 
+within the central strip.
+SIDE
+ARMY 
+POINTS
+SWC
+GAME 
+TABLE 
+SIZE
+DEPLOYMENT ZONE SIZES
+A and 
+B
+150
+3
+24 in x 
+32 in
+8 in x 24 in 
+Central Strip zone: 4 in x 32 in
+A and 
+B
+200
+4
+32 in x 
+48 in
+12 in x 32 in 
+Central Strip zone: 4 in x 48 in
+A and 
+B
+250
+5
+32 in x 
+48 in
+12 in x 32 in 
+Central Strip zone: 4 in x 48 in
+A and 
+B
+300
+6
+48 in x 
+48 in
+12 in x 48 in 
+Central Strip zone: 4 in x 48 in
+A and 
+B
+350
+7
+48 in x 
+48 in
+12 in x 48 in 
+Central Strip zone: 4 in x 48 in
+A and 
+B
+400
+8
+48 in x 
+48 in
+12 in x 48 in 
+Central Strip zone: 4 in x 48 in
+
+35
+During Deployment Phase, players may deploy up to 75 points of 
+Troops from their Army List in their Deployment Zone within the 
+Central Strip.
+It is not permitted to deploy in Silhouette contact with the 
+Antennas. 
+Exclusion Zone. The Exclusion Zones are the areas between 
+the Deployment Zones. Any Special Skill with the Airborne 
+Deployment (AD) or Superior Deployment Labels cannot be used 
+to deploy inside these areas.
+SCENARIO SPECIAL RULES 
+DEAD ZONE
+There are two Dead Zones, one in each half of the game table. 
+The Dead Zones are the areas between the Deployment Zones.
+In this scenario each Dead Zone is a Zone of Operations (ZO).
+DOMINATE ZO 
+A Zone of Operations (ZO) is Dominated by a player if they have 
+more Victory Points than the adversary inside the area. Only 
+Troopers represented by Models or Markers (Camouflaged, 
+Shasvastii-Embryo...) count, as well as Proxies and Peripheral 
+Troops. Troops in a Null State do not count. Tokens representing 
+weapons or pieces of equipment (like Mines or Deployable 
+Repeaters), fake Holoechoes, and any Token that does not 
+represent a Trooper does not count either. 
+A Trooper is inside a Zone of Operations when more than half 
+the Trooper’s base is inside that ZO.
+SHASVASTII
+Troopers possessing the Shasvastii Special Skill that are inside 
+a Zone of Operations count while they are in the Shasvastii-
+Embryo State or any non-Null State.
+BAGGAGE 
+Troopers possessing the Baggage piece of Equipment that are 
+inside a Zone of Operations and in a non-Null State provide an 
+additional 20 Victory Points for Dominating the ZO.
+ANTENNAS
+There are 2 Antennas placed on the central line of the table. 
+They are placed 12 inches from the table edges in 300/350/400 
+point games, 8 inches in 200/250 point games, and 6 inches in 
+150 point games (see map).
+The Antennas must be represented by Transmission Antenna 
+Tokens (TRANS. ANTENNA) or with scenery pieces of the same 
+diameter (such as the Antenna of the ITS Objective Pack Alpha, 
+the Communications Array by Warsenal or the Sat Station 
+Antenna by Customeeple).
+ACTIVATE ANTENNA 
+SHORT SKILL
+Attack, Scenario.
+REQUIREMENTS
+ 
+►Only Specialist Troops can declare this Skill.
+ 
+►The Specialist Troop must be in Silhouette contact with an Antenna.
+EFFECTS
+ 
+►Allows the Specialist Troop to make a Normal WIP Roll to Activate an 
+Antenna.
+ 
+►If the roll is failed, this can be repeated as many times as necessary, each 
+time spending the corresponding Short Skill and making the roll.
+ 
+►An Activated Antenna can be Activated again by the other player, applying 
+the same procedure. In this situation, the Antenna is no longer Activated 
+by the adversary.
+ 
+►Player A and Player B Tokens can be used to mark the Activated Antenna. 
+It is recommended each player uses a different kind of Token.
+
+36
+SUPERIOR DEPLOYMENT
+With the exception of Impersonation, Special Skills with the 
+Superior Deployment Label cannot be used in this scenario.
+SECURE HVT OR SECURE 
+TREASURE NOT USED 
+In this scenario, the Secure HVT or Secure Treasure rule is not 
+applied.
+SPECIALIST TROOPS
+For the purposes of this scenario, only Hackers, Doctors, 
+Engineers, Forward Observers, Paramedics, and Troopers 
+possessing the Chain of Command or the Specialist Operative 
+Special Skill are considered Specialist Troops.
+Hackers, Doctors, and Engineers cannot make use of Repeaters 
+or Peripheral (Servant) Models to perform tasks reserved for 
+Specialist Troops.
+END OF THE MISSION
+This scenario has a limited time frame, so it will automatically 
+finish at the end of the third Game Round.
+If one of the players starts their Active Turn in a Retreat! 
+situation, the game will end at the end of that Turn.

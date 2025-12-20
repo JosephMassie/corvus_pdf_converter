@@ -1,0 +1,331 @@
+30
+CRITICAL INTERVENTION
+TACTICAL SUPPORT OPTIONS 
+1
+SUITABLE FOR REINFORCEMENTS
+NO
+MISSION OBJECTIVES 
+MAIN OBJECTIVES (ATTACKER)
+ 
+^ Unlock the Data Console (1 Objective Point).
+ 
+^ Extract the Data Pack from the Data Console (2 Objective 
+Points).
+ 
+^ The Trooper that Extracted the Data Pack is not Killed 
+at the end of the game (1 Objective Point).
+ 
+^ At the end of the game, the Trooper that Extracted the 
+Data Pack is in your Deployment Zone and is not in a 
+Null State (2 Objective Points).
+ 
+^ At the end of the game, Dominate the Server Room 
+(2 Objective Points).
+150-POINT GAME
+200-POINT GAME
+250-POINT GAME
+300-POINT GAME
+350-POINT GAME
+400-POINT GAME
+OBJECTIVE 
+POINTS
+To Kill at least 
+40 enemy Army 
+Points.
+To Kill at least 
+50 enemy Army 
+Points.
+To Kill at least 
+65 enemy Army 
+Points.
+To Kill at least 
+75 enemy Army 
+Points.
+To Kill at least 
+85 enemy Army 
+Points.
+To Kill at least 
+100 enemy Army 
+Points.
+1 Objective Point.
+MAIN OBJECTIVES (DEFENDER)
+ 
+^ Prevent the Attacker from Unlocking the Data Console (1 
+Objective Point).
+ 
+^ Prevent the Attacker from Extracting the Data Pack from 
+the Data Console (3 Objective Points).
+ 
+^ Kill the Trooper that Extracted the Data Pack (2 Objective 
+Points, only if the Attacker has Extracted the Data Pack).
+ 
+^ At the end of the game, Dominate the Server Room (3 
+Objective Points).
+150-POINT GAME
+200-POINT GAME
+250-POINT GAME
+300-POINT GAME
+350-POINT GAME
+400-POINT GAME
+OBJECTIVE 
+POINTS
+To Kill at least 
+75 enemy Army 
+Points. 
+To Kill at least 
+100 enemy Army 
+Points.
+To Kill at least 
+125 enemy Army 
+Points.
+To Kill at least 
+150 enemy Army 
+Points.
+To Kill at least 
+175 enemy Army 
+Points.
+To Kill at least 
+200 enemy Army 
+Points.
+2 Objective Points.
+CLASSIFIED
+ 
+^ Each player has 1 Classified Objective (1 Objective Point).
+
+31
+FORCES AND DEPLOYMENT
+SIDE A and SIDE B: Both players will deploy on opposite sides 
+of the game table, in Deployment Zones whose size depends on 
+the number of Army Points in the Army Lists.
+SIDE
+ARMY 
+POINTS
+SWC
+GAME TABLE 
+SIZE
+DEPLOYMENT ZONE 
+SIZES
+A and B
+150
+3
+24 in x 32 in
+8 in x 24 in
+A and B
+200
+4
+32 in x 48 in
+12 in x 32 in
+A and B
+250
+5
+32 in x 48 in
+12 in x 32 in
+A and B
+300
+6
+48 in x 48 in
+12 in x 48 in
+A and B
+350
+7
+48 in x 48 in
+12 in x 48 in
+A and B
+400
+8
+48 in x 48 in
+12 in x 48 in
+It is not permitted to deploy inside the Server Room.
+Exclusion Zone (Attacker). The Exclusion Zone is the area 
+covering 4 inches either side of the central line of the game 
+table. Any Special Skill with the Airborne Deployment (AD) or 
+Superior Deployment Labels cannot be used to deploy inside 
+this area. 
+SCENARIO SPECIAL RULES 
+ATTACKER AND DEFENDER
+In this scenario, two distinct roles are established: Attacker and 
+Defender. Each has different Main Objectives.
+The player with the first Player Turn is the Attacker. The player 
+with the second Player Turn is the Defender.
+Before the Deployment Phase, the Defender may spend 1 single 
+Command Token to perform one of the following actions:
+ 
+^ Activate the Server Room Defense System.
+ 
+^ Ignore the Deployment Restriction for the Server Room. 
+You can deploy up to 65 points of Troops from your Army 
+List, anywhere in the Server Room. This does not require 
+the use of Special Skills with the Superior Deployment 
+Label. 
+
+32
+IMPORTANT
+This use of a Command Token is in addition to the Strategic 
+Use of Command Tokens.
+SERVER ROOM
+In this scenario the Server Room is a Zone of Operations (ZO). 
+Placed in the center of the table, it covers an area of 8 by 8 
+inches. To represent the Server Room, we recommend using the 
+Objective Room by Micro Art Studio, the Command Bunker by 
+Warsenal, or the Panic Room by Customeeple. 
+In game terms it is considered to have walls of infinite height 
+that completely block Line of Fire. It has four Gates, one in the 
+middle of each wall (see map). The Gates of the Server Room 
+are open at the start of the game. The Server Room Gates must 
+be represented by a Wide Gate Token or a scenery piece with the 
+same size.
+DOMINATE ZO 
+A Zone of Operations (ZO) is Dominated by a player if they have 
+more Victory Points than the adversary inside the area. Only 
+Troopers represented by Models or Markers (Camouflaged, 
+Shasvastii-Embryo...) count, as well as Proxies and Peripheral 
+Troops. Troops in a Null State do not count. Tokens representing 
+weapons or pieces of equipment (like Mines or Deployable 
+Repeaters), fake Holoechoes, and any Token that does not 
+represent a Trooper does not count either. 
+A Trooper is inside a Zone of Operations when more than half 
+the Trooper’s base is inside that ZO.
+SHASVASTII
+Troopers possessing the Shasvastii Special Skill that are inside 
+a Zone of Operations count while they are in the Shasvastii-
+Embryo State or any non-Null State.
+BAGGAGE 
+Troopers possessing the Baggage piece of Equipment that are 
+inside a Zone of Operations and in a non-Null State provide an 
+additional 20 Victory Points for Dominating the ZO.
+SERVER ROOM DEFENSE SYSTEM
+There are 2 Armed Turrets, placed inside the Server Room in 
+different corners (see map). 
+The Armed Turrets must be represented by a Defensive Turret 
+A /B Token or by a Model or piece of scenery with the same 
+Silhouette value (for example Turrets from the ITS Objectives Pack 
+Alpha).
+If the Server Room’s Defense System is active, the Armed Turrets react 
+with BS Attack or CC Attack to any Order declared by an active Enemy 
+Model (but not Markers) in LOF or in Silhouette contact.
+ARMED TURRET - DEFENSE SYSTEM
+MOV
+CC
+BS
+PH
+WIP
+ARM
+BTS
+STR
+S
+--
+5
+10
+--
+11
+2
+3
+1
+2
+Equipment: 360º Visor
+Special Skills: Total Reaction
+BS Weapons: Combi Rifle
+CC Weapons: PARA CC Weapon (-3)
+DATA CONSOLE
+There is 1 Data Console placed in the center of the table. Inside 
+the Data Console is 1 single Data Pack.
+The Data Console must be represented by a Console A Token or 
+by a scenery piece of the same diameter (such as the Consoles 
+from the ITS Objectives Pack Alpha, the Human Consoles by 
+Micro Art Studio, the Tech Consoles by Warsenal or the Comlink 
+Console by Customeeple).
+EXTRACT DATA PACK 
+(ONLY ATTACKER)
+SHORT SKILL
+Attack, Scenario.
+REQUIREMENTS
+ 
+►Only Specialist Troops can declare this Skill.
+ 
+►The Specialist Troop must be in Silhouette contact with the Data Console.
+EFFECTS
+ 
+►Allows the Specialist Troop to make a Normal WIP-6 Roll to Extract the Data 
+Pack, with a successful roll a DATA PACK Token must be placed besides it. 
+ 
+►If the roll is failed, this can be repeated as many times as necessary, each 
+time spending the corresponding Short Skill and making the roll. 
+ 
+►If the Data Console is Unlocked, the roll is a Normal WIP roll without the -6 
+MOD.
+DATA PACK
+The Data Pack must be represented by a DATA PACK Token.
+The Trooper who has the Data Pack must always be on the game 
+table as a Model and not as a Marker (Camouflaged, Holoecho…).
+Once the Data Pack is Extracted, if the Trooper carrying it enters 
+Dead State the DATA PACK Token must be removed from the 
+game table. 
+
+33
+ INHIBITOR ANTENNA 
+There is an Inhibitor Antenna placed next to one of the outer 
+corners of the Server Room in the Defender’s half of the game 
+table. (see map).
+The Inhibitor Antenna must be represented by a Transmission 
+Antenna Token (TRANS. ANTENNA) or with a scenery piece of 
+the same diameter (such as the Antenna of the ITS Objective 
+Pack Alpha, the Communications Array by Warsenal or the Sat 
+Station Antenna by Customeeple).
+USE INHIBITOR ANTENNA
+SHORT SKILL 
+Attack, Scenario
+REQUIREMENTS 
+ 
+►Only Specialist Troops can declare this Skill.
+ 
+►The Specialist Troop must be in Silhouette contact with the Inhibitor 
+Antenna.
+EFFECTS 
+ 
+►When declaring this Skill, you must choose one of the following actions:
+ 
+►(Only Attacker) Unlock the Data Console.
+ 
+►Activate or deactivate the Server Room Defense System.
+ 
+►With a successful a Normal WIP Roll, the chosen action is performed.
+ 
+►If the roll is failed, this can be repeated as many times as necessary, each 
+time spending the corresponding Short Skill and making the roll.
+SPECIALIST TROOPS
+For the purposes of this scenario, only Hackers, Doctors, 
+Engineers, Forward Observers, Paramedics, and Troopers 
+possessing the Chain of Command or the Specialist Operative 
+Special Skill are considered Specialist Troops.
+Hackers, Doctors, and Engineers cannot make use of Repeaters 
+or Peripheral (Servant) Models to perform tasks reserved for 
+Specialist Troops.
+KILLING
+Troopers are considered Killed by the adversary when they 
+enter Dead State, or they are in a Null State at the end of the 
+game. 
+Troopers that have not been deployed on the game table, as a 
+Model or Marker, at the end of the game will be considered to be 
+Killed by the adversary. 
+INTELCOM CARD 
+(SUPPORT AND CONTROL) 
+Before the beginning of the game, but after choosing the first 
+Classified Objective, the player must inform to their adversary 
+if that card will be their Classified Objective or their INTELCOM 
+Card. Each player rolls a die and the one who gets the highest 
+score must be the first who announces their decision to their 
+adversary. The content of the card, whether the mission or the 
+card numeric value, is Private Information, no matter which use 
+the player has chosen for it. 
+At the end of the last Game Round, when the players count 
+up their points and in Initiative order, the player can use their 
+INTELCOM Card in Support and Control Mode. 
+Support and Control Mode: The player can add the value of the 
+Support and Control Card to their Victory Points in the Zone of 
+Operations (ZO) of their choice. The player must have at least 
+one Trooper inside that ZO, in a non-Null State.
+END OF THE MISSION
+This scenario has a limited time frame, so it will automatically 
+finish at the end of the third Game Round.
+If one of the players starts their Active Turn in a Retreat! 
+situation, the game will end at the end of that Turn.

@@ -1,0 +1,207 @@
+42
+LAST LAUNCH
+TACTICAL SUPPORT OPTIONS 
+2
+SUITABLE FOR REINFORCEMENTS
+YES
+Based on the Dante Harrower’s Scenario from the Loss of Lieutenant custom mission challenge.
+MISSION OBJECTIVES 
+MAIN OBJECTIVES 
+ 
+^ At the end of the game, have Extracted more Army Points 
+than the adversary (2 Objective Points).
+ 
+^ At the end of the game, have Extracted more Specialist 
+Troops than the adversary (2 Objective Points).
+ 
+^ At the end of the game, have Killed more Specialist 
+Troops than the adversary (2 Objective Points).
+ 
+^ At the end of the game, have Killed the same number of 
+Specialist Troops as the adversary (1 Objective Point).
+ 
+^ At the end of the game, Dominate the Launching Tower 
+(1 Objective Point).
+CLASSIFIED
+Each player has 3 Classified Objectives (1 Objective Point for 
+each one). 
+FORCES AND DEPLOYMENT
+SIDE A and SIDE B: Both players will deploy on opposite sides of 
+the game table, in Deployment Zones whose size depends on the 
+number of Army Points in the Army Lists.
+SIDE
+ARMY 
+POINTS
+SWC
+GAME TABLE 
+SIZE
+DEPLOYMENT ZONES 
+SIZES
+A and B
+150
+3
+24 in x 32 in
+8 in x 24 in
+A and B
+200
+4
+32 in x 48 in
+12 in x 32 in
+A and B
+250
+5
+32 in x 48 in
+12 in x 32 in
+A and B
+300
+6
+48 in x 48 in
+12 in x 48 in
+A and B
+350
+7
+48 in x 48 in
+12 in x 48 in
+A and B
+400
+8
+48 in x 48 in
+12 in x 48 in
+It is not allowed to deploy inside the Launching Tower.
+
+43
+LAUNCHING TOWER (ZO)
+In this scenario, the Launching Tower is a Zone of Operations 
+(ZO). Placed in the center of the table, it covers an area of 8 by 8 
+inches. To represent the Launching Tower, we recommend using 
+the Objective Room of the different Infinity Expansion Scenery 
+Packs, the Objective Room by Micro Art Studio, the Command 
+Bunker by Warsenal, or the Panic Room by Customeeple.
+In game terms, it is considered to have walls of infinite height 
+that completely block Line of Fire. It has four Wide Gates, one in 
+the middle of each wall (see map). The Gates of the Launching 
+Tower are open at the start of the game.
+DOMINATE ZO 
+A Zone of Operations is Dominated by a player if they have 
+more Victory Points than the adversary inside the area. Only 
+Troopers represented by Models or Markers (Camouflaged, 
+Shasvastii-Embryo, …) count, as well as Proxies and Peripheral 
+Troops. Troops in a Null State do not count. Tokens representing 
+weapons or pieces of equipment (like Mines or Deployable 
+Repeaters), fake Holoechoes, and any Token that does not 
+represent a Trooper do not count either.
+A Trooper is inside the ZO when more than half the Trooper’s 
+base is inside that ZO.
+SHASVASTII
+Troopers possessing the Shasvastii Special Skill that are inside 
+a Zone of Operations count while they are in Unconscious State 
+or any non-Null State.
+BAGGAGE
+Each Trooper possessing the Baggage piece of Equipment that 
+is Extracted provides an additional 20 points to the player’s 
+Extracted Army Points.
+Troopers possessing the Baggage piece of Equipment that are 
+inside a Zone of Operations and in a non-Null State provide an 
+additional 20 Victory Points for Dominating the ZO 
+SCENARIO SPECIAL RULES 
+ID SCANNERS 
+There are 2 ID Scanners placed on the central line of the table. 
+They are placed 8 inches from the table edges (4 inches in 150 
+point games). 
+The ID Scanners must be represented by a Tech-Coffin Token or 
+with a scenery piece of the same diameter (such as the Tech-
+Coffins of the ITS Objective Pack Alpha, the Stasis Coffins by 
+Warsenal, or the Cryo Pods by Customeeple).
+DOWNLOAD ID
+SHORT SKILL
+Attack, Scenario
+REQUIREMENTS
+ 
+►Only Specialist Troops can declare this Skill.
+ 
+►The Specialist Troop must be in Silhouette contact with the ID Scanner.
+EFFECTS
+ 
+►Allows the Specialist Troop to make a Normal WIP Roll to Download an ID, 
+with a successful roll an ID Token must be placed beside it.
+ 
+►If the roll is failed, this can be repeated as many times as necessary, each 
+time spending the corresponding Short Skill and making the roll.
+SWAP ID
+SHORT SKILL
+Attack, Scenario
+REQUIREMENTS
+ 
+►The Trooper must be in Silhouette contact with an Allied Trooper with an 
+ID Token.
+EFFECTS
+ 
+►Without needing to perform a Roll, the player can Swap the ID.
+ 
+►Place the ID Token next to the Trooper that declared this Skill.
+COMMON RULES OF ID TOKENS
+ 
+^ A Trooper with an ID Token cannot enter or be in any 
+Marker State.
+ 
+^ A Trooper can only have a single ID Token at a time.
+ 
+^ If a Trooper with an ID Token enters Dead State, remove 
+their ID Token.
+
+44
+ID CHECKER
+There is 1 ID Checker placed in the center of the Launching 
+Tower.
+The ID Checker must be represented by a Console A Token or by 
+a scenery piece of the same diameter (such as the Consoles of 
+the ITS Objectives Pack Alpha, the Human Consoles by Micro Art 
+Studio, the Tech Consoles by Warsenal or the Comlink Console 
+by Customeeple).
+EXTRACT IDENTIFIED TROPPER
+SHORT SKILL
+Attack, Scenario
+REQUIREMENTS
+ 
+►The Trooper must have an ID Token.
+ 
+►The Trooper must be in Silhouette contact with the ID Checker.
+ 
+►Troopers taking part in a Coordinated Order cannot declare this Skill.
+EFFECTS
+ 
+►Without needing to perform a Roll, the player can Extract the Trooper.
+ 
+►Remove the Trooper from the game table, and any Peripherals it has that 
+are inside the Launching Tower.
+ 
+►Add the removed Troopers’ points cost to the player’s Extracted Army 
+Points. Each player’s Extracted Army Points total is Open Information.
+ 
+►Troopers removed this way still count toward the player’s Victory Points, 
+even if they entered a Null State or Dead State during the Order they were 
+Extracted.
+ 
+►During a player’s Tactical Phase, if their current Lieutenant has been 
+extracted, apply the Loss of Lieutenant rule. 
+KILLING
+Troopers are considered Killed by the adversary when they 
+enter Dead State or are in a Null State at the end of the game.
+Troopers that have not been deployed on the game table, as a 
+Model or Marker, at the end of the game will be considered to be 
+Killed by the adversary.
+Troopers that have been Extracted are never considered to be 
+Killed by the adversary.
+SPECIALIST TROOPS
+For the purposes of this scenario, only Hackers, Doctors, 
+Engineers, Forward Observers, Paramedics, and Troopers 
+possessing the Chain of Command or the Specialist Operative 
+Special Skill are considered Specialist Troops.
+Hackers, Doctors, and Engineers cannot make use of Repeaters 
+or Peripheral (Servant) Models to perform tasks reserved for 
+Specialist Troops.
+NO QUARTER
+In this scenario, the Retreat! rules are not applied.
+END OF THE MISSION
+This scenario has a limited time frame, so it will automatically 
+finish at the end of the third Game Round.

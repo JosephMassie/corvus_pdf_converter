@@ -1,0 +1,183 @@
+24
+B-PONG
+TACTICAL SUPPORT OPTIONS 
+2
+SUITABLE FOR REINFORCEMENTS
+YES
+MISSION OBJECTIVES 
+MAIN OBJECTIVES 
+ 
+^ At the end of the Game, the Tracking Beacon is totally 
+inside the enemy half of the game table. (2 Objective 
+Points).
+ 
+^ At the end of each Game Round, Control the Tracking 
+Beacon (1 Objective Point).
+ 
+^ At the end of each Game Round, Control at least one 
+Console (1 Objective Point).
+CLASSIFIED
+Each player has 2 Classified Objectives (1 Objective Point for 
+each one). 
+
+FORCES AND DEPLOYMENT
+SIDE A and SIDE B: Both players will deploy on opposite sides 
+of the game table, in Deployment Zones whose size depends on 
+the number of Army Points in the Army Lists.
+SIDE
+ARMY 
+POINTS
+SWC
+GAME TABLE 
+SIZE
+DEPLOYMENT ZONES 
+SIZES
+A and B
+150
+3
+24 in x 32 in
+12 in x 24 in
+A and B
+200
+4
+32 in x 48 in
+16 in x 32 in
+A and B
+250
+5
+32 in x 48 in
+16 in x 32 in
+A and B
+300
+6
+48 in x 48 in
+16 in x 48 in
+A and B
+350
+7
+48 in x 48 in
+16 in x 48 in
+A and B
+400
+8
+48 in x 48 in
+16 in x 48 in
+Exclusion Zone. The Exclusion Zone is the area covering 4 
+inches (2 inches in 150 point games) either side of the central 
+line of the game table. Any Special Skill with the Airborne 
+Deployment (AD) or Superior Deployment Labels cannot be used 
+to deploy inside this area. 
+
+25
+SCENARIO SPECIAL RULES
+TRACKING BEACON 
+There is 1 Tracking Beacon placed in the center of the table.
+The Tracking Beacon must be represented by a Beacon Token 
+(BEACON) or by a scenery piece of the same diameter (such 
+as the Beacon from the ITS Objectives Pack Alpha, the Tactical 
+Beacons by Micro Art Studio, the Tracking Beacons by Warsenal 
+or the Mark One Beacons by Customeeple).
+RELOCATE THE TRACKING BEACON
+SHORT SKILL
+Attack, Scenario.
+REQUIREMENTS
+ 
+►Only Specialist Troops can declare this Skill.
+ 
+► The Specialist Troop must be in Silhouette contact with the Tracking 
+Beacon.
+ 
+►Each Specialist Troop can only declare this Skill once per Game Round.
+EFFECTS
+ 
+►Spending one Short Skill, without needing to perform a Roll, the player 
+can Relocate the Tracking Beacon.
+ 
+►Place the Tracking Beacon anywhere within 4 inches of its previous 
+position.
+COMMON RULES 
+OF THE TRACKING BEACON 
+When moving the Tracking Beacon, the following rules must be 
+followed:
+ 
+^ The final position of the Tracking Beacon must be fully 
+supported by the surface it is placed on, and it cannot be 
+placed on a vertical surface.
+ 
+^ It must be possible to draw a path between the Tracking 
+Beacon’s starting and final positions. The path cannot be 
+blocked by an impassable obstacle (for example a wall 
+of infinite height, a closed door or sealed room...) or a 
+gap too small for the diameter of the Tracking Beacon to 
+pass through.
+ 
+^ The Tracking Beacon is placed in its final position at the 
+Conclusion of the Order. 
+CONTROL THE TRACKING BEACON
+At the end of each Game Round, the Tracking Beacon is 
+Controlled by a player as long as that player is the only one with 
+at least one Trooper (as a Model, not a Marker) in Silhouette 
+contact with it. So there cannot be any enemy Troopers in 
+Silhouette contact with the Tracking Beacon. Models in a Null 
+State cannot do either.
+CONSOLES
+There are two Consoles, placed on the central line of the 
+game table. They are placed 12 inches from the table edges in 
+300/350/400 point games, 8 inches in 200/250 point games, 
+and 6 inches in 150 point games (see map).
+Each Console must be represented by a Console A Token or by a 
+scenery piece of the same diameter (such as the Consoles from 
+the ITS Objectives Pack Alpha, the Human Consoles by Micro Art 
+Studio, the Tech Consoles by Warsenal or the Comlink Console 
+by Customeeple).
+ACTIVATE CONSOLE
+SHORT SKILL
+Attack, Scenario.
+REQUIREMENTS
+ 
+►Only Specialist Troops can declare this Skill.
+ 
+►The Specialist Troop must be in Silhouette contact with the Console. 
+ 
+►The Tracking Beacon cannot be in Silhouette contact with a Trooper.
+ 
+►Each Specialist Troop can only successfully Activate a Console once per 
+Game Round. 
+EFFECTS
+ 
+►Allows the Specialist Troop to make a Normal WIP Roll to Activate the 
+Console. If the roll is failed, this can be repeated as many times as 
+necessary, each time spending the corresponding Short Skill and making 
+the roll.
+ 
+►Once you successfully have Activated the Console, you must choose and 
+perform one of the following actions:
+ 
+►Nudge the Tracking Beacon: Place the Tracking Beacon anywhere 
+within 2 inches of its current position. 
+ 
+►Magnetize the Tracking Beacon: Place the Tracking Beacon within 6 
+inches of its current position and directly towards the center of the 
+game table. This action cannot be used to move the Tracking Beacon 
+beyond the center of the table. 
+
+26
+NO QUARTER
+In this scenario, the Retreat! rules are not applied.
+END OF THE MISSION
+This scenario has a limited time frame, so it will automatically 
+finish at the end of the third Game Round.
+CONTROL THE CONSOLE
+At the end of each Game Round, a Console is Controlled by a 
+player as long as that player is the only one with at least one 
+Trooper (as a Model, not a Marker) in Silhouette contact with it. 
+So there cannot be any enemy Troopers in Silhouette contact 
+with the Console. Models in a Null State cannot do either.
+SPECIALIST TROOPS
+For the purposes of this scenario, only Hackers, Doctors, 
+Engineers, Forward Observers, Paramedics, and Troopers 
+possessing the Chain of Command or the Specialist Operative 
+Special Skill are considered Specialist Troops.
+Hackers, Doctors, and Engineers cannot make use of Repeaters 
+or Peripheral (Servant) Models to perform tasks reserved for 
+Specialist Troops.
