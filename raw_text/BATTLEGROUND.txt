@@ -1,0 +1,131 @@
+53
+MISSION OBJECTIVES 
+ 
+^ At the end of the game, dominate the nearest Sector to 
+your Deployment Zone (1 Objective Point). 
+ 
+^ At the end of the game, dominate the central Sector 
+(3 Objective Points). 
+ 
+^ At the end of the game, dominate the farthest Sector 
+from your Deployment Zone (4 Objective Points). 
+ 
+^ Kill the enemy Key Ops (2 Objective Points). 
+ 
+^ Alternatively, at the end of the game, Threaten the enemy 
+Key Ops (1 Objective Point).
+BATTLEGROUND
+TACTICAL SUPPORT OPTIONS 
+0
+SUITABLE FOR REINFORCEMENTS
+NO
+FORCES AND DEPLOYMENT 
+SIDE A and SIDE B: Both players will deploy on opposite sides 
+of the game table, in Deployment Zones whose size depends on 
+the number of Army Points in the Army Lists.
+SIDE
+ARMY 
+POINTS
+SWC GAME TABLE SIZE DEPLOYMENT ZONES 
+SIZES
+A and B
+150
+3
+24 in x 32 in
+8 in x 24 in
+A and B
+200
+4
+32 in x 48 in
+12 in x 32 in
+A and B
+250
+5
+32 in x 48 in
+12 in x 32 in
+A and B
+300
+6
+48 in x 48 in
+12 in x 48 in
+A and B
+350
+7
+48 in x 48 in
+12 in x 48 in
+A and B
+400
+8
+48 in x 48 in
+12 in x 48 in
+
+54
+SCENARIO SPECIAL RULES 
+SECTORS (ZO) 
+When the game is finished, but not before, 3 Sectors are marked 
+out. In 200/250/300/350/400 point games, these Sectors are 
+8 inches deep and as wide as the game table. Two of these 
+Sectors are placed 4 inches from the central line of the game 
+table, one on each side, and the third Sector is a strip 8 inches 
+deep in the central area of the table. 
+In 150 point games, these Sectors are 4 inches deep and as 
+wide as the game table. Two of these Sectors are placed 2 
+inches from the central line of the game table, one on each side, 
+and the third Sector is a strip 4 inches deep in the central area 
+of the table. 
+In this scenario each Sector is a Zone of Operations (ZO).
+DOMINATE ZO 
+A Zone of Operations (ZO) is Dominated by a player if they have 
+more Victory Points than the adversary inside the area. Only 
+Troopers represented by Models or Markers (Camouflaged, 
+Shasvastii-Embryo...) count, as well as Proxies and Peripheral 
+Troops. Troops in a Null State do not count. Tokens representing 
+weapons or pieces of equipment (like Mines or Deployable 
+Repeaters), fake Holoechoes, and any Token that does not 
+represent a Trooper does not count either. 
+A Trooper is inside a Zone of Operations when more than half 
+the Trooper’s base is inside that ZO.
+SHASVASTII 
+Troopers possessing the Shasvastii Special Skill that are inside 
+a Zone of Operations count while they are in the Unconscious 
+State or any non-Null State.
+BAGGAGE 
+Troopers possessing the Baggage piece of Equipment that are 
+inside a Zone of Operations and in a non-Null State provide an 
+additional 20 Victory Points for Dominating the ZO.
+KILLING 
+Troopers are considered Killed by the adversary when they 
+enter Dead State, or they are in a Null State at the end of the 
+game. 
+Troopers that have not been deployed on the game table, as a 
+Model or Marker, at the end of the game will be considered to be 
+Killed by the adversary. 
+KEY OPS
+The Key Ops is a special tactics operator with unique training to 
+conduct multi-domain reconnaissance and combat across the 
+full spectrum of conflicts.
+At the end of the Deployment Phase, in Initiative order, players 
+must declare which Trooper from their Army List is their Key 
+Ops. The Trooper chosen must be always one of the models 
+deployed on the game table. Players are not allowed to choose 
+Troopers in Hidden Deployment or in Marker state. This Trooper 
+must always be on the game table as a Model and not as a 
+Marker (Camouflaged, Holoecho…). Also, Irregular Troops and 
+those whose Troop Type is REM or VH are not eligible to be Key 
+Ops. 
+The Key Ops possesses the Dodge (+3) and Tactical Awareness 
+Special Skills, even if those are not listed on their Unit Profile. 
+These Special Skills are not cumulative, if the Trooper already 
+has them, then they are not applied. 
+The Key Ops is identified with a Player A or B Marker.
+THREATEN KEY OPS 
+A Key Ops is Threatened by a player if they have at least one 
+Trooper (as a Model, not a Marker) in a non-Null state inside the 
+Key Ops’ Zone of Control. 
+HVT AND CLASSIFIED DECK NOT USED 
+In this scenario, the HVT Model and Secure HVT rules are not 
+applied. Players will not deploy the HVT Model on the game 
+table and they will not use the Classified Deck in this scenario.
+END OF THE MISSION 
+This scenario has a limited time frame, so it will automatically 
+finish at the end of the third Game Round.

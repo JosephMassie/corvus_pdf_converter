@@ -8,10 +8,11 @@ from rich.console import Console
 from rich.table import Table
 from rich.pretty import pprint
 import os
+import time
 
 console = Console()
 
-def extract_scenarios_from_pdf(pdf_path, debug=False, raw=False):
+def extract_scenarios_from_pdf(pdf_path, debug=False, raw=False, slow=False):
     """
     Main function to orchestrate the extraction of ITS Scenarios and Direct Action 
     scenarios from the provided PDF file. It reads the table of contents, then 
@@ -94,8 +95,10 @@ def extract_scenarios_from_pdf(pdf_path, debug=False, raw=False):
             console.print(f"  [dim]Preview: {preview}...[/dim]")
         
         # Parse the extracted text to get structured data for the scenario.
-        scenario_data = parse_scenario(scenario_name, scenario_text, debug=debug)
+        scenario_data = parse_mission(scenario_name, scenario_text, debug=debug)
         scenarios.append(scenario_data)
+        if slow:
+            time.sleep(1)  # Small delay to avoid overwhelming the console.
     
     # Process each Direct Action scenario similarly.
     for i, da_info in enumerate(direct_actions):
@@ -118,14 +121,21 @@ def extract_scenarios_from_pdf(pdf_path, debug=False, raw=False):
         # Extract text from the determined page range.
         da_text = extract_text_from_pages(doc, start_page, end_page)
         
+        if raw:
+            os.makedirs("raw_text", exist_ok=True)
+            with open(f"raw_text/{da_name}.txt", "w", encoding="utf-8") as f:
+                f.write(da_text)
+
         if debug:
             console.print(f"  [green]Extracted {len(da_text)} characters[/green]")
             preview = da_text[:300] if len(da_text) > 300 else da_text
             console.print(f"  [dim]Preview: {preview}...[/dim]")
         
         # Parse the text, flagging it as a Direct Action.
-        da_data = parse_scenario(da_name, da_text, is_direct_action=True, debug=debug)
+        da_data = parse_mission(da_name, da_text, is_direct_action=True, debug=debug)
         scenarios.append(da_data)
+        if slow:
+            time.sleep(1)  # Small delay to avoid overwhelming the console.
     
     doc.close()
     
@@ -220,10 +230,10 @@ def find_page_with_text(doc, search_text, start_page=0):
             return page_num
     return -1
 
-def parse_scenario(name, text, is_direct_action=False, debug=False):
+def parse_mission(name, text, is_direct_action=False, debug=False):
     """
-    Top-level parser for a single scenario's text. It orchestrates calls to
-    specialized functions to extract each distinct section of the scenario,
+    Top-level parser for a single mission's text. It orchestrates calls to
+    specialized functions to extract each distinct section of the mission,
     such as objectives, deployment, and special rules.
     """
     scenario = {
@@ -271,17 +281,18 @@ def extract_objectives(text, debug=False):
     # the next major section header is encountered.
     # - `MISSION\s+OBJECTIVES\s+`: Matches the section start.
     # - `(.*?)`: Non-greedily captures the content of the section.
-    # - `(?:FORCES\s+AND\s+DEPLOYMENT|SCENARIO\s+SPECIAL)`: A non-capturing group that defines
+    # - `(?:FORCES\s+AND\s+DEPLOYMENT|SCENARIO\s+SPECIAL|TACTICAL\s+SUPPORT\s+OPTIONS)`: A non-capturing group that defines
     #   the possible headers that terminate the objectives section.
-    obj_match = re.search(r'MISSION\s+OBJECTIVES\s+(.*?)(?:FORCES\s+AND\s+DEPLOYMENT|SCENARIO\s+SPECIAL)', text, re.DOTALL | re.IGNORECASE)
+    obj_match = re.search(r'MISSION\s+OBJECTIVES\s+(.*?)(?:FORCES\s+AND\s+DEPLOYMENT|SCENARIO\s+SPECIAL|TACTICAL\s+SUPPORT\s+OPTIONS)', text, re.DOTALL | re.IGNORECASE)
     if not obj_match:
         if debug:
-            console.print(f"    [red]✗ MISSION OBJECTIVES section not found[/red]")
+            console.print(f"\t[red]✗ MISSION OBJECTIVES section not found[/red]")
         return objectives
     
     obj_text = obj_match.group(1)
     if debug:
-        console.print(f"    [green]✓ Found objectives section ({len(obj_text)} chars)[/green]")
+        console.print(f"\t[green]✓ Found objectives section ({len(obj_text)} chars)[/green]")
+        console.print(f"\t[dim]Preview: {obj_text[:200]}...[/dim]")
     
     # The strategy is to iterate through the lines of the section text, identifying
     # subsection headers. A header is assumed to be a line that is predominantly
@@ -289,6 +300,10 @@ def extract_objectives(text, debug=False):
     lines = obj_text.split('\n')
     current_section = None
     current_content = []
+
+    if debug:
+        console.print(f"\t[blue]Parsing objectives section into {len(lines)} lines looking for subheadings...[/blue]")
+        pprint(lines, max_string=100)
     
     for line in lines:
         line_stripped = line.strip()
@@ -307,7 +322,7 @@ def extract_objectives(text, debug=False):
         
         if is_header:
             # When a new header is found, process the content of the previous section.
-            if current_section and current_content:
+            if current_content:
                 content_str = '\n'.join(current_content)
                 # Objectives are often listed as bullet points starting with '^'.
                 # Split the content by this pattern to get individual objectives.
@@ -324,21 +339,27 @@ def extract_objectives(text, debug=False):
                     item = re.sub(r'\s+', ' ', item)
                     if item and len(item) > 5:
                         objective_items.append(item)
+                    elif debug:
+                        console.print(f"\t\t[orange1]! Objective skipped [{current_section}]: '{item}'[/orange1]")
                 
-                if objective_items:
-                    # Sanitize the header text to use as a JSON key.
+                # Some sections main not have a header, so we use a default key
+                header_key = f"group_{len(objectives)}"
+                # Sanitize the header text to use as a JSON key.
+                if current_section:
                     header_key = current_section.lower().replace(' ', '_').replace('(', '').replace(')', '').replace('-', '_').replace('/', '_')
+
+                if objective_items:
                     objectives[header_key] = objective_items
                     if debug:
-                        console.print(f"    [green]✓ Found {len(objective_items)} objectives for '{current_section}'[/green]")
+                        console.print(f"\t\t[green]✓ Found {len(objective_items)} objectives for '{header_key}'[/green]")
             
             # Start a new section.
             current_section = line_stripped
             current_content = []
         else:
             # If not a header, append the line to the current section's content.
-            if current_section:
-                current_content.append(line_stripped)
+            current_content.append(line_stripped)
+
     
     # After the loop, process the very last section found.
     if current_section and current_content:
@@ -358,7 +379,36 @@ def extract_objectives(text, debug=False):
             objectives[header_key] = objective_items
             if debug:
                 console.print(f"    [green]✓ Found {len(objective_items)} objectives for '{current_section}'[/green]")
-    
+    # If no subheadings were found, treat the entire section as a single group of objectives.
+    elif current_content:
+        content_str = '\n'.join(current_content)
+        items = re.split(r'\n\s*\^\s*', content_str)
+        objective_items = []
+        for item in items:
+            item = item.strip()
+            item = re.sub(r'^\^\s*', '', item)
+            item = re.sub(r'\s*\n\s*', ' ', item)
+            item = re.sub(r'\s+', ' ', item)
+            if item and len(item) > 5:
+                objective_items.append(item)
+        
+        if objective_items:
+            objectives = objective_items
+            if debug:
+                console.print(f"    [dark_cyan]✓ Found {len(objective_items)} objectives with no subhead[/dark_cyan]")
+    else:
+        console.print(f"    [red]✗ No objectives found in the section[/red]")
+
+    # finally check if there are only objectives from generic groups
+    # if so combine them into one list
+    if isinstance(objectives, dict) and all(map(lambda k: k.startswith("group_"), objectives.keys())):
+        if debug:
+            console.print(f"    [cyan]✓ Found {len(objectives)} generic groups of objectives, combining[/cyan]")
+        all_objectives = []
+        for group in objectives.values():
+            all_objectives.extend(group)
+        objectives = all_objectives
+
     return objectives
 
 def extract_deployment(text, debug=False):
@@ -675,7 +725,8 @@ def extract_end_of_mission(text, debug=False):
 @click.option("--json_output", type=click.Path(), help="Path to save the JSON output file")
 @click.option("--debug", is_flag=True, help="Enable debug output")
 @click.option("--raw", is_flag=True, help="Output raw text from each scenario")
-def main(pdf_path, debug, raw, json_output):
+@click.option("-z", "--slow", is_flag=True, help="Run in slow mode")
+def main(pdf_path, debug, raw, json_output, slow):
     """
     Command-line interface entrypoint for the script. It takes a PDF file path
     as input, orchestrates the scenario extraction, and saves the result to a
@@ -684,7 +735,7 @@ def main(pdf_path, debug, raw, json_output):
     console.print(f"\n[bold cyan]Extracting scenarios from PDF:[/bold cyan] {pdf_path}\n")
     
     # Run the main extraction process.
-    scenarios = extract_scenarios_from_pdf(pdf_path, debug=debug, raw=raw)
+    scenarios = extract_scenarios_from_pdf(pdf_path, debug=debug, raw=raw, slow=slow)
     
     # Structure the final output with some metadata.
     output = {
@@ -702,11 +753,6 @@ def main(pdf_path, debug, raw, json_output):
     
     console.print(f"\n[bold green]✓ Extracted {len(scenarios)} scenarios[/bold green]")
     console.print(f"[bold green]✓ Output saved to {jsonFileName}[/bold green]\n")
-    
-    # Print a sample of the first extracted scenario for immediate verification.
-    if scenarios:
-        console.print("[bold]First scenario sample:[/bold]")
-        pprint(scenarios[0], max_string=100)
 
 if __name__ == "__main__":
     # This makes the script executable from the command line.

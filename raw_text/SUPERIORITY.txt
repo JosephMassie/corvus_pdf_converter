@@ -1,0 +1,190 @@
+57
+MISSION OBJECTIVES 
+ 
+^ At the end of each Game Round, dominate more 
+Quadrants than the adversary (2 Objective Points). 
+ 
+^ At the end of the game, have a Hacked Console 
+(1 Objective Point for each Hacked Console, up to a 
+maximum of 3 Objective Points). 
+ 
+^ At the end of the game, have a Dominant Key Ops 
+(1 extra Objective Point).
+FORCES AND DEPLOYMENT 
+SIDE A and SIDE B: Both players will deploy on opposite sides 
+of the game table, in Deployment Zones whose size depends on 
+the number of Army Points in the Army Lists. 
+SIDE
+ARMY 
+POINTS
+SWC
+GAME TABLE SIZE
+DEPLOYMENT 
+ZONES SIZES
+A and B
+150
+3
+24 in x 32 in
+8 in x 24 in
+A and B
+200
+4
+32 in x 48 in
+12 in x 32 in
+A and B
+250
+5
+32 in x 48 in
+12 in x 32 in
+A and B
+300
+6
+48 in x 48 in
+12 in x 48 in
+A and B
+350
+7
+48 in x 48 in
+12 in x 48 in
+A and B
+400
+8
+48 in x 48 in
+12 in x 48 in
+SUPERIORITY
+TACTICAL SUPPORT OPTIONS 
+0
+SUITABLE FOR REINFORCEMENTS
+NO
+
+58
+SCENARIO SPECIAL RULES 
+QUADRANTS (ZO) 
+At the end of each Game Round, but not before, the table is 
+divided into four Quadrants as seen on the map. Each player 
+then checks how many Quadrants they are dominating and 
+counts their Objective Points. 
+In this scenario each Quadrant is a Zone of Operations (ZO). 
+DOMINATE ZO 
+A Zone of Operations (ZO) is Dominated by a player if they have 
+more Victory Points than the adversary inside the area. Only 
+Troopers represented by Models or Markers (Camouflaged, 
+Shasvastii-Embryo...) count, as well as Proxies and Peripheral 
+Troops. Troops in a Null State do not count. Tokens representing 
+weapons or pieces of equipment (like Mines or Deployable 
+Repeaters), fake Holoechoes, and any Token that does not 
+represent a Trooper does not count either. 
+A Trooper is inside a Zone of Operations when more than half 
+the Trooper’s base is inside that ZO. 
+SHASVASTII 
+Troopers possessing the Shasvastii Special Skill that are inside 
+a Zone of Operations count while they are in the Unconscious 
+State or any non-Null State.
+BAGGAGE 
+Troopers possessing the Baggage piece of Equipment that are 
+inside a Zone of Operations and in a non-Null State provide an 
+additional 20 Victory Points for Dominating the ZO.
+CONSOLES 
+There are 4 Consoles, placed on the center of each Quadrant 
+(See map). 
+Each Console must be represented by a Console A Token or by 
+a scenery piece of the same diameter (such as the Consoles of 
+the ITS Objective Pack Alpha, the Human Consolesby Micro Art 
+Studio, the Tech Consoles by Warsenal or the Comlink Console 
+by Customeeple).
+HACK CONSOLES 
+SHORT SKILL 
+Attack, Scenario. 
+REQUIREMENTS 
+ 
+►Only Specialist Troops can declare this Skill. 
+ 
+ 
+►The Specialist Troop must be in Silhouette contact with a Console. 
+EFFECTS 
+ 
+►Allows the Specialist Troop to make a Normal WIP Roll to Hack the 
+Console.
+ 
+►If the roll is failed, this can be repeated as many times as necessary, each 
+time spending the corresponding Short Skill and making the roll. 
+ 
+►A Hacked Console can be Hacked again by the other player applying the 
+same procedure. In this case, both players will count that Console as 
+Hacked.
+ 
+►Player A and Player B Tokens can be used to mark the Hacked Consoles. It 
+is recommended each player uses a different kind of Tokens.
+SPECIALIST TROOPS 
+For the purposes of this scenario, only Hackers, Doctors, 
+Engineers, Forward Observers, Paramedics, and Troopers 
+possessing the Chain of Command or the Specialist Operative 
+Special Skill are considered Specialist Troops.
+Hackers, Doctors, and Engineers cannot make use of Repeaters 
+or Peripheral (Servant) Models to perform tasks reserved for 
+Specialist Troops.
+
+59
+OPERATIONAL LEARNING
+When a Specialist Troop performs a Skill with the Scenario 
+Label that requires a WIP Roll and fails, they benefit from the 
+following MODs in subsequent Orders:
+ 
+^ In the second consecutive Order, the Trooper applies a 
++3 MOD to the WIP Roll required for that Scenario Skill.
+ 
+^ In the third consecutive Order—and subsequent Orders— 
+the Trooper applies +3 and +1SD MODs to the WIP Roll 
+required for that Scenario Skill.
+ 
+^ These MODs are cumulative with any other MOD that 
+applies to Skills with the Scenario Label. 
+IMPORTANT:
+These MODs only apply to Rolls made in consecutive 
+Orders by the same Trooper for the same Scenario Skill, 
+with the same target, with no interruptions, or Orders spent 
+on other Troopers:
+ 
+^ If the Trooper passes the Roll, the sequence resets.
+ 
+^ If the Trooper do not declare that Scenario Skill, the 
+sequence resets. 
+ 
+^ If the Trooper declare the same Skill, but on a different 
+target, the sequence resets. 
+ 
+^ If an Order is spent on any other Trooper, the sequence 
+resets.
+ 
+^ Only one sequence can be applied per Trooper and per 
+Scenario-labelled Skill at a time.
+KEY OPS
+The Key Ops is a special tactics operator with unique training to 
+conduct multi-domain reconnaissance and combat across the 
+full spectrum of conflicts. 
+At the end of the Deployment Phase, in Initiative order, players 
+must declare which Trooper from their Army List is their Key 
+Ops. The Trooper chosen must be always one of the models 
+deployed on the game table. Players are not allowed to choose 
+Troopers in Hidden Deployment or in Marker state. This Trooper 
+must always be on the game table as a Model and not as a 
+Marker (Camouflaged, Holoecho…). Also, Irregular Troops and 
+those whose Troop Type is REM or VH are not eligible to be Key 
+Ops. 
+The Key Ops possesses the Dodge (+3) and Tactical Awareness 
+Special Skills, even if those are not listed on their Unit Profile. 
+These Special Skills are not cumulative, if the Trooper already 
+has them, then they are not applied. 
+The Key Ops is identified with a Player A or B Marker. 
+DOMINANT KEY OPS 
+Players who have their Key Ops in any non-Null State in a ZO 
+Dominated by them, have a Dominant Key Ops.
+HVT AND CLASSIFIED DECK NOT USED 
+In this scenario, the HVT Model and Secure HVT rules are not 
+applied. Players will not deploy the HVT Model on the game 
+table and they will not use the Classified Deck in this scenario.
+END OF THE MISSION 
+This scenario has a limited time frame, so it will automatically 
+finish at the end of the third Game Round.
+If one of the players starts their Active Turn in a Retreat! 
+situation, the game will end at the end of that Turn.

@@ -1,0 +1,169 @@
+60
+UPLINK CENTER
+TACTICAL SUPPORT OPTIONS 
+0
+SUITABLE FOR REINFORCEMENTS
+YES
+MISSION OBJECTIVES 
+ 
+^ At the end of the game, have an Activated 
+Communication Antenna (2 Objective Points for each 
+Activated Communication Antenna). 
+ 
+^ At the end of the game, Control a Communication 
+Antenna (1 Objective Point for each Controlled 
+Communication Antenna). 
+ 
+^ At the end of the game, Control the Tech-Coffin 
+(3 Objective Points). 
+ 
+^ At the end of the game, have an Active Lieutenant 
+(1 Objective Point).
+FORCES AND DEPLOYMENT 
+SIDE A and SIDE B: Both players will deploy on opposite sides 
+of the game table, in Deployment Zones whose size depends on 
+the number of Army Points in the Army Lists.
+SIDE
+ARMY 
+POINTS
+SWC
+GAME TABLE 
+SIZE
+DEPLOYMENT ZONES 
+SIZES
+A and B
+150
+3
+24 in x 32 in
+12 in x 24 in
+A and B
+200
+4
+32 in x 48 in
+16 in x 32 in
+A and B
+250
+5
+32 in x 48 in
+16 in x 32 in
+A and B
+300
+6
+48 in x 48 in
+16 in x 48 in
+A and B
+350
+7
+48 in x 48 in
+16 in x 48 in
+A and B
+400
+8
+48 in x 48 in
+16 in x 48 in
+It is not permitted to deploy in Silhouette contact with the 
+TechCoffin or with the Communication Antennas. 
+
+61
+SCENARIO SPECIAL RULES 
+COMMUNICATION ANTENNAS 
+There are 2 Communication Antennas on the central line of the 
+table. 
+They are placed 12 inches from the table edges in 300/350/400 
+point games, 8 inches in 200/250 point games, and 4 inches 
+in 150 point games. Each Communication Antenna must 
+be represented by a Transmission Antenna Token (TRANS. 
+ANTENNA) or with a scenery piece of the same diameter 
+(such as the Antenna of the ITS Objective Pack Alpha, the 
+Communications Array by Warsenal or the Sat Station Antenna 
+by Customeeple). 
+ACTIVATE COMMUNICATION ANTENNA 
+SHORT SKILL 
+Attack, Scenario 
+REQUIREMENTS 
+ 
+►Only Specialist Troops can declare this Skill.
+ 
+►The Specialist Troop must be in Silhouette contact with a Communication 
+Antenna.
+EFFECTS 
+ 
+►Allows the Specialist Troop to make a Normal WIP Roll to Activate a 
+Communication Antenna.
+ 
+►If the roll is failed, this can be repeated as many times as necessary, each 
+time spending the corresponding Short Skill and making the roll.
+ 
+►An Activated Communication Antenna can be Activated again by the other 
+player, applying the same procedure. In this situation, the Communication 
+Antenna is no longer Activated by the adversary.
+ 
+►Player A and Player B Tokens can be used to mark the Activated 
+Communication Antenna. It is recommended each player uses a different 
+kind of Tokens.
+CONTROL A COMMUNICATION ANTENNA 
+A Communication Antenna is Controlled by a player as long 
+as that player is the only one with at least one Trooper (as a 
+Model, not a Marker) in Silhouette contact with it. So there 
+cannot be any enemy Troopers in Silhouette contact with the 
+Communication Antenna. Models in a Null State cannot do either. 
+TECH-COFFIN 
+There is 1 Tech-Coffin placed in the center of the table. 
+The Tech-Coffin must be represented by a Tech-Coffin Token or 
+with a scenery piece of the same diameter (such as the Tech-
+Coffin of the ITS Objective Pack Alpha, the Stasis Coffins by 
+Warsenal or the Cryo Pods by Customeeple). 
+CONTROL THE TECH-COFFIN 
+The Tech-Coffin is Controlled by a player as long as that player 
+is the only one with at least one Trooper (as a Model, not a 
+Marker) in Silhouette contact with it. So there cannot be any 
+enemy Troopers in Silhouette contact with the Tech-Coffin. 
+Models in a Null State cannot do either. 
+SPECIALIST TROOPS 
+For the purposes of this scenario, only Hackers, Doctors, 
+Engineers, Forward Observers, Paramedics, and Troopers 
+possessing the Chain of Command or the Specialist Operative 
+Special Skill are considered Specialist Troops.
+Hackers, Doctors, and Engineers cannot make use of Repeaters 
+or Peripheral (Servant) Models to perform tasks reserved for 
+Specialist Troops. 
+
+62
+OPERATIONAL LEARNING
+When a Specialist Troop performs a Skill with the Scenario 
+Label that requires a WIP Roll and fails, they benefit from the 
+following MODs in subsequent Orders:
+In the second consecutive Order, the Trooper applies a +3 MOD 
+to the WIP Roll required for that Scenario Skill.
+In the third consecutive Order—and subsequent Orders—the 
+Trooper applies +3 and +1SD MODs to the WIP Roll required for 
+that Scenario Skill.
+These MODs are cumulative with any other MOD that applies to 
+Skills with the Scenario Label. 
+IMPORTANT:
+These MODs only apply to Rolls made in consecutive 
+Orders by the same Trooper for the same Scenario Skill, 
+with the same target, with no interruptions, or Orders spent 
+on other Troopers:
+If the Trooper passes the Roll, the sequence resets.
+If the Trooper do not declare that Scenario Skill, the 
+sequence resets. 
+If the Trooper declares the same Skill, but with a different 
+target, the sequence resets. 
+If an Order is spent on any other Trooper, the sequence 
+resets.
+Only one sequence can be applied per Trooper and per 
+Scenario-Labelled Skill at a time.
+ACTIVE LIEUTENANT 
+At the end of the game, a Lieutenant is Active if they are not 
+in any Null state (Unconscious, Dead, Sepsitorized…), Isolated 
+State, or any Immobilized State.
+HVT AND CLASSIFIED DECK NOT USED 
+In this scenario, the HVT Model and Secure HVT rules are not 
+applied. Players will not deploy the HVT Model on the game 
+table and they will not use the Classified Deck in this scenario.
+END OF THE MISSION 
+This scenario has a limited time frame, so it will automatically 
+finish at the end of the third Game Round.
+If one of the players starts their Active Turn in a Retreat! 
+situation, the game will end at the end of that Turn.

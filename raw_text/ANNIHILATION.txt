@@ -1,0 +1,194 @@
+51
+ITS DIRECT ACTION
+ANNIHILATION
+TACTICAL SUPPORT OPTIONS 
+0
+SUITABLE FOR REINFORCEMENTS
+YES
+MISSION OBJECTIVES 
+150-POINT GAME
+200-POINT GAME
+250-POINT GAME
+300-POINT GAME
+350-POINT GAME
+400-POINT GAME
+OBJECTIVE 
+POINTS
+To Kill 40 to 75 
+enemy Army 
+Points.
+To Kill 50 to 100 
+enemy Army 
+Points.
+To Kill 65 to 125 
+enemy Army 
+Points..
+To Kill 75 to 150 
+enemy Army 
+Points.
+To Kill 85 to 175 
+enemy Army 
+Points..
+To Kill 100 to 
+200 enemy Army 
+Points.
+1 Objective Point.
+To Kill 76 to 125 
+enemy Army 
+Points.
+To Kill 101 to 
+150 enemy Army 
+Points.
+To Kill 126 to 
+200 enemy Army 
+Points.
+To Kill 151 to 
+250 enemy Army 
+Points.
+To Kill 176 to 
+274 enemy Army 
+Points.
+To Kill 201 to 
+300 enemy Army 
+Points.
+3 Objective Points.
+To Kill more than 
+125 enemy Army 
+Points.
+To Kill more than 
+150 enemy Army 
+Points.
+To Kill more than 
+200 enemy Army 
+Points.
+To Kill more than 
+250 enemy Army 
+Points.
+To Kill more than 
+275 enemy Army 
+Points.
+To Kill more than 
+300 enemy Army 
+Points.
+4 Objective Points.
+If you have 40 
+to 75 surviving 
+Victory Points.
+If you have 50 
+to 100 surviving 
+Victory Points..
+If you have 65 
+to 125 surviving 
+Victory Points.
+If you have 75 
+to 150 surviving 
+Victory Points.
+If you have 85 
+to 175 surviving 
+Victory Points.
+If you have 100 
+to 200 surviving 
+Victory Points.
+1 Objective Point.
+If you have 76 
+to 125 surviving 
+Victory Points..
+If you have 101 
+to 150 surviving 
+Victory Points.
+If you have 126 
+to 200 surviving 
+Victory Points..
+If you have 151 
+to 250 surviving 
+Victory Points.
+If you have 176 
+to 274 surviving 
+Victory Points.
+If you have 201 
+to 300 surviving 
+Victory Points.
+3 Objective Point.
+If you have more 
+than 125 surviving 
+Victory Points.
+If you have more 
+than 150 surviving 
+Victory Points.
+If you have more 
+than 200 surviving 
+Victory Points.
+If you have more 
+than 250 surviving 
+Victory Points.
+If you have more 
+than 275 surviving 
+Victory Points.
+If you have more 
+than 300 surviving 
+Victory Points.
+4 Objective Points.
+To Kill the enemy Lieutenant.
+2 Objective Points.
+
+52
+FORCES AND DEPLOYMENT 
+SIDE A and SIDE B: Both players will deploy on opposite sides 
+of the game table, in Deployment Zones whose size depends on 
+the number of Army Points in the Army Lists.
+SIDE
+ARMY 
+POINTS
+SWC
+GAME TABLE 
+SIZE
+DEPLOYMENT ZONES 
+SIZES
+A and B
+150
+3
+24 in x 32 in
+8 in x 32 cm
+A and B
+200
+4
+32 in x 48 in
+12 in x 32 in
+A and B
+250
+5
+32 in x 48 in
+12 in x 32 in
+A and B
+300
+6
+48 in x 48 in
+12 in x 48 in
+A and B
+350
+7
+48 in x 48 in
+12 in x 48 in
+A and B
+400
+8
+48 in x 48 in
+12 in x 48 in
+SCENARIO SPECIAL RULES 
+KILLING 
+Troopers are considered Killed by the adversary when they 
+enter Dead State, or they are in a Null State at the end of the 
+game. 
+Troopers that have not been deployed on the game table, as a 
+Model or Marker, at the end of the game will be considered to be 
+Killed by the adversary. 
+ 
+NO QUARTER 
+In this scenario, the Retreat! rules are not applied. 
+HVT AND CLASSIFIED DECK NOT USED 
+In this scenario, the HVT Model and Secure HVT rules are not 
+applied. Players will not deploy the HVT Model on the game 
+table and they will not use the Classified Deck in this scenario. 
+END OF THE MISSION 
+This scenario has a limited time frame, so it will automatically 
+finish at the end of the third Game Round.

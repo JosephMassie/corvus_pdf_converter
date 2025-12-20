@@ -889,7 +889,13 @@
       "type": "Direct Action",
       "tactical_support_options": 0,
       "suitable_for_reinforcements": false,
-      "mission_objectives": {},
+      "mission_objectives": [
+        "At the end of the game, dominate the nearest Sector to your Deployment Zone (1 Objective Point).",
+        "At the end of the game, dominate the central Sector (3 Objective Points).",
+        "At the end of the game, dominate the farthest Sector from your Deployment Zone (4 Objective Points).",
+        "Kill the enemy Key Ops (2 Objective Points).",
+        "Alternatively, at the end of the game, Threaten the enemy Key Ops (1 Objective Point)."
+      ],
       "forces_and_deployment": {
         "sides": "SIDE A and SIDE B",
         "deployment_table": [
@@ -948,7 +954,13 @@
       "type": "Direct Action",
       "tactical_support_options": 0,
       "suitable_for_reinforcements": true,
-      "mission_objectives": {},
+      "mission_objectives": [
+        "To Kill more Army Points than the adversary (3 Objective Points).",
+        "To Kill the same number of Lieutenants as the adversary (2 Objective Points, but only if at least 1 Lieutenant is killed by the player).",
+        "To Kill more Lieutenants than the adversary (3 Objective Points).",
+        "To Kill the enemy Key Ops (1 Objective Point).",
+        "To Kill more enemy Troopers with your Key Ops than the adversary does with theirs (3 Objective Points)."
+      ],
       "forces_and_deployment": {
         "sides": "SIDE A and SIDE B",
         "deployment_table": [
@@ -1005,7 +1017,11 @@
       "type": "Direct Action",
       "tactical_support_options": 0,
       "suitable_for_reinforcements": false,
-      "mission_objectives": {},
+      "mission_objectives": [
+        "At the end of each Game Round, dominate more Quadrants than the adversary (2 Objective Points).",
+        "At the end of the game, have a Hacked Console (1 Objective Point for each Hacked Console, up to a maximum of 3 Objective Points).",
+        "At the end of the game, have a Dominant Key Ops (1 extra Objective Point)."
+      ],
       "forces_and_deployment": {
         "sides": "SIDE A and SIDE B",
         "deployment_table": [
@@ -1072,7 +1088,12 @@
       "type": "Direct Action",
       "tactical_support_options": 0,
       "suitable_for_reinforcements": true,
-      "mission_objectives": {},
+      "mission_objectives": [
+        "At the end of the game, have an Activated Communication Antenna (2 Objective Points for each Activated Communication Antenna).",
+        "At the end of the game, Control a Communication Antenna (1 Objective Point for each Controlled Communication Antenna).",
+        "At the end of the game, Control the Tech-Coffin (3 Objective Points).",
+        "At the end of the game, have an Active Lieutenant (1 Objective Point)."
+      ],
       "forces_and_deployment": {
         "sides": "SIDE A and SIDE B",
         "deployment_table": [
