@@ -5,6 +5,7 @@
     {
       "name": "AKIAL INTERFERENCE",
       "type": "ITS Scenario",
+      "tables": {},
       "tactical_support_options": 0,
       "suitable_for_reinforcements": true,
       "mission_objectives": {
@@ -87,6 +88,7 @@
     {
       "name": "B-PONG",
       "type": "ITS Scenario",
+      "tables": {},
       "tactical_support_options": 2,
       "suitable_for_reinforcements": true,
       "mission_objectives": {
@@ -169,6 +171,7 @@
     {
       "name": "CORPORATE APPROPRIATION",
       "type": "ITS Scenario",
+      "tables": {},
       "tactical_support_options": 0,
       "suitable_for_reinforcements": true,
       "mission_objectives": {
@@ -256,6 +259,84 @@
     {
       "name": "CRITICAL INTERVENTION",
       "type": "ITS Scenario",
+      "tables": {
+        "[[objective_table_0]]": [
+          [
+            "150-POINT GAME",
+            "200-POINT GAME",
+            "250-POINT GAME",
+            "300-POINT GAME",
+            "350-POINT GAME",
+            "400-POINT GAME",
+            "OBJECTIVE POINTS"
+          ],
+          [
+            "To Kill at least 40 enemy Army Points",
+            "To Kill at least 50 enemy Army Points",
+            "To Kill at least 65 enemy Army Points",
+            "To Kill at least 75 enemy Army Points",
+            "To Kill at least 85 enemy Army Points",
+            "To Kill at least 100 enemy Army Points",
+            "1 Objective Point"
+          ],
+          [
+            "150-POINT GAME",
+            "200-POINT GAME",
+            "250-POINT GAME",
+            "300-POINT GAME",
+            "350-POINT GAME",
+            "400-POINT GAME",
+            "OBJECTIVE POINTS"
+          ],
+          [
+            "To Kill at least 75 enemy Army Points",
+            "To Kill at least 100 enemy Army Points",
+            "To Kill at least 125 enemy Army Points",
+            "To Kill at least 150 enemy Army Points",
+            "To Kill at least 175 enemy Army Points",
+            "To Kill at least 200 enemy Army Points",
+            "2 Objective Points"
+          ]
+        ],
+        "[[objective_table_1]]": [
+          [
+            "150-POINT GAME",
+            "200-POINT GAME",
+            "250-POINT GAME",
+            "300-POINT GAME",
+            "350-POINT GAME",
+            "400-POINT GAME",
+            "OBJECTIVE POINTS"
+          ],
+          [
+            "To Kill at least 40 enemy Army Points",
+            "To Kill at least 50 enemy Army Points",
+            "To Kill at least 65 enemy Army Points",
+            "To Kill at least 75 enemy Army Points",
+            "To Kill at least 85 enemy Army Points",
+            "To Kill at least 100 enemy Army Points",
+            "1 Objective Point"
+          ],
+          [
+            "150-POINT GAME",
+            "200-POINT GAME",
+            "250-POINT GAME",
+            "300-POINT GAME",
+            "350-POINT GAME",
+            "400-POINT GAME",
+            "OBJECTIVE POINTS"
+          ],
+          [
+            "To Kill at least 75 enemy Army Points",
+            "To Kill at least 100 enemy Army Points",
+            "To Kill at least 125 enemy Army Points",
+            "To Kill at least 150 enemy Army Points",
+            "To Kill at least 175 enemy Army Points",
+            "To Kill at least 200 enemy Army Points",
+            "2 Objective Points"
+          ]
+        ]
+      },
       "tactical_support_options": 1,
       "suitable_for_reinforcements": false,
       "mission_objectives": {
@@ -264,16 +345,15 @@
           "Extract the Data Pack from the Data Console (2 Objective Points).",
           "The Trooper that Extracted the Data Pack is not Killed at the end of the game (1 Objective Point).",
           "At the end of the game, the Trooper that Extracted the Data Pack is in your Deployment Zone and is not in a Null State (2 Objective Points).",
-          "At the end of the game, Dominate the Server Room (2 Objective Points)."
-        ],
-        "points": [
-          "To Kill at least 75 enemy Army Points. To Kill at least 100 enemy Army Points. To Kill at least 125 enemy Army Points. To Kill at least 150 enemy Army Points. To Kill at least 175 enemy Army Points. To Kill at least 200 enemy Army Points. 2 Objective Points."
+          "At the end of the game, Dominate the Server Room (2 Objective Points).",
+          "[[objective_table_0]]"
         ],
         "main_objectives_defender": [
           "Prevent the Attacker from Unlocking the Data Console (1 Objective Point).",
           "Prevent the Attacker from Extracting the Data Pack from the Data Console (3 Objective Points).",
           "Kill the Trooper that Extracted the Data Pack (2 Objective Points, only if the Attacker has Extracted the Data Pack).",
-          "At the end of the game, Dominate the Server Room (3 Objective Points)."
+          "At the end of the game, Dominate the Server Room (3 Objective Points).",
+          "[[objective_table_1]]"
         ],
         "classified": [
           "Each player has 1 Classified Objective (1 Objective Point). 31"
@@ -353,6 +433,7 @@
     {
       "name": "CROSSING LINES",
       "type": "ITS Scenario",
+      "tables": {},
       "tactical_support_options": 0,
       "suitable_for_reinforcements": false,
       "mission_objectives": {
@@ -431,6 +512,7 @@
     {
       "name": "EVACUATION",
       "type": "ITS Scenario",
+      "tables": {},
       "tactical_support_options": 2,
       "suitable_for_reinforcements": true,
       "mission_objectives": {
@@ -505,6 +587,7 @@
     {
       "name": "HARDLOCK",
       "type": "ITS Scenario",
+      "tables": {},
       "tactical_support_options": 1,
       "suitable_for_reinforcements": true,
       "mission_objectives": {
@@ -586,6 +669,7 @@
     {
       "name": "LAST LAUNCH",
       "type": "ITS Scenario",
+      "tables": {},
       "tactical_support_options": 2,
       "suitable_for_reinforcements": true,
       "mission_objectives": {
@@ -673,6 +757,7 @@
     {
       "name": "PROVISIONING",
       "type": "ITS Scenario",
+      "tables": {},
       "tactical_support_options": 1,
       "suitable_for_reinforcements": true,
       "mission_objectives": {
@@ -759,6 +844,7 @@
     {
       "name": "AREA OF INTEREST",
       "type": "ITS Scenario",
+      "tables": {},
       "tactical_support_options": 0,
       "suitable_for_reinforcements": true,
       "mission_objectives": {
@@ -821,9 +907,8 @@
           "name": "ACTIVATE COMMUNICATION ANTENNA",
           "skill_type": "short skill, Attack, Scenario",
           "requirements": "• Only Specialist Troops can declare this Skill. • The Specialist Troop must be in Silhouette contact with the Communication Antenna.",
-          "effects": "• Spending one Short Skill, without needing to perform a Roll, the Specialist Trooper Activates the Communication Antenna. • If there are any enemy Hackers within any Areas of Interest, one of them can declare an ARO to oppose the Specialist Trooper. Activating the Communication Antenna in this situation is a Face to Face WIP Roll. • If the roll is failed, this can be repeated as many times as necessary, each time spending the corresponding Short Skill. • An Activated Communication Antenna can be Activated again by the other player, applying the same procedure. In this situation, the Communication Antenna is no longer Activated by the adversary. • Player A and Player B Tokens can be used to mark the Activated Communication Antenna. It is recommended each player uses a different kind of Token."
+          "effects": "• Spending one Short Skill, without needing to perform a Roll, the Specialist Trooper Activates the Communication Antenna. • If there are any enemy Hackers within any Areas of Interest, one of them can declare an ARO to oppose the Specialist Trooper. Activating the Communication Antenna in this situation is a Face to Face WIP Roll. • If the roll is failed, this can be repeated as many times as necessary, each time spending the corresponding Short Skill. • An Activated Communication Antenna can be Activated again by the other player, applying the same procedure. In this situation, the Communication Antenna is no longer Activated by the adversary. • Player A and Player B Tokens can be used to mark the Activated Communication Antenna. It is recommended each player uses a different kind of Token. In this scenario the Areas of Interest are Zones of Operations (ZO), represented by Circular Templates. There are a total of three Areas of Interest, one of which is the Special Area of Interest. Before the Deployment Phase, and in Initiative order, each player must place their Circular Templates. They can be placed on any surface of the game table that is equal or larger in size than the Template, must be completely outside any Deployment Zones, and cannot overlap another Area of Interest. The player with the first turn must place an Area of Interest and the Special Area of Interest, specifying which Template is the Special Area of Interest when placing it. The player with second turn places an Area of Interest."
         },
-        "area_of_interest": "In this scenario the Areas of Interest are Zones of Operations (ZO), represented by Circular Templates. There are a total of three Areas of Interest, one of which is the Special Area of Interest. Before the Deployment Phase, and in Initiative order, each player must place their Circular Templates. They can be placed on any surface of the game table that is equal or larger in size than the Template, must be completely outside any Deployment Zones, and cannot overlap another Area of Interest. The player with the first turn must place an Area of Interest and the Special Area of Interest, specifying which Template is the Special Area of Interest when placing it. The player with second turn places an Area of Interest.",
         "dominate_zo": "A Zone of Operations (ZO) is Dominated by a player if they have more Victory Points than the adversary inside the area. Only Troopers represented by Models or Markers (Camouflaged, Shasvastii-Embryo...) count, as well as Proxies and Peripheral Troops. Troops in a Null State do not count. Tokens representing weapons or pieces of equipment (like Mines or Deployable Repeaters), fake Holoechoes, and any Token that does not represent a Trooper does not count either. A Trooper is inside a Zone of Operations when more than half the Trooper’s base is inside that ZO.",
         "shasvastii": "Troopers possessing the Shasvastii Special Skill that are inside a Zone of Operations count while they are in Unconscious State or any non-Null State. 50",
         "baggage": "Troopers possessing the Baggage piece of Equipment that are inside a Zone of Operations and in a non-Null State provide an additional 20 Victory Points for Dominating the ZO.",
@@ -834,13 +919,82 @@
     {
       "name": "ANNIHILATION",
       "type": "Direct Action",
-      "tactical_support_options": 0,
-      "suitable_for_reinforcements": true,
-      "mission_objectives": {
-        "points": [
-          "To Kill 40 to 75 enemy Army Points. To Kill 50 to 100 enemy Army Points. To Kill 65 to 125 enemy Army Points.. To Kill 75 to 150 enemy Army Points. To Kill 85 to 175 enemy Army Points.. To Kill 100 to 200 enemy Army Points. 1 Objective Point. To Kill 76 to 125 enemy Army Points. To Kill 101 to 150 enemy Army Points. To Kill 126 to 200 enemy Army Points. To Kill 151 to 250 enemy Army Points. To Kill 176 to 274 enemy Army Points. To Kill 201 to 300 enemy Army Points. 3 Objective Points. To Kill more than 125 enemy Army Points. To Kill more than 150 enemy Army Points. To Kill more than 200 enemy Army Points. To Kill more than 250 enemy Army Points. To Kill more than 275 enemy Army Points. To Kill more than 300 enemy Army Points. 4 Objective Points. If you have 40 to 75 surviving Victory Points. If you have 50 to 100 surviving Victory Points.. If you have 65 to 125 surviving Victory Points. If you have 75 to 150 surviving Victory Points. If you have 85 to 175 surviving Victory Points. If you have 100 to 200 surviving Victory Points. 1 Objective Point. If you have 76 to 125 surviving Victory Points.. If you have 101 to 150 surviving Victory Points. If you have 126 to 200 surviving Victory Points.. If you have 151 to 250 surviving Victory Points. If you have 176 to 274 surviving Victory Points. If you have 201 to 300 surviving Victory Points. 3 Objective Point. If you have more than 125 surviving Victory Points. If you have more than 150 surviving Victory Points. If you have more than 200 surviving Victory Points. If you have more than 250 surviving Victory Points. If you have more than 275 surviving Victory Points. If you have more than 300 surviving Victory Points. 4 Objective Points. To Kill the enemy Lieutenant. 2 Objective Points. 52"
+      "tables": {
+        "[[objective_table_0]]": [
+          [
+            "150-POINT GAME",
+            "200-POINT GAME",
+            "250-POINT GAME",
+            "300-POINT GAME",
+            "350-POINT GAME",
+            "400-POINT GAME",
+            "OBJECTIVE POINTS"
+          ],
+          [
+            "To Kill 40 to 75 enemy Army Points",
+            "To Kill 50 to 100 enemy Army Points",
+            "To Kill 65 to 125 enemy Army Points",
+            "To Kill 75 to 150 enemy Army Points",
+            "To Kill 85 to 175 enemy Army Points",
+            "To Kill 100 to 200 enemy Army Points",
+            "1 Objective Point"
+          ],
+          [
+            "To Kill 76 to 125 enemy Army Points",
+            "To Kill 101 to 150 enemy Army Points",
+            "To Kill 126 to 200 enemy Army Points",
+            "To Kill 151 to 250 enemy Army Points",
+            "To Kill 176 to 274 enemy Army Points",
+            "To Kill 201 to 300 enemy Army Points",
+            "3 Objective Points"
+          ],
+          [
+            "To Kill more than 125 enemy Army Points",
+            "To Kill more than 150 enemy Army Points",
+            "To Kill more than 200 enemy Army Points",
+            "To Kill more than 250 enemy Army Points",
+            "To Kill more than 275 enemy Army Points",
+            "To Kill more than 300 enemy Army Points",
+            "4 Objective Points"
+          ],
+          [
+            "If you have 40 to 75 surviving Victory Points",
+            "If you have 50 to 100 surviving Victory Points",
+            "If you have 65 to 125 surviving Victory Points",
+            "If you have 75 to 150 surviving Victory Points",
+            "If you have 85 to 175 surviving Victory Points",
+            "If you have 100 to 200 surviving Victory Points",
+            "1 Objective Point"
+          ],
+          [
+            "If you have 76 to 125 surviving Victory Points",
+            "If you have 101 to 150 surviving Victory Points",
+            "If you have 126 to 200 surviving Victory Points",
+            "If you have 151 to 250 surviving Victory Points",
+            "If you have 176 to 274 surviving Victory Points",
+            "If you have 201 to 300 surviving Victory Points",
+            "3 Objective Point"
+          ],
+          [
+            "If you have more than 125 surviving Victory Points",
+            "If you have more than 150 surviving Victory Points",
+            "If you have more than 200 surviving Victory Points",
+            "If you have more than 250 surviving Victory Points",
+            "If you have more than 275 surviving Victory Points",
+            "If you have more than 300 surviving Victory Points",
+            "4 Objective Points"
+          ],
+          [
+            "To Kill the enemy Lieutenant",
+            "2 Objective Points"
+          ]
         ]
       },
+      "tactical_support_options": 0,
+      "suitable_for_reinforcements": true,
+      "mission_objectives": [
+        "[[objective_table_0]] 52"
+      ],
       "forces_and_deployment": {
         "sides": "SIDE A and SIDE B",
         "deployment_table": [
@@ -887,6 +1041,7 @@
     {
       "name": "BATTLEGROUND",
       "type": "Direct Action",
+      "tables": {},
       "tactical_support_options": 0,
       "suitable_for_reinforcements": false,
       "mission_objectives": [
@@ -952,6 +1107,7 @@
     {
       "name": "CUTTHROAT",
       "type": "Direct Action",
+      "tables": {},
       "tactical_support_options": 0,
       "suitable_for_reinforcements": true,
       "mission_objectives": [
@@ -1015,6 +1171,7 @@
     {
       "name": "SUPERIORITY",
       "type": "Direct Action",
+      "tables": {},
       "tactical_support_options": 0,
       "suitable_for_reinforcements": false,
       "mission_objectives": [
@@ -1086,6 +1243,7 @@
     {
       "name": "UPLINK CENTER",
       "type": "Direct Action",
+      "tables": {},
       "tactical_support_options": 0,
       "suitable_for_reinforcements": true,
       "mission_objectives": [

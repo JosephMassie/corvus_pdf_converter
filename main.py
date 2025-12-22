@@ -82,7 +82,7 @@ def extract_scenarios_from_pdf(pdf_path, debug=False, raw=False, slow=False):
         console.print(f"  [cyan]Pages: {start_page + 1} to {end_page}[/cyan]")
         
         # Extract all text from the calculated page range for this scenario.
-        scenario_text = extract_text_from_pages(doc, start_page, end_page)
+        scenario_text = extract_text_from_pages(doc, start_page, end_page, debug=debug, name=scenario_name)
 
         if raw:
             os.makedirs("raw_text", exist_ok=True)
@@ -119,7 +119,7 @@ def extract_scenarios_from_pdf(pdf_path, debug=False, raw=False, slow=False):
         console.print(f"  [cyan]Pages: {start_page + 1} to {end_page}[/cyan]")
         
         # Extract text from the determined page range.
-        da_text = extract_text_from_pages(doc, start_page, end_page)
+        da_text = extract_text_from_pages(doc, start_page, end_page, debug=debug, name=da_name)
         
         if raw:
             os.makedirs("raw_text", exist_ok=True)
@@ -197,7 +197,7 @@ def parse_table_of_contents(toc_text, debug=False):
     
     return its_scenarios, direct_actions
 
-def extract_text_from_pages(doc, start_page, end_page):
+def extract_text_from_pages(doc, start_page, end_page, debug=False, name=None):
     """
     Extract and concatenate text from a specified range of pages in the document.
     The text is normalized to clean up whitespace while preserving paragraph structure.
@@ -209,6 +209,11 @@ def extract_text_from_pages(doc, start_page, end_page):
             # Append the text of each page, followed by a newline to mark page breaks.
             text += page.get_text() + "\n"
     
+    # If mission name is provided, remove it from the text
+    if name:
+        if debug:
+            console.print(f"\treplacing instances of mission name headers in '{name}'")
+        text = re.sub(r'^' + re.escape(name) + r'$', '', text, flags=re.MULTILINE)
     # Normalize whitespace for consistent parsing.
     # Replace one or more spaces or tabs with a single space.
     text = re.sub(r'[ \t]+', ' ', text)
@@ -236,12 +241,16 @@ def parse_mission(name, text, is_direct_action=False, debug=False):
     specialized functions to extract each distinct section of the mission,
     such as objectives, deployment, and special rules.
     """
+
+    objectives, objective_tables = extract_objectives(text, debug)
+
     scenario = {
         "name": name,
         "type": "Direct Action" if is_direct_action else "ITS Scenario",
+        "tables": {**objective_tables},
         "tactical_support_options": extract_tactical_support(text, debug),
         "suitable_for_reinforcements": extract_reinforcements(text, debug),
-        "mission_objectives": extract_objectives(text, debug),
+        "mission_objectives": objectives,
         "forces_and_deployment": extract_deployment(text, debug),
         "scenario_special_rules": extract_special_rules(text, debug),
         "end_of_mission": extract_end_of_mission(text, debug)
@@ -293,6 +302,65 @@ def extract_objectives(text, debug=False):
     if debug:
         console.print(f"\t[green]✓ Found objectives section ({len(obj_text)} chars)[/green]")
         console.print(f"\t[dim]Preview: {obj_text[:200]}...[/dim]")
+
+    # check if there is a table of objective points by game size
+    tables = {}
+    table_matches = re.findall(r'((?:\d+-point game\s+)+objective\s+points\s+)((?:to\s+kill\s+(?:(?:at\s+least|\d{1,3}\s+to|more\s+than)\s+\d{1,3}\s+enemy\s+army\s+points|the\s+enemy\s+Lieutenant)\.+?\s+|If\s+you\s+have\s+(?:\d{1,3}\s+to|more\s+than)\s+\d{1,3}\s+surviving\s+victory points?\.+\s+|\d+\s+objective\s+points?\.+\s+)+)', obj_text, re.IGNORECASE | re.MULTILINE)
+    tableData = []
+    for table_index, table_match in enumerate(table_matches):
+        if debug:
+            console.print(f"\t\t[cyan]✓ Found {len(table_matches)} objective tables[/cyan]")
+        # retrieve the table header and content from match
+        table_header_text, table_content_text = table_match
+
+        # clean up new lines, periods, and excess whitespace
+        def sanitizeTableStr(tableStr: str):
+            result = tableStr.strip()
+            result = result.replace('\n', '')
+            result = result.replace('.', '')
+            return result
+
+        # break both header and body content furhter into seprate cells
+        headers = re.findall(r'(\d+-point game|objective\s+points)', table_header_text, re.IGNORECASE)
+        headers = list(map(sanitizeTableStr, headers))
+        body = re.findall(r'(to\s+kill\s+(?:(?:at\s+least|\d{1,3}\s+to|more\s+than)\s+\d{1,3}\s+enemy\s+army\s+points|the\s+enemy\s+Lieutenant)\.+?\s+|If\s+you\s+have\s+(?:\d{1,3}\s+to|more\s+than)\s+\d{1,3}\s+surviving\s+victory points?\.+\s+|\d+\s+objective\s+points?\.+\s+)', table_content_text, re.IGNORECASE)
+        body = list(map(sanitizeTableStr, body))
+
+        # start building table data from those headers
+        tableData.append(headers)
+
+        # begin determining the appropriate number of columns and rows
+        columns = len(headers)
+        bodyLength = len(body)
+        remainder = bodyLength % columns
+        if remainder != 0:
+            console.print(f"\t\t[orange1]! Possibly Invalid table configuration, expected {columns} got {bodyLength} % {bodyLength % columns}[/orange1]")
+            
+        rows = round(bodyLength / columns) + (0 if remainder == 0 else 1)
+        if debug:
+            console.print(f"\t\t[blue]building table of [bold]{rows}[/bold] rows and [bold]{columns}[/bold] columns[/]")
+        # split body content out into rows based on the number of columns expected
+        # any remainder that doesn't fill a full row is left on its own
+        start = 0
+        for i in range(rows):
+            end = start+columns
+            row = body[start:end]
+            start = end
+            if debug:
+                console.print(f"\t\t[yellow]building row {i} [italic]{i+columns}[/]")
+                pprint(row)
+            tableData.append(row)
+    
+        pprint(tableData)
+
+        # remove table text from the objectives text
+        obj_text = re.sub(table_header_text, '', obj_text)
+        # replacing it with a key to store its placement in the list of objectives
+        table_key = f"[[objective_table_{table_index}]]"
+        obj_text = re.sub(table_content_text, f"\n^ {table_key}\n", obj_text)
+        # store the actual table data in a separate tables dict to be combined at the mission level
+        tables[table_key] = tableData
+
     
     # The strategy is to iterate through the lines of the section text, identifying
     # subsection headers. A header is assumed to be a line that is predominantly
@@ -409,7 +477,7 @@ def extract_objectives(text, debug=False):
             all_objectives.extend(group)
         objectives = all_objectives
 
-    return objectives
+    return objectives, tables
 
 def extract_deployment(text, debug=False):
     """Extract deployment information, including army configurations and special notes."""
