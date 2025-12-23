@@ -510,15 +510,15 @@ def extract_deployment(text, debug=False):
     # - `((?:\d+\s+in\s+x\s+\d+\s+in)|(?:Radius of\s+\d+\s+in))`: Captures the deployment zone,
     #   which can be rectangular or radial.
     army_configs = re.findall(
-        r'A\s+and\s+B\s+(\d{3,4})\s+(\d+)\s+(\d+\s+in\s+x\s+\d+\s+in)\s+((?:\d+\s+in\s+x\s+\d+\s+in)|(?:Radius of\s+\d+\s+in))',
+        r'A\s+and\s+B\s+(\d{3,4})\s+(\d+)\s+(\d+\s+in\s+x\s+\d+\s+in)\s+((?:\d+\s+in\s+x\s+\d+\s+in(?:\s+Central\s+Strip\s+zone:\s+\d+\s+in\s+x\s+\d+\s+in)?)|(?:Radius of\s+\d+\s+in))',
         deploy_text, re.IGNORECASE
     )
     for config in army_configs:
         deployment["deployment_table"].append({
             "army_points": int(config[0]),
             "swc": int(config[1]),
-            "table_size": config[2].strip(),
-            "deployment_zone": config[3].strip()
+            "table_size": config[2].strip().replace('\n', ''),
+            "deployment_zone": config[3].strip().replace('\n', '')
         })
     
     if debug:

@@ -452,38 +452,38 @@
           {
             "army_points": 150,
             "swc": 3,
-            "table_size": "24 in x \n32 in",
-            "deployment_zone": "8 in x 24 in"
+            "table_size": "24 in x 32 in",
+            "deployment_zone": "8 in x 24 in Central Strip zone: 4 in x 32 in"
           },
           {
             "army_points": 200,
             "swc": 4,
-            "table_size": "32 in x \n48 in",
-            "deployment_zone": "12 in x 32 in"
+            "table_size": "32 in x 48 in",
+            "deployment_zone": "12 in x 32 in Central Strip zone: 4 in x 48 in"
           },
           {
             "army_points": 250,
             "swc": 5,
-            "table_size": "32 in x \n48 in",
-            "deployment_zone": "12 in x 32 in"
+            "table_size": "32 in x 48 in",
+            "deployment_zone": "12 in x 32 in Central Strip zone: 4 in x 48 in"
           },
           {
             "army_points": 300,
             "swc": 6,
-            "table_size": "48 in x \n48 in",
-            "deployment_zone": "12 in x 48 in"
+            "table_size": "48 in x 48 in",
+            "deployment_zone": "12 in x 48 in Central Strip zone: 4 in x 48 in"
           },
           {
             "army_points": 350,
             "swc": 7,
-            "table_size": "48 in x \n48 in",
-            "deployment_zone": "12 in x 48 in"
+            "table_size": "48 in x 48 in",
+            "deployment_zone": "12 in x 48 in Central Strip zone: 4 in x 48 in"
           },
           {
             "army_points": 400,
             "swc": 8,
-            "table_size": "48 in x \n48 in",
-            "deployment_zone": "12 in x 48 in"
+            "table_size": "48 in x 48 in",
+            "deployment_zone": "12 in x 48 in Central Strip zone: 4 in x 48 in"
           }
         ],
         "special_notes": [
