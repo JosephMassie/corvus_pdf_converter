@@ -12,17 +12,17 @@ import time
 
 console = Console()
 
-def extract_scenarios_from_pdf(pdf_path, debug=False, raw=False, slow=False):
+def extract_missions_from_pdf(pdf_path, debug=False, raw=False, slow=False):
     """
     Main function to orchestrate the extraction of ITS Scenarios and Direct Action 
     scenarios from the provided PDF file. It reads the table of contents, then 
-    iterates through each identified scenario, extracting and parsing the text
+    iterates through each identified mission, extracting and parsing the text
     from the relevant pages.
     """
     doc = pymupdf.open(pdf_path)
     
     # The table of contents is consistently on the second page (index 1) of the PDF.
-    # This page is crucial for locating the scenarios.
+    # This page is crucial for locating the missions.
     toc_page = doc[1]
     toc_text = toc_page.get_text()
     
@@ -38,28 +38,27 @@ def extract_scenarios_from_pdf(pdf_path, debug=False, raw=False, slow=False):
             f.write(text)
     
     # Parse the raw text of the table of contents to get a structured list of
-    # scenario names and the pages they start on.
+    # mission names and the pages they start on.
     its_scenarios, direct_actions = parse_table_of_contents(toc_text, debug)
     
-    if debug:
-        # For debugging, print the parsed TOC data in formatted tables.
-        console.print("\n[bold green]ITS Scenarios found in TOC:[/bold green]")
-        table = Table(show_header=True, header_style="bold magenta")
-        table.add_column("Name", style="cyan")
-        table.add_column("Page", style="yellow")
-        for scenario in its_scenarios:
-            table.add_row(scenario["name"], str(scenario["page"]))
-        console.print(table)
-        
-        console.print("\n[bold green]Direct Actions found in TOC:[/bold green]")
-        table2 = Table(show_header=True, header_style="bold magenta")
-        table2.add_column("Name", style="cyan")
-        table2.add_column("Page", style="yellow")
-        for action in direct_actions:
-            table2.add_row(action["name"], str(action["page"]))
-        console.print(table2)
+    # For clarity, print the parsed TOC data in formatted tables.
+    console.print("\n[bold green]ITS Scenarios found in TOC:[/bold green]")
+    table = Table(show_header=True, header_style="bold magenta")
+    table.add_column("Name", style="cyan")
+    table.add_column("Page", style="yellow")
+    for scenario in its_scenarios:
+        table.add_row(scenario["name"], str(scenario["page"]))
+    console.print(table)
     
-    scenarios = []
+    console.print("\n[bold green]Direct Actions found in TOC:[/bold green]")
+    table2 = Table(show_header=True, header_style="bold magenta")
+    table2.add_column("Name", style="cyan")
+    table2.add_column("Page", style="yellow")
+    for action in direct_actions:
+        table2.add_row(action["name"], str(action["page"]))
+    console.print(table2)
+    
+    missions = []
     
     # Process each ITS Scenario found in the table of contents.
     for i, scenario_info in enumerate(its_scenarios):
@@ -96,7 +95,7 @@ def extract_scenarios_from_pdf(pdf_path, debug=False, raw=False, slow=False):
         
         # Parse the extracted text to get structured data for the scenario.
         scenario_data = parse_mission(scenario_name, scenario_text, debug=debug)
-        scenarios.append(scenario_data)
+        missions.append(scenario_data)
         if slow:
             time.sleep(1)  # Small delay to avoid overwhelming the console.
     
@@ -133,13 +132,13 @@ def extract_scenarios_from_pdf(pdf_path, debug=False, raw=False, slow=False):
         
         # Parse the text, flagging it as a Direct Action.
         da_data = parse_mission(da_name, da_text, is_direct_action=True, debug=debug)
-        scenarios.append(da_data)
+        missions.append(da_data)
         if slow:
             time.sleep(1)  # Small delay to avoid overwhelming the console.
     
     doc.close()
     
-    return scenarios
+    return missions
 
 def parse_table_of_contents(toc_text, debug=False):
     """
@@ -244,7 +243,7 @@ def parse_mission(name, text, is_direct_action=False, debug=False):
 
     objectives, objective_tables = extract_objectives(text, debug)
 
-    scenario = {
+    mission = {
         "name": name,
         "type": "Direct Action" if is_direct_action else "ITS Scenario",
         "tables": {**objective_tables},
@@ -256,7 +255,7 @@ def parse_mission(name, text, is_direct_action=False, debug=False):
         "end_of_mission": extract_end_of_mission(text, debug)
     }
     
-    return scenario
+    return mission
 
 def extract_tactical_support(text, debug=False):
     """Extract tactical support options number."""
@@ -351,7 +350,8 @@ def extract_objectives(text, debug=False):
                 pprint(row)
             tableData.append(row)
     
-        pprint(tableData)
+        if debug:
+            pprint(tableData)
 
         # remove table text from the objectives text
         obj_text = re.sub(table_header_text, '', obj_text)
@@ -791,8 +791,8 @@ def extract_end_of_mission(text, debug=False):
 @click.command()
 @click.argument("pdf_path", type=click.Path(exists=True))
 @click.option("--json_output", type=click.Path(), help="Path to save the JSON output file")
-@click.option("--debug", is_flag=True, help="Enable debug output")
-@click.option("--raw", is_flag=True, help="Output raw text from each scenario")
+@click.option("-d", "--debug", is_flag=True, help="Enable debug output")
+@click.option("-r", "--raw", is_flag=True, help="Output raw text from each scenario")
 @click.option("-z", "--slow", is_flag=True, help="Run in slow mode")
 def main(pdf_path, debug, raw, json_output, slow):
     """
@@ -800,26 +800,43 @@ def main(pdf_path, debug, raw, json_output, slow):
     as input, orchestrates the scenario extraction, and saves the result to a
     JSON file.
     """
-    console.print(f"\n[bold cyan]Extracting scenarios from PDF:[/bold cyan] {pdf_path}\n")
-    
+    console.print(f"\n[bold cyan]Extracting missions from PDF:[/bold cyan] {pdf_path}\n")
+
+    # Determine season and version metadata from the target PDF file name
+    season = "unknown"
+    season_match = re.search(r'(season[_\-\s]?\d{1,2})', pdf_path, re.IGNORECASE)
+    if season_match:
+        season = season_match.group(1)
+        console.print(f"[green]✓ Season: {season}[/green]")
+    else:
+        console.print(f"[orange1]! Could not determine season from file name, defaulting to 'unknown'[/orange1]")
+        
+    version = "unknown"
+    version_match = re.search(r'v(\d+\.\d+\.\d+)', pdf_path, re.IGNORECASE)
+    if version_match:
+        version = version_match.group(1)
+        console.print(f"[green]✓ Version: {version}[/green]")
+    else:
+        console.print(f"[orange1]! Could not determine version from file name, defaulting to 'unknown'[/orange1]")
+
     # Run the main extraction process.
-    scenarios = extract_scenarios_from_pdf(pdf_path, debug=debug, raw=raw, slow=slow)
+    missions = extract_missions_from_pdf(pdf_path, debug=debug, raw=raw, slow=slow)
     
     # Structure the final output with some metadata.
     output = {
-        "season": "Season 17",
-        "version": "v1.0.1",
-        "scenarios": scenarios
+        "season": season,
+        "version": version,
+        "missions": missions
     }
     
-    jsonFileName = "infinity_its_missions.json" if not json_output else json_output
+    jsonFileName = f"infinity_its_missions_{season.replace(' ', '_').lower()}_v{version}.json" if not json_output else json_output
 
     # Write the structured data to a JSON file. `ensure_ascii=False` preserves
     # special characters, and `indent=2` makes the file human-readable.
     with open(jsonFileName, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
     
-    console.print(f"\n[bold green]✓ Extracted {len(scenarios)} scenarios[/bold green]")
+    console.print(f"\n[bold green]✓ Extracted {len(missions)} missions[/bold green]")
     console.print(f"[bold green]✓ Output saved to {jsonFileName}[/bold green]\n")
 
 if __name__ == "__main__":

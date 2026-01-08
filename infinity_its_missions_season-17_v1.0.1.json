@@ -1,7 +1,7 @@
 {
-  "season": "Season 17",
-  "version": "v1.0.1",
-  "scenarios": [
+  "season": "season-17",
+  "version": "1.0.1",
+  "missions": [
     {
       "name": "AKIAL INTERFERENCE",
       "type": "ITS Scenario",
