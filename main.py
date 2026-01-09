@@ -806,7 +806,7 @@ def main(pdf_path, debug, raw, json_output, slow):
     season = "unknown"
     season_match = re.search(r'(season[_\-\s]?\d{1,2})', pdf_path, re.IGNORECASE)
     if season_match:
-        season = season_match.group(1)
+        season = season_match.group(1).replace('_', ' ').replace('-', ' ').title()
         console.print(f"[green]✓ Season: {season}[/green]")
     else:
         console.print(f"[orange1]! Could not determine season from file name, defaulting to 'unknown'[/orange1]")
@@ -824,7 +824,7 @@ def main(pdf_path, debug, raw, json_output, slow):
     
     # Structure the final output with some metadata.
     output = {
-        "season": season,
+        "name": season,
         "version": version,
         "missions": missions
     }
