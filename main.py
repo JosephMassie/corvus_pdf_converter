@@ -565,7 +565,7 @@ def extract_special_rules(text, debug=False):
     
     # Define a set of headers that are known to be subsections of a rule (e.g., for skills)
     # or other markers that should not be treated as the start of a new rule.
-    subsection_headers = {'SHORT SKILL', 'SHORT MOVEMENT SKILL', 'LONG SKILL', 'REQUIREMENTS', 'EFFECTS', 'CANCELATION', 'END OF THE MISSION', 'END OF MISSION'}
+    subsection_headers = {'SHORT SKILL', 'SHORT MOVEMENT SKILL', 'LONG SKILL', 'REQUIREMENTS', 'EFFECTS', 'CANCELATION'}
     
     # --- Strategy: Find all potential headers first ---
     # A header is assumed to be a line consisting entirely of uppercase letters, spaces, and hyphens.
@@ -637,6 +637,10 @@ def extract_special_rules(text, debug=False):
     
     for i, header_info in enumerate(merged_headers):
         header = header_info['text']
+
+        if header in ('END OF THE MISSION', 'END OF MISSION'):
+            continue
+        
         header_end = header_info['end']
         
         # The content of the rule is the text between its header and the start of the next header.
@@ -764,21 +768,36 @@ def parse_skill_rule(header, full_text, debug=False):
     return rule
 
 def extract_end_of_mission(text, debug=False):
-    """Extracts the 'END OF THE MISSION' section text."""
-    # Regex to find the "END OF THE MISSION" section and capture its content.
-    # - `END\s+OF\s+THE\s+MISSION\s+`: Matches the section header.
-    # - `(.*?)`: Non-greedily captures the content.
-    # - `(?:$|\d+\s+[A-Z][A-Z\s]+TACTICAL\s+SUPPORT)`: A non-capturing group that stops
-    #   capturing at either the end of the text (`$`) or what looks like the start of
-    #   a table footer (e.g., "1 ITS SCENARIOS TACTICAL SUPPORT").
-    end_match = re.search(r'END\s+OF\s+THE\s+MISSION\s+(.*?)(?:$|\d+\s+[A-Z][A-Z\s]+TACTICAL\s+SUPPORT)', text, re.DOTALL | re.IGNORECASE)
-    if not end_match:
+    """
+    Extracts the 'END OF THE MISSION' section text, stopping at the next
+    all-caps header to prevent including subsequent sections.
+    """
+    # Find the "END OF THE MISSION" header.
+    end_header_match = re.search(r'END\s+OF\s+THE\s+MISSION', text, re.IGNORECASE)
+    if not end_header_match:
         if debug:
             console.print(f"    [red]✗ END OF THE MISSION section not found[/red]")
         return None
+
+    # Get all text that follows the header, stripping leading whitespace.
+    content = text[end_header_match.end():].lstrip()
     
-    end_text = end_match.group(1).strip()
-    # Clean up the text by collapsing all newlines and excess whitespace into single spaces.
+    # We only want the content up to the next section header.
+    next_header_start = -1
+
+    # Find the first valid all-caps header, which marks the end of our section.
+    # This logic is borrowed from `extract_special_rules` to consistently identify headers.
+    for match in re.finditer(r'^\s*([A-Z][A-Z \t\-\(\)\/]*[A-Z])[ \t]*$', content, re.MULTILINE):
+        next_header_start = match.start()
+        break
+
+    end_text = content
+    if next_header_start != -1:
+        end_text = content[:next_header_start]
+
+    end_text = end_text.strip()
+
+    # Clean up the text for consistent output.
     end_text = re.sub(r'\s*\n\s*', ' ', end_text)
     end_text = re.sub(r'\s+', ' ', end_text)
     

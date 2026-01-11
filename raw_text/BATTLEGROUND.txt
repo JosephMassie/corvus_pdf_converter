@@ -14,7 +14,7 @@ from your Deployment Zone (4 Objective Points).
  
 ^ Alternatively, at the end of the game, Threaten the enemy 
 Key Ops (1 Objective Point).
-BATTLEGROUND
+
 TACTICAL SUPPORT OPTIONS 
 0
 SUITABLE FOR REINFORCEMENTS
