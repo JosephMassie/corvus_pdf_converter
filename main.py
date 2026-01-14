@@ -203,16 +203,19 @@ def extract_text_from_pages(doc, start_page, end_page, debug=False, name=None):
     """
     text = ""
     for page_num in range(start_page, end_page):
+        page_text = ""
         if page_num < len(doc):
             page = doc[page_num]
-            # Append the text of each page, followed by a newline to mark page breaks.
-            text += page.get_text() + "\n"
-    
-    # If mission name is provided, remove it from the text
-    if name:
-        if debug:
-            console.print(f"\treplacing instances of mission name headers in '{name}'")
-        text = re.sub(r'^' + re.escape(name) + r'$', '', text, flags=re.MULTILINE)
+            # Append the text of each page, followed by two newlines to mark page breaks.
+            page_text = page.get_text() + "\n\n"
+        # If mission name is provided and we're on the first page of the mission, remove it from the text of that page
+        if name and page_num - start_page == 0:
+            if debug:
+                console.print(f"\treplacing instances of mission name headers in '{name}'")
+            page_text = re.sub(r'^' + re.escape(name) + r'$', '', page_text, flags=re.MULTILINE)
+        # Append page text to mission text
+        text += page_text
+        
     # Normalize whitespace for consistent parsing.
     # Replace one or more spaces or tabs with a single space.
     text = re.sub(r'[ \t]+', ' ', text)

@@ -103,7 +103,7 @@ Antenna is no longer Activated by the adversary.
 ►Player A and Player B Tokens can be used to mark the Activated 
 Communication Antenna. It is recommended each player uses a different 
 kind of Token.
-
+AREA OF INTEREST
 In this scenario the Areas of Interest are Zones of Operations 
 (ZO), represented by Circular Templates.
 There are a total of three Areas of Interest, one of which is the 
