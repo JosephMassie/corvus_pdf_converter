@@ -577,9 +577,10 @@ def extract_special_rules(text, debug=False):
     
     # Regex to find all-caps lines that could be headers.
     # - `^...$`: Anchors the match to the start and end of a line (due to MULTILINE flag).
-    # - `([A-Z][A-Z \t\-\(\)\/]*[A-Z])`: Captures a line that starts and ends with an uppercase letter
+    # - `([A-Z][A-Z \t\-\(\)\/]*)`: Captures a line that starts with an uppercase letter and only includes uppercase
+    #   letters, whitespace, parenthesis, and slashes
     #   and contains only uppercase letters, spaces, tabs, hyphens, slashes, or parentheses in between.
-    for header_match in re.finditer(r'^([A-Z][A-Z \t\-\(\)\/]*[A-Z])[ \t]*$', rules_text, re.MULTILINE):
+    for header_match in re.finditer(r'^([A-Z][A-Z \t\-\(\)\/]*)[ \t]*$', rules_text, re.MULTILINE):
         header_text = header_match.group(1).strip()
         
         # Filter out lines that contain lowercase letters, as they are likely wrapped text, not headers.
@@ -655,8 +656,9 @@ def extract_special_rules(text, debug=False):
         
         if not content or len(content) < 10:
             continue
-        
-        rule_key = header.lower().replace(' ', '_').replace('(', '').replace(')', '').replace('-', '_').replace('/', '_')
+
+        # Replace all spaces with underscores in headers to format them as keys
+        rule_key = header.lower().replace(' ', '_')
         
         # Check if the content describes a structured skill (e.g., "SHORT SKILL").
         # - `(SHORT( MOVEMENT)?|LONG)\s+SKILL`: Matches "SHORT SKILL", "SHORT MOVEMENT SKILL", or "LONG SKILL".
