@@ -580,7 +580,7 @@ def extract_special_rules(text, debug=False):
     # - `([A-Z][A-Z \t\-\(\)\/]*)`: Captures a line that starts with an uppercase letter and only includes uppercase
     #   letters, whitespace, parenthesis, and slashes
     #   and contains only uppercase letters, spaces, tabs, hyphens, slashes, or parentheses in between.
-    for header_match in re.finditer(r'^([A-Z][A-Z \t\-\(\)\/]*)[ \t]*$', rules_text, re.MULTILINE):
+    for header_match in re.finditer(r'^([A-Z][A-Z \t\-\(\)\/:]*)[ \t]*$', rules_text, re.MULTILINE):
         header_text = header_match.group(1).strip()
         
         # Filter out lines that contain lowercase letters, as they are likely wrapped text, not headers.
@@ -662,7 +662,10 @@ def extract_special_rules(text, debug=False):
         
         # Check if the content describes a structured skill (e.g., "SHORT SKILL").
         # - `(SHORT( MOVEMENT)?|LONG)\s+SKILL`: Matches "SHORT SKILL", "SHORT MOVEMENT SKILL", or "LONG SKILL".
-        if re.search(r'(SHORT( MOVEMENT)?|LONG)\s+SKILL', content, re.IGNORECASE):
+        if re.search(r'(SHORT( MOVEMENT)?|LONG)\s+SKILL', content):
+            if debug:
+                console.print(f"    [cyan]> found a skill {rule_key}")
+                console.print(f"    [dim]  {content[:100]}")
             # If it's a skill, use the specialized parser to extract its structured data.
             rule_data = parse_skill_rule(header, content, debug)
             rules[rule_key] = rule_data
@@ -685,7 +688,7 @@ def extract_special_rules(text, debug=False):
         console.print(f"\t[green]✓ Found {rule_count} special rules[/green]")
         if rules and debug:
             for rule_name, rule in rules.items():
-                console.print(f"\t- {rule_name}{' (skill)' if isinstance(rule, dict) else ''}")
+                console.print(f"\t- {rule_name}{' [bright_cyan](skill)[/]' if isinstance(rule, dict) else ''}")
     
     return rules
 
